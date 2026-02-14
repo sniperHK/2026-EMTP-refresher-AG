@@ -1,0 +1,7 @@
+.DS_Store
+
+# Raw source materials (PDF/PPTX/etc.) and generated exports
+inputs/
+exports/
+references/raw/
+
