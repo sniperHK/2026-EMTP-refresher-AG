@@ -117,6 +117,7 @@
 - **辨識**：單側呼吸音消失 + 叩診過度共鳴 + JVD + 低血壓 → 高度懷疑張力性氣胸
 - **EMT-P 處置**：依預立醫療流程執行 needle decompression（依地方 protocol）
 - **關鍵時間**：從辨識到減壓的時間直接決定存活率
+- **講師評分**：`docs/scenarios/critical-actions-checklist.md`（S01 區段）
 
 ## 參考資料
 

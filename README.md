@@ -8,6 +8,11 @@
 - 模組模板：`docs/templates/module-template.md`
 - 情境模板：`docs/scenarios/scenario-template.md`
 - 題庫：`docs/assessments/question-bank.md`
+- Pre-test：`docs/assessments/pre-test.md`
+- Post-test：`docs/assessments/post-test.md`
+- Answer key：`docs/assessments/answer-key.md`
+- 情境評分表：`docs/scenarios/critical-actions-checklist.md`
+- M02 在地劑量對接表：`docs/modules/M02_protocol-dosing-map.md`
 - 課程執行腳本：`docs/teaching/session-flow.md`
 
 ## 專案結構（重點）

@@ -4,6 +4,11 @@
 - M01 病生理學 (Q1-Q15)
 - M02 藥物動力學/藥效學 (Q16-Q30)
 
+相關檔案：
+- `docs/assessments/pre-test.md`
+- `docs/assessments/post-test.md`
+- `docs/assessments/answer-key.md`
+
 ---
 
 ## M01 ALS 病生理學

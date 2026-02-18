@@ -15,6 +15,12 @@
 | 課後 | Post-test MCQ | 20 題 | 驗證知識與決策框架是否提升 |
 | 課後 | Mini OSCE / 口頭情境 | 1 站（8-10 分） | 驗證 critical actions |
 
+對應檔案：
+- `docs/assessments/pre-test.md`
+- `docs/assessments/post-test.md`
+- `docs/assessments/answer-key.md`
+- `docs/scenarios/critical-actions-checklist.md`
+
 ## 3. 題庫分布（30 題）
 
 - 病生理學（M01）：15 題（50%）
@@ -29,5 +35,5 @@
 ## 5. 通過門檻（建議）
 
 - Post-test：`>= 80%`
-- Mini OSCE：critical actions 不可漏掉任一項
+- Mini OSCE：`critical` 項目不得為 0 分
 - 若未達標：1 週內完成 targeted remediation（重做 10 題 + 1 案口述）

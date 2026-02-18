@@ -168,6 +168,7 @@ Epi 1 mg IV → α1 受體 → 周邊血管收縮
 - **Amiodarone**：refractory VF → 300 mg IV push；可追加 150 mg
 - **進階呼吸道**：依 protocol 執行氣管插管（EMT-P scope）
 - **可逆原因**：時刻思考 H's and T's，尤其前三案的情境
+- **講師評分**：`docs/scenarios/critical-actions-checklist.md`（S04 區段）
 
 ## 參考資料
 

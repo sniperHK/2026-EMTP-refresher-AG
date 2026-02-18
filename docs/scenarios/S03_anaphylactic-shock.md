@@ -140,6 +140,7 @@
 - **IV/IO fluid**：NS/LR 快速 bolus（補充滲出的血漿容量）
 - **高流量氧氣**：NRM 15L，若呼吸道阻塞考慮 BVM 或進階呼吸道
 - **注意**：biphasic reaction 可在 1-72 小時後再發，到院後需觀察
+- **講師評分**：`docs/scenarios/critical-actions-checklist.md`（S03 區段）
 
 ## 參考資料
 

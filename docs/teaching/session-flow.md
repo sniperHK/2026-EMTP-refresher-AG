@@ -26,6 +26,13 @@
 3. `S03_anaphylactic-shock.md`：分布性休克與 Epi 藥理
 4. `S04_OHCA-VF.md`：前述病生理最終共同路徑與 ACLS 介入
 
+## 評量與評分檔案
+
+- Pre-test：`docs/assessments/pre-test.md`
+- Post-test：`docs/assessments/post-test.md`
+- Answer Key：`docs/assessments/answer-key.md`
+- 情境評分：`docs/scenarios/critical-actions-checklist.md`
+
 ## 講師提醒（避免教學失焦）
 
 - 每個案例都要回到同一問題：
@@ -33,3 +40,4 @@
   2) 你選的處置在修正哪個環節？
   3) 若處置失敗，下一步怎麼調整？
 - 不在課堂上強行背在地劑量，先把「決策框架」講清楚，再導入 protocol 細節。
+- 課堂結束前，至少完成一次 `critical actions` 回饋（每組 1 次）。
