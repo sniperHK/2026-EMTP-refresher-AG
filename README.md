@@ -8,6 +8,7 @@
 - 模組模板：`docs/templates/module-template.md`
 - 情境模板：`docs/scenarios/scenario-template.md`
 - 題庫：`docs/assessments/question-bank.md`
+- 課程執行腳本：`docs/teaching/session-flow.md`
 
 ## 專案結構（重點）
 
@@ -20,4 +21,4 @@
 
 - 本 repo 以教學用途為主；實際劑量、適應症、禁忌症、給藥途徑與流程請以現行 protocol/醫療指導為準。
 - 目前「ALS」預設為 Advanced Life Support；若你要講的是 amyotrophic lateral sclerosis，告訴我我會立刻調整模組與案例。
-
+- 題庫正式檔名固定為 `question-bank.md`（避免 `question_bank.md` 與 `question-bank.md` 並存）。
