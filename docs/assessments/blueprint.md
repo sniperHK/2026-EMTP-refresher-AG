@@ -13,13 +13,14 @@
 | 課前 | Pre-test MCQ | 10 題 | 快速辨識基線能力 |
 | 課中 | 情境討論 | 4 案（S01-S04） | 訓練病生理推論與團隊決策 |
 | 課後 | Post-test MCQ | 20 題 | 驗證知識與決策框架是否提升 |
-| 課後 | Mini OSCE / 口頭情境 | 1 站（8-10 分） | 驗證 critical actions |
+| 課後 | Mini OSCE 口頭快速演練 | 1 站（5 分） | 驗證 critical actions |
 
 對應檔案：
 - `docs/assessments/pre-test.md`
 - `docs/assessments/post-test.md`
 - `docs/assessments/answer-key.md`
 - `docs/scenarios/critical-actions-checklist.md`
+- `docs/assessments/mini-osce.md`
 
 ## 3. 題庫分布（30 題）
 

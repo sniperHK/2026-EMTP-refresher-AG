@@ -16,7 +16,8 @@
 | 115-125 分 | Break |  |  |
 | 125-170 分 | M02 核心概念 | 短講 + 計算演練 | Route/Onset/Duration 與用藥風險 |
 | 170-210 分 | 情境 S03 + S04 | 小組討論 + 全班 debrief | Epi/Amiodarone/CPR 的病生理連結 |
-| 210-230 分 | Post-test（20 題） | 個人作答 | 學習成效驗證 |
+| 210-225 分 | Post-test（20 題） | 個人作答 | 學習成效驗證 |
+| 225-230 分 | Mini OSCE 口頭快速演練 | 抽情境卡 + 3 題問答 | 驗證 critical actions |
 | 230-240 分 | 收尾 | 講師總結 | 3 個帶走重點 |
 
 ## 四案例串接順序（建議）
@@ -32,6 +33,7 @@
 - Post-test：`docs/assessments/post-test.md`
 - Answer Key：`docs/assessments/answer-key.md`
 - 情境評分：`docs/scenarios/critical-actions-checklist.md`
+- Mini OSCE：`docs/assessments/mini-osce.md`
 
 ## 講師提醒（避免教學失焦）
 
