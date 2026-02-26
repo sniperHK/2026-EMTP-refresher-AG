@@ -31,7 +31,12 @@ if [[ -f ".shared-ai-context.md" ]]; then
   if [[ -n "$head_hash" ]] && rg -q "$head_hash" ".shared-ai-context.md"; then
     pass ".shared-ai-context.md Git history includes HEAD ($head_hash)"
   else
-    warn ".shared-ai-context.md Git history does not include current HEAD"
+    prev_hash="$(git rev-parse --short HEAD~1 2>/dev/null || true)"
+    if [[ -n "$prev_hash" ]] && rg -q "$prev_hash" ".shared-ai-context.md"; then
+      pass ".shared-ai-context.md Git history is synced through previous commit ($prev_hash); current HEAD ($head_hash) pending"
+    else
+      warn ".shared-ai-context.md Git history does not include current HEAD or previous commit"
+    fi
   fi
 fi
 
