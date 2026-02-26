@@ -1,12 +1,12 @@
 # 2026 北市 EMTP 複訓題庫 (Draft)
 
 涵蓋範圍：
-- M01 病生理學 (Q1-Q15)
-- M02 藥物動力學/藥效學 (Q16-Q30)
+- M01 病生理學 (Q1-Q15, Q31-Q33)
+- M02 藥物動力學/藥效學 (Q16-Q30, Q34-Q35)
 
 相關檔案：
-- `docs/assessments/pre-test.md`（題號 1-10，對照本檔 Q1/Q3/Q4/Q8/Q13/Q16/Q17/Q20/Q21/Q26）
-- `docs/assessments/post-test.md`（題號 1-20，對照本檔其餘 20 題）
+- `docs/assessments/pre-test.md`（題號 1-10，對照本檔 Q1/Q3/Q4/Q8/Q13/Q16/Q17/Q20/Q21/Q34）
+- `docs/assessments/post-test.md`（題號 1-20，對照本檔 Q2/Q5/Q6/Q7/Q9/Q10/Q11/Q12/Q14/Q31/Q18/Q19/Q22/Q23/Q24/Q25/Q27/Q28/Q29/Q33）
 - `docs/assessments/answer-key.md`
 
 ### 標籤說明
@@ -293,3 +293,52 @@ C. 絕對不可以使用 Epinephrine，會造成胎盤血管收縮
 D. 應該先幫孕婦剖腹產再給藥
 > **Answer: B**
 > **解析**：母體休克是胎兒死亡最大主因。雖 Epi 可能收縮胎盤血管，但若母體死亡胎兒必死，故仍依 ACLS/ATLS 原則優先搶救母體循環。
+
+---
+
+## 心因性休克、急性肺水腫、PseudoPEA（新增）
+
+**Q31.** `M01` `Apply` `Post`
+**65 歲男性，主訴胸痛合併呼吸困難。BP 180/110, HR 110, SpO₂ 88%，雙肺佈滿濕囉音，端坐呼吸，咳出粉紅泡沫痰。使用 Nohria-Stevenson 矩陣分類，此病人屬於？**
+A. Warm + Dry（A 象限）
+B. Warm + Wet（B 象限）
+C. Cold + Dry（L 象限）
+D. Cold + Wet（C 象限）
+> **Answer: B**
+> **解析**：四肢尚溫暖（Warm）+ 雙側囉音/肺水腫（Wet）= B 象限。高血壓 + 急性肺水腫 + 呼吸窘迫 = SCAPE。處置方向：NTG + CPAP/BiPAP。
+
+**Q32.** `M01` `Analyze` `Post`
+**承上題，給予 NTG SL + CPAP 後 5 分鐘，病人突然惡化：BP 75/50, HR 130, 皮膚冰冷濕黏，囉音加重。此時的最佳處置是？**
+A. 加大 NTG 劑量（加強降壓）
+B. 給予 Furosemide 20 mg IV（利尿排水）
+C. 停止 NTG，給予 Push-dose Epinephrine 10-20 mcg IV
+D. 快速輸注 NS 1000 mL
+> **Answer: C**
+> **解析**：從 Warm+Wet 轉為 Cold+Wet（C 象限）——forward failure 加劇。NTG 在 SBP < 90 禁用（會更低）；Furosemide 在低灌流時無效且可能惡化低血壓；大量輸液會加重肺水腫。正確做法：停 NTG → 升壓（push-dose epi）。
+
+**Q33.** `M01` `Analyze` `Post`
+**OHCA 急救中，電擊後 ECG 轉為 sinus tachycardia，但頸動脈脈搏仍摸不到。POCUS 顯示心臟有收縮。此狀態最可能是？**
+A. True PEA（真無脈搏電氣活動）
+B. Asystole（心搏停止）
+C. PseudoPEA（假無脈搏電氣活動）
+D. VF（心室顫動）
+> **Answer: C**
+> **解析**：ECG 有 organized rhythm + 無脈搏 + POCUS 有心臟收縮 = PseudoPEA。心臟還在跳但心輸出量極低（extreme shock）。與 true PEA（POCUS 無收縮）不同，pseudoPEA 的管理方式是升壓（push-dose epi 10-20 mcg），而非標準 ACLS Epi 1 mg。
+
+**Q34.** `M02` `Apply` `Pre`
+**關於 Nitroglycerin (NTG) 在急性肺水腫的應用，下列何者正確？**
+A. NTG 是利尿劑，可幫助排除肺部多餘液體
+B. NTG 低劑量擴張靜脈（減前負荷），高劑量擴張動脈（減後負荷），是 SCAPE 首選
+C. SBP 60 mmHg 的休克病人仍可使用 NTG
+D. NTG 舌下吸收不受灌流狀態影響
+> **Answer: B**
+> **解析**：NTG 是血管擴張劑（非利尿劑）。低劑量靜脈擴張→減前負荷→減肺水腫；高劑量動脈擴張→減後負荷→減心臟負擔。SBP < 90 禁用。低灌流時 SL 吸收差（黏膜血流不足）。
+
+**Q35.** `M02` `Analyze` `Post`
+**在 PseudoPEA 狀態下（POCUS 確認心臟有收縮），為什麼不能使用標準 ACLS 劑量 Epinephrine 1 mg IV？**
+A. 因為 PseudoPEA 不需要任何 Epinephrine
+B. 因為心臟還在跳，全量 Epi 會導致心肌過度興奮→VF/VT
+C. 因為 PseudoPEA 只能用 IM 給藥
+D. 因為 1 mg 劑量太小不夠用
+> **Answer: B**
+> **解析**：PseudoPEA 的心臟仍有收縮能力，只是心輸出量極低。ACLS 劑量 1 mg = push-dose 劑量的 50-100 倍。對還在跳的心臟打全量 Epi → 心肌氧耗暴增 + 受體過度興奮 → 極易打成 VF/VT。正確做法：push-dose epi 10-20 mcg IV q 1-2 min。

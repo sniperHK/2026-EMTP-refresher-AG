@@ -56,8 +56,109 @@
 
 ### 灌流評估三角 (Perfusion Triangle)
 - **Pump (心臟)**: Rate, Rhythm, Contractility
+  - Contractility 評估：脈壓差窄（Narrow Pulse Pressure）、心音低沉、末梢冰冷+濕
 - **Pipe (血管)**: Tone (SVR) - 看脈壓差 (Pulse Pressure), CRT, 皮膚溫度
-- **Tank (容量)**: Preload - 看 JVD, 黏膜, 聽診 (肺水腫 vs 乾)
+- **Tank (容量)**: Preload
+  - Tank 空的徵象：JVD(-), 黏膜乾, 聽診乾淨, 脈搏微弱 → 輸液
+  - Tank 滿的徵象：**JVD(+), 雙側肺囉音 (crackles), 下肢水腫** → 不能輸液！
+  - **陷阱**：Tank 空 vs Tank 滿 vs Pump 不力，三者都可能低血壓，但處置完全不同
+
+### 鑑別決策樹：同樣低血壓，該輸液還是升壓？
+
+```
+低血壓 (SBP < 90)
+  │
+  ├─ 皮膚冰冷 + JVD(-) + 肺音乾淨 → Tank 空 → 輸液 (S02 低血容性)
+  │
+  ├─ 皮膚溫暖 + JVD(-) + ±wheeze → Pipe 鬆 → Epi (S03 過敏性)
+  │
+  ├─ 皮膚冰冷 + JVD(+) + 肺音乾淨 → Tank 被擋 → 減壓 (S01 張力性氣胸)
+  │
+  └─ 皮膚冰冷 + JVD(±) + 雙側囉音 → Pump 不力 → 升壓/強心 (S05 心因性)
+```
+
+---
+
+## 3.5 心因性休克與急性肺水腫 (Cardiogenic Shock & APE)
+
+> **Critical Concept**:
+> 心因性休克是 Pump 壞了——心臟打不出去。它常常同時產生兩個方向的問題：
+> - **Forward failure（前向衰竭）**：心輸出量不足 → 全身低灌流 → Cold
+> - **Backward failure（後向衰竭）**：血液回堵到肺 → 肺水腫 → Wet
+>
+> 當兩者同時出現 = **Cold + Wet** = 最難處理的急重症之一。
+
+### 心因性休克的常見成因
+- **收縮力不全**：急性心肌梗塞（AMI）、心肌炎 → 最常見
+- **後負荷過高**：高血壓危象 → 交感風暴 → SCAPE
+- **心律不整**：快速心房顫動、VT → Pump 效率崩潰（連結 S04）
+- **阻塞性重疊**：心包填塞、大面積 PE → Pump 被外力壓住（連結 S01）
+
+### 急性肺水腫 (Acute Pulmonary Edema) 的病生理
+
+```
+左心衰竭 → 左心室舒張末壓↑ → 肺靜脈壓↑ → 肺微血管靜水壓↑
+  ↓
+超過 Starling 平衡 → 血漿滲入肺間質/肺泡
+  ↓
+肺泡氣體交換面積↓ → SpO2↓ + 呼吸困難 + 雙側囉音 (crackles)
+```
+
+**SCAPE（Sympathetic Crashing Acute Pulmonary Edema）**：
+- 交感風暴 → 血壓飆高 → 後負荷暴增 → 左心室打不過去 → 急性肺水腫
+- 特徵：**高血壓 + 呼吸窘迫 + 粉紅泡沫痰** → 惡化極快（分鐘級）
+- 處置：**NTG（減後負荷）+ CPAP/BiPAP（減少回心血量+改善氧合）+ 坐姿**
+- **不要急著插管**：NIV 往往在 5-10 分鐘內顯著改善
+
+### Nohria-Stevenson 矩陣：一張圖搞定心衰處置方向
+
+```
+                    灌流 (Perfusion)
+                  Warm（溫暖）    Cold（冰冷）
+              ┌──────────────┬──────────────┐
+  Dry（乾）   │  A: 穩定       │  L: 低灌流     │
+  無肺水腫    │  觀察          │  輸液試探       │
+  Congestion ├──────────────┼──────────────┤
+  Wet（濕）   │  B: 肺水腫     │  C: 心因性休克  │
+  有肺水腫    │  NTG + NIV    │  升壓 + 強心    │
+              └──────────────┴──────────────┘
+```
+
+| 象限 | 臨床表現 | 處置方向 |
+|------|---------|---------|
+| **A (Warm+Dry)** | 穩定代償，生命徵象正常 | 口服藥調整，不需急處置 |
+| **B (Warm+Wet)** | 呼吸困難+囉音+SpO₂↓，但四肢溫暖，BP 正常或偏高 | **NTG + CPAP/BiPAP**（SCAPE 即屬此類） |
+| **L (Cold+Dry)** | 低血壓+末梢冰冷，肺音乾淨 | 小量輸液試探（注意：可能是右心衰或 PE） |
+| **C (Cold+Wet)** | 低血壓+末梢冰冷+囉音+SpO₂↓ | **最棘手**：不能輸液（會更濕）、不能 NTG（會更低）→ 升壓 + 強心 |
+
+### PseudoPEA — 休克的終點站
+
+> **Critical Concept**:
+> PseudoPEA 不是心跳停了——是心臟還在跳，但打出來的血壓太低（SBP < 40-50 mmHg），低到你摸不到脈搏。
+> 它不是 cardiac arrest，它是 **extreme shock**。處置方式完全不同。
+
+**為何重要**：
+- 42-86% 的 PEA cardiac arrest 可能其實是 pseudoPEA
+- True PEA 存活率 < 1%；pseudoPEA（有心臟收縮）ROSC 率可達 70-94%
+- **POCUS 是唯一可靠鑑別**：超音波看到心臟有收縮 = pseudoPEA
+
+**處置差異**：
+
+| 項目 | True PEA | PseudoPEA |
+|------|----------|-----------|
+| 心臟狀態 | 無有效收縮 | 有收縮但極弱 |
+| 處置 | ACLS：CPR + Epi 1 mg + 找可逆原因 | **當作重度休克**：push-dose epi 10-20 mcg + 升壓藥 drip + 找原因 |
+| Epi 劑量 | 1 mg（標準 ACLS） | **10-20 mcg**（全量 1 mg 會打垮還在跳的心臟 → VF） |
+| CPR | 持續壓胸 | 若 POCUS 確認有收縮，**考慮暫停壓胸**，改用升壓支持 |
+
+**休克→心搏停止的連續體**：
+
+```
+正常 → 代償休克 → 失代償休克 → PseudoPEA → True PEA → Asystole
+                                    ↑
+                              最後的逆轉窗口
+                          （所有 S01-S05 的惡化終點）
+```
 
 ---
 
@@ -76,10 +177,12 @@
 
 | 藥物/處置 | 作用目標 (Physiological Target) | 預期效應 (Desired Effect) | 風險/副作用 (Risk) |
 | :--- | :--- | :--- | :--- |
-| **Fluids** (NS/LR) | Tank (Preload) | 增加 SV → 增加 CO → 改善 BP | Fluid overload (肺水腫), 稀釋凝血因子 |
+| **Fluids** (NS/LR) | Tank (Preload) | 增加 SV → 增加 CO → 改善 BP | Fluid overload (肺水腫), 稀釋凝血因子。**Cold+Wet 禁大量輸液！** |
 | **Epinephrine** | Alpha-1 (Vessel), Beta-1 (Heart) | 增加 SVR (BP↑), 增加 Contractility | 增加心肌耗氧 (Myocardial O2 demand), 導致心律不整 |
+| **Nitroglycerin** | 靜脈（低劑量）/ 動脈（高劑量）擴張 | 減前負荷 → 減肺水腫；減後負荷 → 減心臟負擔 | **SBP < 90 禁用。右心梗禁用。** 低灌流時 SL 吸收差 |
 | **Amiodarone** | K+ Channel, Beta, Ca++, Na+ | 延長動作電位 (Repolarization), 抑制異位放電 | **Hypotension (血管擴張)**, Bradycardia |
 | **Intubation** (RSI) | Airway/Ventilation | 確保通氣, 防止吸入 | **PPV (正壓通氣) 減少回心血流 (Preload↓) → 可能導致剛插管後 Cardiac Arrest** |
+| **CPAP/BiPAP** | Oxygenation + Preload | 正壓撐開肺泡 + 減少回心血量 | 肺水腫首選！**比插管侵入性低，效果快（5-10 min）** |
 
 ### 關鍵決策示警 (Red Flags)
 - 🚑 **插管前低血壓**：正壓通氣 (PPV) 會進一步降低血壓。**務必先 Fluid resuscitation 或先上 Vasopressor (Push-dose epi / Norepi) 把 BP 拉住再插管。**
@@ -91,4 +194,7 @@
 
 1. **區分 Oxygenation vs Ventilation 問題**：SpO2 低給氧，EtCO2 高/意識差給通氣。
 2. **休克識別在血壓掉之前**：看 HR, CRT, 皮膚, 意識。
-3. **Resuscitation 優先於 Intubation**：不要對一個休克瀕死的病人直接插管（HOP: Hypotension, Oxygenation, pH），先穩定循環再插管。
+3. **Pump-Pipe-Tank 定位休克類型**：Tank 空（輸液）vs Pipe 鬆（Epi）vs Pump 不力（升壓/強心）→ 處置方向完全不同。
+4. **Nohria-Stevenson 分四象限**：Warm+Wet（NTG+NIV）、Cold+Wet（升壓+強心）、Cold+Dry（輸液試探）。
+5. **PseudoPEA ≠ 心搏停止**：心臟還在跳但脈搏摸不到 → 當重度休克治療，不是 ACLS protocol。
+6. **Resuscitation 優先於 Intubation**：不要對一個休克瀕死的病人直接插管（HOP: Hypotension, Oxygenation, pH），先穩定循環再插管。肺水腫優先用 CPAP/BiPAP，而非插管。

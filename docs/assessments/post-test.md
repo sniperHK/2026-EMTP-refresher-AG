@@ -58,11 +58,11 @@ B. 大於 2 mmol/L (or 4 mmol/L) 提示組織灌流不足
 C. 只有敗血症會高，創傷病人不會高
 D. 乳酸清除率 (Lactate clearance) 可作為急救復甦的指標
 
-**10. 嚴重低體溫 (Severe Hypothermia, <30°C) 病人的脈搏檢查，指引建議至少需檢查多久？**
-A. 10 秒
-B. 30-45 秒
-C. 1 分鐘
-D. 不用摸，直接壓胸
+**10. 65 歲男性，主訴胸痛合併呼吸困難。BP 180/110, HR 110, SpO₂ 88%，雙肺佈滿濕囉音，端坐呼吸，咳出粉紅泡沫痰。使用 Nohria-Stevenson 矩陣分類，此病人屬於？**
+A. Warm + Dry（A 象限）
+B. Warm + Wet（B 象限）
+C. Cold + Dry（L 象限）
+D. Cold + Wet（C 象限）
 
 **11. 您要對一位 80 歲、體重 50 公斤的躁動阿嬤給予 Midazolam 鎮靜。相較於 30 歲壯年人，您的考量是？**
 A. 劑量不變
@@ -118,8 +118,8 @@ B. 心因性休克
 C. 末期失代償性休克 (酸中毒嚴重)
 D. 神經性休克
 
-**20. 懷孕末期創傷孕婦的急救用藥考量，下列何者正確？**
-A. 所有藥物劑量都要減半
-B. 優先考量母體穩定 (Resuscitate the mother matches resuscitate the fetus)
-C. 絕對不可以使用 Epinephrine，會造成胎盤血管收縮
-D. 應該先幫孕婦剖腹產再給藥
+**20. OHCA 急救中，電擊後 ECG 轉為 sinus tachycardia，但頸動脈脈搏仍摸不到。POCUS 顯示心臟有收縮。此狀態最可能是？**
+A. True PEA（真無脈搏電氣活動）
+B. Asystole（心搏停止）
+C. PseudoPEA（假無脈搏電氣活動）
+D. VF（心室顫動）

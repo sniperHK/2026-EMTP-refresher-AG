@@ -11,7 +11,7 @@
 | 階段 | 形式 | 題數/項目 | 目的 |
 |---|---|---|---|
 | 課前 | Pre-test MCQ | 10 題 | 快速辨識基線能力 |
-| 課中 | 情境討論 | 4 案（S01-S04） | 訓練病生理推論與團隊決策 |
+| 課中 | 情境討論 | 5 案（S01-S05） | 訓練病生理推論與團隊決策 |
 | 課後 | Post-test MCQ | 20 題 | 驗證知識與決策框架是否提升 |
 | 課後 | Mini OSCE 口頭快速演練 | 1 站（5 分） | 驗證 critical actions |
 
@@ -22,10 +22,10 @@
 - `docs/scenarios/critical-actions-checklist.md`
 - `docs/assessments/mini-osce.md`
 
-## 3. 題庫分布（30 題）
+## 3. 題庫分布（35 題）
 
-- 病生理學（M01）：15 題（50%）
-- PK/PD（M02）：15 題（50%）
+- 病生理學（M01）：18 題（51%）— 含心因性休克/APE/pseudoPEA 3 題
+- PK/PD（M02）：17 題（49%）— 含 NTG/pseudoPEA 用藥 2 題
 
 ## 4. 認知層級分布（建議）
 

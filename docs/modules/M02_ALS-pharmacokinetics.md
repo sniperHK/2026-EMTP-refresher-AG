@@ -97,11 +97,37 @@
   - **PK**: Inhalation Onset 5-15 min。
   - **陷阱**: Side effect 是 Tachycardia, Tremor (Beta-2 selectivity 不是 100%)。
 
+### 血管擴張劑 (Vasodilators) — 肺水腫用
+- **Nitroglycerin (NTG)**
+  - **Warm+Wet（SCAPE / 急性肺水腫）**: SL 0.4 mg q 3-5 min；SCAPE 可加倍至 SL 0.8 mg
+  - **IV drip**: 10-200 mcg/min，依血壓 titrate
+  - **PK**: SL Onset 1-3 min, Duration 20-30 min; IV Onset < 1 min
+  - **作用機轉**：低劑量 → 靜脈擴張 → 減前負荷 → 減肺水腫；高劑量 → 動脈擴張 → 減後負荷
+  - **陷阱**: **SBP < 90 禁用**。右心梗（RV infarct: inferior STEMI + RV lead ST↑）禁用——右心靠前負荷維生，NTG 會讓它崩潰。
+  - **PK/PD 教學點**: NTG 在低灌流時 SL 吸收差——跟 IM 在休克時失效的道理一樣（黏膜血流不足 → 吸收延遲）。
+
 ### 升壓劑 (Vasopressors)
 - **Norepinephrine**
   - **Septic/Distributive Shock**: 0.1-0.5 mcg/kg/min IV drip, titrate q 2-5 min
+  - **Cardiogenic Shock (Cold+Wet, SBP < 70)**: 首選升壓，待 BP 穩定後再加 Dobutamine
   - **泡製**: 4 mg/250 mL D5W (16 mcg/mL)
   - **陷阱**: 外滲致組織壞死 → 優先 central line 或大口徑 IV。確保已補充足夠 volume。
+
+### 肺水腫/心衰附錄（速查表，課堂不另講解）
+
+> 以下藥物放在學員講義中作為參考，課堂時間有限不逐一講解。
+
+- **Furosemide (Lasix)**
+  - 適應症：真正 volume overload（慢性心衰急性惡化+全身水腫），**非 SCAPE 首選**
+  - 劑量：20-80 mg IV（≥ 口服維持劑量）
+  - Onset：IV 5 min（利尿效果 15-20 min）
+  - 陷阱：利尿過度 → 低血容 → Cold+Dry；監測 K+
+
+- **Dobutamine**
+  - 適應症：Cold+Wet，SBP 70-90（已有 Norepinephrine 支持後加入）
+  - 劑量：2-20 mcg/kg/min IV drip
+  - 作用：β1 為主 → 增加心輸出量；輕度 β2 → 減後負荷
+  - 陷阱：增加心肌耗氧，AMI 時有風險；SBP < 70 不應單獨使用
 
 ---
 
@@ -110,6 +136,7 @@
 - **Push-dose Epinephrine (急救升壓)**:
   - 取 1ml (1:10,000) + 9ml NS = 10mcg/ml
   - 每次給 1-2ml (10-20mcg)，每 1-2 分鐘 titrate 直到 SBP > 90。
+  - **PseudoPEA 專用情境**：心臟還在跳但脈搏摸不到 → 用 push-dose（10-20 mcg），**絕對不能用 ACLS 劑量 1 mg**——心臟還有收縮力，全量 Epi 會打成 VF/VT。
 
 - **Dopamine/Norepi Drip Rate**:
   - 利用 Rule of 6 或鐘面法則 (Clock Method) 快速換算。
@@ -123,6 +150,8 @@
 2. **Humeral IO** 快於 Tibial IO。
 3. **老人的鎮靜藥量要減半**。
 4. **Push-dose Epinephrine** 是現代 EMS 處理休克的重要技能，比單純輸液更有效且避免水腫。
+5. **NTG 是肺水腫利器**，但 SBP < 90 或右心梗禁用。低灌流時 SL 吸收差。
+6. **PseudoPEA 用 push-dose（10-20 mcg），不是 ACLS 劑量（1 mg）**——心臟還在跳，全量會打成 VF。
 
 ## 7. 在地 Protocol 對接（授課前檢查）
 

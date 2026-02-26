@@ -1,6 +1,6 @@
 # Scenarios Critical Actions Checklist（講師評分表）
 
-> 適用情境：`S01_tension-pneumothorax.md`、`S02_hypovolemic-shock.md`、`S03_anaphylactic-shock.md`、`S04_OHCA-VF.md`
+> 適用情境：`S01_tension-pneumothorax.md`、`S02_hypovolemic-shock.md`、`S03_anaphylactic-shock.md`、`S04_OHCA-VF.md`、`S05_cardiogenic-shock-APE.md`
 
 ## 評分方式
 
@@ -12,7 +12,7 @@
   - 總分 `>= 80%`
   - 下列 `Critical` 項目不得為 0 分
 
-## 共用項目（四案例皆評）
+## 共用項目（五案例皆評）
 
 | 項目 | Critical | 分數 (0/1/2) |
 |---|---|---|
@@ -58,6 +58,17 @@
 | 電擊時機與循環節奏正確 | `Yes` |  |
 | Epinephrine / Amiodarone 給藥時機正確 | `Yes` |  |
 | 能同步思考 H's and T's（可逆原因） | `Yes` |  |
+
+## S05 心因性休克合併急性肺水腫（Scenario-specific）
+
+| 項目 | Critical | 分數 (0/1/2) |
+|---|---|---|
+| 辨識 SCAPE（高血壓 + 雙側囉音 + 端坐呼吸）→ Warm+Wet | `Yes` |  |
+| 正確處置 Warm+Wet：NTG SL + CPAP + 坐姿（非大量輸液） | `Yes` |  |
+| 辨識 Warm+Wet → Cold+Wet 轉折（SBP < 90 + 末梢冰冷） | `Yes` |  |
+| Cold+Wet 時立即停 NTG 並轉向升壓策略（push-dose epi） | `Yes` |  |
+| 能區分 PseudoPEA vs True PEA（不啟動標準 ACLS 1mg Epi） |  |  |
+| 能說明 S05 vs S02 同為低血壓但處置相反的病生理原因 |  |  |
 
 ## 講師紀錄
 

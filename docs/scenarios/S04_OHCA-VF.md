@@ -94,7 +94,8 @@
 2. **高品質 CPR 的「5-6 cm、100-120/min、完全回彈」不是隨意數字——每個參數背後的生理學是什麼？**
 3. **Epinephrine 在 CPR 期間的角色不是「讓心臟跳起來」——那它到底在做什麼？**（提示：冠狀動脈灌流壓）
 4. **第一次電擊沒成功 → 為什麼要先壓胸 2 分鐘，而不是馬上再電？**
-5. **回顧前三個案例（張力性氣胸、出血性休克、過敏性休克）——如果都沒處理，最終都會走到什麼共同結局？各自的「H's and T's」對應是什麼？**
+5. **回顧前四個案例（S01-S03 + S05）——如果都沒處理，最終都會走到什麼共同結局？各自的「H's and T's」對應是什麼？**
+6. **假設第三次電擊後節律轉為 organized rhythm（sinus tachycardia），但頸動脈脈搏仍摸不到——這是 True PEA 還是 PseudoPEA？你會怎麼判斷和處置？**（提示：POCUS → 若有心臟收縮 = pseudoPEA → push-dose epi 10-20 mcg，而非 ACLS 1 mg）
 
 ## Debrief 重點
 
@@ -156,9 +157,23 @@ Epi 1 mg IV → α1 受體 → 周邊血管收縮
 | S01 張力性氣胸 | 胸腔內壓↑ | **T**ension pneumothorax | Needle decompression |
 | S02 出血性休克 | 循環血量↓ | **H**ypovolemia | 止血 + 輸液 |
 | S03 過敏性休克 | 血管擴張 + 呼吸道阻塞 | Anaphylaxis（T: Toxins 類別） | Epinephrine |
+| S05 心因性休克 | Pump failure + 肺水腫 | AMI / Cardiogenic shock | 升壓/強心 + PCI |
 
-**如果前三案都沒處理 → 都走到 PEA 或 VF → 就是本案 S04。**
+**如果前四案都沒處理 → 都走到 PEA 或 VF → 就是本案 S04。**
 **ACLS 不只是背演算法——是理解「為什麼心臟會停」並在停之前逆轉可逆原因。**
+
+### PseudoPEA：從 VF 轉 PEA 時的關鍵判斷
+
+在 ACLS 急救中，VF 經電擊後轉為 PEA 是常見情況。但這個 PEA 有兩種可能：
+
+| 項目 | True PEA | PseudoPEA |
+|---|---|---|
+| 心臟 | 無有效收縮（心肌耗竭/電機分離） | **有收縮但太弱**（心輸出量極低） |
+| POCUS | 心臟不動或僅蠕動 | **可見心室收縮** |
+| 處置 | 繼續 CPR + Epi 1 mg + 找 H's/T's | **考慮暫停壓胸 + push-dose epi 10-20 mcg + 升壓** |
+| 預後 | 存活 < 1% | ROSC 可達 70%+ |
+
+**臨床意義**：如果你有 POCUS 能力，在「PEA」階段花 10 秒看一下心臟——看到收縮就是 pseudoPEA，處置策略完全不同。這連結了 S05 的 pseudoPEA 教學。
 
 ### Protocol 連結
 
