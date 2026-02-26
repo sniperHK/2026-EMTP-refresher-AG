@@ -66,6 +66,20 @@ else
   printf '  %s\n' "${root_artifacts[@]}"
 fi
 
+export_root_files=()
+while IFS= read -r export_file; do
+  export_root_files+=("$export_file")
+done < <(
+  find exports -maxdepth 1 -type f ! -name 'README.md' | sort 2>/dev/null || true
+)
+
+if [[ "${#export_root_files[@]}" -eq 0 ]]; then
+  pass "No export files placed directly under exports/ root"
+else
+  warn "exports/ root contains files; move them into YYYY-MM-DD_vN/ subfolder:"
+  printf '  %s\n' "${export_root_files[@]}"
+fi
+
 if [[ -f "TODO.md" && -f "docs/roadmap.md" ]]; then
   if rg -q '^\- \[ \] 準備 PowerPoint 簡報素材' "TODO.md" && rg -q '^\- \[x\] PowerPoint 簡報' "docs/roadmap.md"; then
     warn "TODO.md and docs/roadmap.md appear inconsistent for PowerPoint progress"

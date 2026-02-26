@@ -7,6 +7,8 @@ inputs/**
 !inputs/README.md
 exports/**
 !exports/README.md
+!exports/**/
+!exports/**/manifest.md
 references/raw/**
 !references/raw/README.md
 

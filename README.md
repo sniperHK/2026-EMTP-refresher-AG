@@ -7,6 +7,7 @@
 - 文件導覽（docs index）：`docs/index.md`
 - 專案路線圖：`docs/roadmap.md`
 - 模組模板：`docs/templates/module-template.md`
+- 匯出清單範本：`docs/templates/export-manifest-template.md`
 - 情境模板：`docs/scenarios/scenario-template.md`
 - 題庫：`docs/assessments/question-bank.md`
 - Pre-test：`docs/assessments/pre-test.md`
@@ -22,7 +23,7 @@
 - `docs/`：教材與大綱（可直接投影片化）
 - `inputs/`：外部原始檔（不進 Git；保留 `README.md` 說明用途）
 - `references/`：參考文獻與連結；原始檔建議放 `references/raw/`（不進 Git）
-- `exports/`：輸出檔（不進 Git；保留 `README.md` 與版本化資料夾慣例）
+- `exports/`：輸出檔（不進 Git；保留 `README.md` 與各版次 `manifest.md`）
 
 ## 注意事項
 
@@ -30,3 +31,4 @@
 - 目前「ALS」預設為 Advanced Life Support；若你要講的是 amyotrophic lateral sclerosis，告訴我我會立刻調整模組與案例。
 - 題庫正式檔名固定為 `question-bank.md`（避免 `question_bank.md` 與 `question-bank.md` 並存）。
 - 根目錄避免放原始 PDF/PPTX；請移至 `inputs/` 或 `references/raw/`，再於對應 `README.md` 補註來源與用途。
+- `exports/` 建議採 `YYYY-MM-DD_vN/` 子資料夾管理，每個版次資料夾放一份 `manifest.md` 記錄來源與用途。
