@@ -31,6 +31,48 @@
 4. `S03_anaphylactic-shock.md`：分布性休克與 Epi 藥理
 5. `S04_OHCA-VF.md`：前述病生理最終共同路徑與 ACLS 介入（含 pseudoPEA 轉折）
 
+## 時間管理指引（Fallback Flow）
+
+> 240 分鐘排程緊湊，以下提供超時應對策略。
+
+### Check-in 時間點
+
+| 時間點 | 應完成 | 落後處理 |
+|--------|--------|---------|
+| **70 分** | M01 結束 | 若已 75 分 → S01+S02 壓到 25 min |
+| **115 分** | S05 結束 | 若已 120 分 → Break 縮至 5 min |
+| **170 分** | M02 結束 | 若已 175 分 → S03 壓到 12 min |
+
+### 各段壓縮空間
+
+| 段落 | 正常 | 最短 | 壓縮方法 | 不可跳過 |
+|------|------|------|---------|---------|
+| 開場 | 10 min | 5 min | 直接進 pre-test | |
+| Pre-test | 15 min | 15 min | — | Yes |
+| M01 核心 | 45 min | 40 min | §4 酸鹼指向講義自讀 | |
+| S01+S02 | 30 min | 25 min | S01 壓到 10 min | |
+| S05 | 15 min | 12 min | Debrief 聚焦 2 問 | Yes |
+| Break | 10 min | 5 min | 縮短休息 | |
+| M02 核心 | 45 min | 40 min | Furosemide/Dobutamine 不口述 | |
+| S03+S04 | 40 min | 35 min | S03 壓到 12 min | S04 不可壓 |
+| Post-test | 15 min | 15 min | — | Yes |
+| Mini OSCE | 5 min | 0 min | 時間不足→「口頭快問 1 題」 | |
+| 收尾 | 10 min | 5 min | 3 個帶走重點不能省 | |
+
+### 超時應對決策
+
+- **超時 ≤ 5 min**：壓縮下一段的「可壓縮」部分
+- **超時 5-15 min**：Break 縮至 5 min + 壓縮 2 段
+- **超時 > 15 min**：跳過 Mini OSCE + 收尾壓至 5 min
+- **底線**：Pre-test + Post-test + S04 + S05 **不能跳**（核心評量 + 新教學內容）
+
+### 講師引導筆記
+
+每個情境的 Socratic 提問、常見迷思、debrief 時間控制，請參考：
+`docs/teaching/instructor-notes.md`
+
+---
+
 ## 評量與評分檔案
 
 - Pre-test：`docs/assessments/pre-test.md`
