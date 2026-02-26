@@ -1,9 +1,14 @@
 .DS_Store
+**/.DS_Store
 
 # Raw source materials (PDF/PPTX/etc.) and generated exports
-inputs/
-exports/
-references/raw/
+# Keep folder-level README.md files tracked for structure documentation.
+inputs/**
+!inputs/README.md
+exports/**
+!exports/README.md
+references/raw/**
+!references/raw/README.md
 
 # Plaintext secrets - never commit
 .env

@@ -1,16 +1,24 @@
 # 2026 北市 TP 複訓課程規劃 TODO
 
-## 課程設計
-- [ ] **定案課名**：重探病生理-瀕死案例討論 (Revisiting Pathophysiology: Near-Death Case Discussions)
-    - **歸類**：1.5 人體基本解剖生理學 (對應條文：生命徵象與神經、呼吸及循環相關的生理)
-    - **課程目標**：
-        - 透過瀕死案例（如 OHCA、嚴重休克）連結臨床徵象與基礎生理。
-        - 探討呼吸與循環系統在衰竭過程中的代償機制。
-    - **簡介文案**：
-        > 「透過瀕死案例（如 OHCA、嚴重休克），重新探討**循環與呼吸生理**的代償與衰竭機制，解析生命徵象變化背後的病生理意義。」
+## 現況同步（與 `docs/roadmap.md` 對齊）
 
-## 待辦事項
-- [ ] 撰寫課程詳細大綱 (Outline)
-- [ ] 準備 PowerPoint 簡報素材
-    - [ ] 收集典型 OHCA/Shock 案例心電圖與生命徵象數據
-    - [ ] 整理相關生理機轉圖表 (Oxygen transport, Shock cycle)
+- [x] M01 病生理學模組（lecture-ready）
+- [x] M02 藥物動力學模組（lecture-ready）
+- [x] 題庫 / pre-post / answer key / blueprint / mini-OSCE
+- [x] 學員講義與課程執行腳本
+- [x] PowerPoint 簡報（M01、M02）
+
+## 近期待辦（收尾與在地化）
+
+- [ ] **定案課名**：重探病生理-瀕死案例討論 (Revisiting Pathophysiology: Near-Death Case Discussions)
+  - 歸類：1.5 人體基本解剖生理學（生命徵象與神經、呼吸及循環相關生理）
+  - 課程目標：用瀕死案例連結臨床徵象與基礎生理，聚焦代償與衰竭機制
+- [ ] 對齊台北市在地 protocol：更新 `docs/modules/M02_protocol-dosing-map.md`，並同步 M02 與題庫相關劑量/流程
+- [ ] 視需要建立 A/B 平行題卷（目前 pre/post 固定卷）
+
+## 補強素材（Optional）
+
+- [ ] 補充典型 OHCA/Shock 案例心電圖與生命徵象數據（供教學圖像化）
+- [ ] 整理氧氣運輸、休克循環、酸鹼/CO2 生理機轉圖表
+- [ ] 視需要撰寫講師詳細教案（Instructor Notes）
+- [ ] 視需要建立課後回饋問卷
