@@ -1,6 +1,6 @@
 import type { TreeNode } from "../types";
 
-export const pseudoPEATree: TreeNode[] = [
+const _peaNodes: TreeNode[] = [
   {
     id: "pea-root",
     type: "question",
@@ -114,3 +114,21 @@ export const pseudoPEATree: TreeNode[] = [
     color: "#3498DB",
   },
 ];
+
+export const pseudoPEATree: Record<string, TreeNode> = Object.fromEntries(
+  _peaNodes.map((n) => [n.id, n])
+);
+
+export const pseudoPEARootId = "pea-root";
+
+export const comparisonTable = {
+  headers: ["項目", "True PEA", "Pseudo-PEA"],
+  rows: [
+    ["心臟收縮", "無（POCUS wall motion −）", "有微弱收縮（wall motion +）"],
+    ["Epi 劑量", "1 mg IV/IO q3-5min", "10-20 mcg push-dose"],
+    ["CPR", "立即高品質 CPR", "通常不需要（反而有害）"],
+    ["EtCO₂", "可能極低（< 10）", "可能 > 20 mmHg"],
+    ["處置重點", "CPR + 找 H's & T's", "升壓藥 + 找根本原因"],
+    ["常見原因", "嚴重缺氧、電解質、心包填塞", "低血容、心肌梗塞、張力性氣胸"],
+  ],
+};

@@ -1,6 +1,6 @@
 import type { Quadrant } from "../types";
 
-export const quadrants: Quadrant[] = [
+export const nohriaStevensonData: Quadrant[] = [
   {
     id: "A",
     label: "Warm + Dry",
@@ -53,3 +53,8 @@ export const quadrants: Quadrant[] = [
     scenarioLink: "S05",
   },
 ];
+
+export const axisLabels = {
+  horizontal: { left: "Warm", right: "Cold" },
+  vertical: { top: "Dry", bottom: "Wet" },
+};

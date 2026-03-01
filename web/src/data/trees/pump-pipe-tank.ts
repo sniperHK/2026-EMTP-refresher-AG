@@ -1,6 +1,6 @@
 import type { TreeNode } from "../types";
 
-export const pumpPipeTankTree: TreeNode[] = [
+const _pptNodes: TreeNode[] = [
   {
     id: "ppt-root",
     type: "question",
@@ -129,3 +129,9 @@ export const pumpPipeTankTree: TreeNode[] = [
     color: "#16A085",
   },
 ];
+
+export const pumpPipeTankTree: Record<string, TreeNode> = Object.fromEntries(
+  _pptNodes.map((n) => [n.id, n])
+);
+
+export const rootNodeId = "ppt-root";

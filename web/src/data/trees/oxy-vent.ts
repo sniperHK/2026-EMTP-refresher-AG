@@ -1,6 +1,6 @@
 import type { TreeNode } from "../types";
 
-export const oxyVentTree: TreeNode[] = [
+const _ovNodes: TreeNode[] = [
   {
     id: "ov-root",
     type: "question",
@@ -136,3 +136,9 @@ export const oxyVentTree: TreeNode[] = [
     color: "#2980B9",
   },
 ];
+
+export const oxyVentTree: Record<string, TreeNode> = Object.fromEntries(
+  _ovNodes.map((n) => [n.id, n])
+);
+
+export const oxyVentRootId = "ov-root";
