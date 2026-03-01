@@ -1,6 +1,154 @@
+import type { ComponentProps } from 'react'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import handoutRaw from '../../../docs/teaching/student-handout.md?raw'
+
+// ── Custom renderers for medical reference card styling ──────────────────
+
+const mdComponents: ComponentProps<typeof ReactMarkdown>['components'] = {
+  // Skip the H1 from markdown (we render our own header)
+  h1: () => null,
+
+  h2: ({ children }) => (
+    <h2
+      className="mt-8 mb-3 flex items-center gap-2 border-b-2 pb-2 text-lg font-bold first:mt-0"
+      style={{ color: 'var(--medical-navy)', borderColor: 'var(--medical-navy)' }}
+    >
+      <span
+        className="inline-block h-4 w-1 rounded-full"
+        style={{ backgroundColor: 'var(--medical-navy)' }}
+      />
+      {children}
+    </h2>
+  ),
+
+  h3: ({ children }) => (
+    <h3
+      className="mt-5 mb-2 text-sm font-bold uppercase tracking-wide"
+      style={{ color: 'var(--medical-red)' }}
+    >
+      {children}
+    </h3>
+  ),
+
+  // Tables — clean medical reference style
+  table: ({ children }) => (
+    <div className="my-3 overflow-x-auto rounded-lg border border-gray-200 shadow-sm">
+      <table className="w-full border-collapse text-sm">{children}</table>
+    </div>
+  ),
+
+  thead: ({ children }) => (
+    <thead style={{ backgroundColor: 'var(--medical-navy)' }}>{children}</thead>
+  ),
+
+  th: ({ children }) => (
+    <th className="border-r border-white/20 px-3 py-2 text-left text-xs font-semibold text-white last:border-r-0">
+      {children}
+    </th>
+  ),
+
+  tbody: ({ children }) => <tbody className="divide-y divide-gray-100">{children}</tbody>,
+
+  tr: ({ children, ...props }) => (
+    <tr
+      className="transition-colors hover:bg-blue-50"
+      {...props as object}
+    >
+      {children}
+    </tr>
+  ),
+
+  td: ({ children }) => (
+    <td className="border-r border-gray-100 px-3 py-2 text-gray-700 last:border-r-0">
+      {children}
+    </td>
+  ),
+
+  // Code blocks — monospace ASCII art box
+  pre: ({ children }) => (
+    <pre
+      className="my-3 overflow-x-auto rounded-lg border border-gray-200 bg-gray-50 p-4 font-mono text-xs leading-relaxed text-gray-700 whitespace-pre"
+      style={{ fontFamily: '"SF Mono", "Fira Code", "Cascadia Code", monospace' }}
+    >
+      {children}
+    </pre>
+  ),
+
+  code: ({ children, className }) => {
+    // inline code
+    if (!className) {
+      return (
+        <code className="rounded bg-gray-100 px-1.5 py-0.5 font-mono text-xs text-gray-800">
+          {children}
+        </code>
+      )
+    }
+    return <code>{children}</code>
+  },
+
+  // Blockquotes — protocol disclaimer / notes
+  blockquote: ({ children }) => (
+    <blockquote
+      className="my-3 rounded-r-lg border-l-4 bg-amber-50 py-2 pl-4 pr-3 text-sm text-amber-900"
+      style={{ borderLeftColor: '#F39C12' }}
+    >
+      {children}
+    </blockquote>
+  ),
+
+  // Horizontal rule — section separator
+  hr: () => (
+    <div className="my-6 flex items-center gap-3">
+      <div className="h-px flex-1 bg-gray-200" />
+      <div
+        className="h-1.5 w-1.5 rounded-full"
+        style={{ backgroundColor: 'var(--medical-navy)' }}
+      />
+      <div className="h-px flex-1 bg-gray-200" />
+    </div>
+  ),
+
+  // Unordered lists
+  ul: ({ children }) => (
+    <ul className="my-2 space-y-1.5 pl-1">{children}</ul>
+  ),
+
+  li: ({ children }) => (
+    <li className="flex items-start gap-2 text-sm text-gray-700">
+      <span
+        className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full"
+        style={{ backgroundColor: 'var(--medical-red)' }}
+      />
+      <span>{children}</span>
+    </li>
+  ),
+
+  ol: ({ children }) => (
+    <ol className="my-2 list-decimal space-y-1.5 pl-5 text-sm text-gray-700">{children}</ol>
+  ),
+
+  // Paragraphs
+  p: ({ children }) => (
+    <p className="my-2 text-sm leading-relaxed text-gray-700">{children}</p>
+  ),
+
+  // Strong text — highlight drug names and warnings
+  strong: ({ children }) => {
+    const text = typeof children === 'string' ? children : ''
+    const isWarning = text.includes('禁') || text.includes('注意') || text.includes('停') || text.includes('不能') || text.includes('禁用')
+    return (
+      <strong
+        className="font-bold"
+        style={{ color: isWarning ? 'var(--medical-red)' : 'var(--medical-navy)' }}
+      >
+        {children}
+      </strong>
+    )
+  },
+}
+
+// ── Page ────────────────────────────────────────────────────────────────
 
 export function HandoutPage() {
   return (
@@ -28,11 +176,14 @@ export function HandoutPage() {
       </div>
 
       {/* Markdown content */}
-      <div className="prose prose-gray max-w-none prose-headings:font-bold prose-h1:text-2xl prose-h2:text-xl prose-h2:border-b prose-h2:pb-2 prose-h3:text-base prose-table:text-sm prose-th:bg-gray-100 prose-td:border prose-th:border prose-td:px-3 prose-td:py-2 prose-th:px-3 prose-th:py-2">
-        <ReactMarkdown remarkPlugins={[remarkGfm]}>
+      <div className="space-y-0">
+        <ReactMarkdown remarkPlugins={[remarkGfm]} components={mdComponents}>
           {handoutRaw}
         </ReactMarkdown>
       </div>
+
+      {/* Bottom padding for mobile */}
+      <div className="h-16" />
     </div>
   )
 }
