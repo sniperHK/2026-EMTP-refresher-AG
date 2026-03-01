@@ -138,6 +138,70 @@ export function HomePage() {
           ))}
         </div>
       </section>
+
+      {/* 課程模組 */}
+      <section>
+        <h2
+          className="mb-4 text-xl font-bold md:text-2xl"
+          style={{ color: 'var(--medical-navy)' }}
+        >
+          課程模組
+        </h2>
+        <div className="grid gap-4 sm:grid-cols-3">
+          {[
+            { id: 'M01', title: 'M01 病生理學', desc: '休克、呼吸衰竭、心因性休克病生理決策導向', color: 'var(--medical-blue)' },
+            { id: 'M02', title: 'M02 藥物動力學', desc: 'PK/PD 原則、給藥途徑、現場用藥決策', color: 'var(--medical-purple)' },
+            { id: 'M02-dosing', title: 'M02 劑量對接表', desc: '在地協議劑量速查與關鍵警示', color: 'var(--medical-teal)' },
+          ].map((m) => (
+            <Link key={m.id} to={`/content/${m.id}`} className="group">
+              <Card className="h-full transition-all hover:shadow-lg group-hover:-translate-y-0.5">
+                <CardHeader>
+                  <CardTitle className="text-base" style={{ color: m.color }}>
+                    {m.title}
+                  </CardTitle>
+                  <CardDescription className="text-xs">{m.desc}</CardDescription>
+                </CardHeader>
+              </Card>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* 學員資源 */}
+      <section>
+        <h2
+          className="mb-4 text-xl font-bold md:text-2xl"
+          style={{ color: 'var(--medical-navy)' }}
+        >
+          學員資源
+        </h2>
+        <div className="grid gap-4 sm:grid-cols-2">
+          <Link to="/handout" className="group">
+            <Card className="h-full transition-all hover:shadow-lg group-hover:-translate-y-0.5">
+              <CardHeader>
+                <CardTitle className="text-base" style={{ color: 'var(--medical-navy)' }}>
+                  學員講義
+                </CardTitle>
+                <CardDescription className="text-xs">
+                  快速參考卡 — Pump-Pipe-Tank、Nohria-Stevenson、SCAPE、PseudoPEA 速查
+                </CardDescription>
+              </CardHeader>
+            </Card>
+          </Link>
+          <Link to="/quiz" className="group">
+            <Card className="h-full transition-all hover:shadow-lg group-hover:-translate-y-0.5">
+              <CardHeader>
+                <CardTitle className="text-base" style={{ color: 'var(--medical-red)' }}>
+                  評量測驗
+                </CardTitle>
+                <CardDescription className="text-xs">
+                  前測（10 題）、後測（20 題）、完整題庫（35 題）互動作答，即時解析
+                </CardDescription>
+              </CardHeader>
+            </Card>
+          </Link>
+        </div>
+      </section>
     </div>
   )
 }

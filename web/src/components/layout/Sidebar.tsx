@@ -21,6 +21,12 @@ const toolLinks = [
   { id: 'oxygenation', label: 'Oxy vs Vent' },
 ]
 
+const contentLinks = [
+  { id: 'M01', label: 'M01 病生理學' },
+  { id: 'M02', label: 'M02 PK-PD' },
+  { id: 'M02-dosing', label: 'M02 劑量對接表' },
+]
+
 export function Sidebar({ isOpen, onClose }: SidebarProps) {
   const location = useLocation()
 
@@ -84,6 +90,63 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
               </Link>
             )
           })}
+        </div>
+      </div>
+
+      {/* 課程模組 */}
+      <div>
+        <h3 className="mb-2 text-xs font-semibold uppercase tracking-wider text-gray-400">
+          課程模組
+        </h3>
+        <div className="space-y-0.5">
+          {contentLinks.map((c) => {
+            const path = `/content/${c.id}`
+            const isActive = location.pathname === path
+            return (
+              <Link
+                key={c.id}
+                to={path}
+                onClick={onClose}
+                className={cn(
+                  'flex items-center gap-2.5 rounded-md px-3 py-2 text-sm transition-colors',
+                  isActive
+                    ? 'bg-gray-100 font-medium text-gray-900'
+                    : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
+                )}
+              >
+                <span className="h-2.5 w-2.5 shrink-0 rounded-full bg-purple-400" />
+                <span>{c.label}</span>
+              </Link>
+            )
+          })}
+        </div>
+      </div>
+
+      {/* 學員資源 */}
+      <div>
+        <h3 className="mb-2 text-xs font-semibold uppercase tracking-wider text-gray-400">
+          學員資源
+        </h3>
+        <div className="space-y-0.5">
+          {[
+            { to: '/handout', label: '學員講義', dot: 'bg-blue-600' },
+            { to: '/quiz', label: '評量測驗', dot: 'bg-red-500' },
+          ].map((item) => (
+            <Link
+              key={item.to}
+              to={item.to}
+              onClick={onClose}
+              className={cn(
+                'flex items-center gap-2.5 rounded-md px-3 py-2 text-sm transition-colors',
+                location.pathname.startsWith(item.to)
+                  ? 'bg-gray-100 font-medium text-gray-900'
+                  : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
+              )}
+            >
+              <span className={cn('h-2.5 w-2.5 shrink-0 rounded-full', item.dot)} />
+              <span>{item.label}</span>
+            </Link>
+          ))}
         </div>
       </div>
 
