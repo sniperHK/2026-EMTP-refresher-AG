@@ -32,6 +32,35 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
 
   const navContent = (
     <nav className="flex flex-col gap-6 p-4">
+      {/* 課程模組（移至最前） */}
+      <div>
+        <h3 className="mb-2 text-xs font-semibold uppercase tracking-wider text-gray-400">
+          課程模組
+        </h3>
+        <div className="space-y-0.5">
+          {contentLinks.map((c) => {
+            const path = `/content/${c.id}`
+            const isActive = location.pathname === path
+            return (
+              <Link
+                key={c.id}
+                to={path}
+                onClick={onClose}
+                className={cn(
+                  'flex items-center gap-2.5 rounded-md px-3 py-2 text-sm transition-colors',
+                  isActive
+                    ? 'bg-gray-100 font-medium text-gray-900'
+                    : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
+                )}
+              >
+                <span className="h-2.5 w-2.5 shrink-0 rounded-full bg-purple-400" />
+                <span>{c.label}</span>
+              </Link>
+            )
+          })}
+        </div>
+      </div>
+
       {/* 情境模擬 */}
       <div>
         <h3 className="mb-2 text-xs font-semibold uppercase tracking-wider text-gray-400">
@@ -87,35 +116,6 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
               >
                 <span className="h-2.5 w-2.5 shrink-0 rounded-full bg-gray-400" />
                 <span>{t.label}</span>
-              </Link>
-            )
-          })}
-        </div>
-      </div>
-
-      {/* 課程模組 */}
-      <div>
-        <h3 className="mb-2 text-xs font-semibold uppercase tracking-wider text-gray-400">
-          課程模組
-        </h3>
-        <div className="space-y-0.5">
-          {contentLinks.map((c) => {
-            const path = `/content/${c.id}`
-            const isActive = location.pathname === path
-            return (
-              <Link
-                key={c.id}
-                to={path}
-                onClick={onClose}
-                className={cn(
-                  'flex items-center gap-2.5 rounded-md px-3 py-2 text-sm transition-colors',
-                  isActive
-                    ? 'bg-gray-100 font-medium text-gray-900'
-                    : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
-                )}
-              >
-                <span className="h-2.5 w-2.5 shrink-0 rounded-full bg-purple-400" />
-                <span>{c.label}</span>
               </Link>
             )
           })}

@@ -63,6 +63,34 @@ export function HomePage() {
         </div>
       </section>
 
+      {/* 課程模組（移至最前） */}
+      <section>
+        <h2
+          className="mb-4 text-xl font-bold md:text-2xl"
+          style={{ color: 'var(--medical-navy)' }}
+        >
+          課程模組
+        </h2>
+        <div className="grid gap-4 sm:grid-cols-3">
+          {[
+            { id: 'M01', title: 'M01 病生理學', desc: '休克、呼吸衰竭、心因性休克病生理決策導向', color: 'var(--medical-blue)' },
+            { id: 'M02', title: 'M02 藥物動力學', desc: 'PK/PD 原則、給藥途徑、現場用藥決策', color: 'var(--medical-purple)' },
+            { id: 'M02-dosing', title: 'M02 劑量對接表', desc: '在地協議劑量速查與關鍵警示', color: 'var(--medical-teal)' },
+          ].map((m) => (
+            <Link key={m.id} to={`/content/${m.id}`} className="group">
+              <Card className="h-full transition-all hover:shadow-lg group-hover:-translate-y-0.5">
+                <CardHeader>
+                  <CardTitle className="text-base" style={{ color: m.color }}>
+                    {m.title}
+                  </CardTitle>
+                  <CardDescription className="text-xs">{m.desc}</CardDescription>
+                </CardHeader>
+              </Card>
+            </Link>
+          ))}
+        </div>
+      </section>
+
       {/* 情境模擬 */}
       <section>
         <h2
@@ -132,34 +160,6 @@ export function HomePage() {
                   <CardDescription className="text-xs">
                     {t.description}
                   </CardDescription>
-                </CardHeader>
-              </Card>
-            </Link>
-          ))}
-        </div>
-      </section>
-
-      {/* 課程模組 */}
-      <section>
-        <h2
-          className="mb-4 text-xl font-bold md:text-2xl"
-          style={{ color: 'var(--medical-navy)' }}
-        >
-          課程模組
-        </h2>
-        <div className="grid gap-4 sm:grid-cols-3">
-          {[
-            { id: 'M01', title: 'M01 病生理學', desc: '休克、呼吸衰竭、心因性休克病生理決策導向', color: 'var(--medical-blue)' },
-            { id: 'M02', title: 'M02 藥物動力學', desc: 'PK/PD 原則、給藥途徑、現場用藥決策', color: 'var(--medical-purple)' },
-            { id: 'M02-dosing', title: 'M02 劑量對接表', desc: '在地協議劑量速查與關鍵警示', color: 'var(--medical-teal)' },
-          ].map((m) => (
-            <Link key={m.id} to={`/content/${m.id}`} className="group">
-              <Card className="h-full transition-all hover:shadow-lg group-hover:-translate-y-0.5">
-                <CardHeader>
-                  <CardTitle className="text-base" style={{ color: m.color }}>
-                    {m.title}
-                  </CardTitle>
-                  <CardDescription className="text-xs">{m.desc}</CardDescription>
                 </CardHeader>
               </Card>
             </Link>
