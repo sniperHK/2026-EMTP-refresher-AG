@@ -9,6 +9,34 @@ import fs from 'node:fs'
 // Only active during `vite dev`; has no effect in the production build.
 const ANNOTATIONS_FILE = path.join(__dirname, 'annotations.json')
 
+// ── Dev-only: serve Slidev static builds for /slides/{id}/* ──────────────────
+// Vite's SPA fallback would otherwise intercept /slides/M01/ and serve the
+// React app's index.html, causing an infinite iframe loop.
+// This middleware runs BEFORE the SPA fallback and serves the pre-built
+// Slidev HTML directly from public/slides/{id}/.
+function slidesStaticPlugin() {
+  return {
+    name: 'slides-static',
+    configureServer(server: import('vite').ViteDevServer) {
+      server.middlewares.use((req, res, next) => {
+        const url = req.url?.split('?')[0] ?? ''
+        // Match /slides/{id} or /slides/{id}/  (but NOT /slides/{id}/assets/...)
+        const rootMatch = url.match(/^\/slides\/(M\d+)\/?$/)
+        if (rootMatch) {
+          const slideId = rootMatch[1]
+          const indexFile = path.join(__dirname, 'public', 'slides', slideId, 'index.html')
+          if (fs.existsSync(indexFile)) {
+            res.setHeader('Content-Type', 'text/html; charset=utf-8')
+            res.end(fs.readFileSync(indexFile))
+            return
+          }
+        }
+        next()
+      })
+    },
+  }
+}
+
 function annotationsPlugin() {
   return {
     name: 'annotations-api',
@@ -53,7 +81,7 @@ function annotationsPlugin() {
 }
 
 export default defineConfig({
-  plugins: [react(), tailwindcss(), annotationsPlugin()],
+  plugins: [react(), tailwindcss(), slidesStaticPlugin(), annotationsPlugin()],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
