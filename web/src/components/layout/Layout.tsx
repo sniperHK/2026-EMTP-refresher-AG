@@ -2,6 +2,7 @@ import { useState, useEffect, useCallback } from 'react'
 import { Outlet, useLocation } from 'react-router-dom'
 import { Header } from '@/components/layout/Header'
 import { Sidebar } from '@/components/layout/Sidebar'
+import { AnnotationLayer } from '@/components/annotation/AnnotationLayer'
 
 function getPageName(pathname: string): string | undefined {
   if (pathname === '/') return '首頁'
@@ -62,6 +63,8 @@ export function Layout() {
           <Outlet />
         </div>
       </main>
+
+      <AnnotationLayer />
     </div>
   )
 }

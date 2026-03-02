@@ -6,6 +6,7 @@ import { ToolPage } from '@/pages/ToolPage'
 import { ContentPage } from '@/pages/ContentPage'
 import { HandoutPage } from '@/pages/HandoutPage'
 import { QuizPage } from '@/pages/QuizPage'
+import { SlidesPage } from '@/pages/SlidesPage'
 
 export default function App() {
   return (
@@ -19,6 +20,8 @@ export default function App() {
           <Route path="handout" element={<HandoutPage />} />
           <Route path="quiz" element={<QuizPage />} />
           <Route path="quiz/:type" element={<QuizPage />} />
+          <Route path="slides/:slideId" element={<SlidesPage />} />
+          <Route path="slides" element={<SlidesPage />} />
         </Route>
       </Routes>
     </BrowserRouter>

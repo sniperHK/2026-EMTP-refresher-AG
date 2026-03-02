@@ -89,6 +89,29 @@ export function HomePage() {
             </Link>
           ))}
         </div>
+        {/* 投影片（Slidev） */}
+        <div className="mt-4 grid gap-4 sm:grid-cols-2">
+          {[
+            { id: 'M01', title: 'M01 投影片', desc: '病生理學互動式 Slidev 投影片' },
+            { id: 'M02', title: 'M02 投影片', desc: '藥物動力學互動式 Slidev 投影片' },
+          ].map((s) => (
+            <Link key={s.id} to={`/slides/${s.id}`} className="group">
+              <Card className="h-full transition-all hover:shadow-lg group-hover:-translate-y-0.5">
+                <CardHeader>
+                  <div className="flex items-center gap-2">
+                    <span className="text-base">&#9654;</span>
+                    <div>
+                      <CardTitle className="text-sm" style={{ color: 'var(--medical-blue)' }}>
+                        {s.title}
+                      </CardTitle>
+                      <CardDescription className="text-xs">{s.desc}</CardDescription>
+                    </div>
+                  </div>
+                </CardHeader>
+              </Card>
+            </Link>
+          ))}
+        </div>
       </section>
 
       {/* 情境模擬 */}

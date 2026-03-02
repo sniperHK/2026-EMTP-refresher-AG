@@ -27,11 +27,45 @@ const contentLinks = [
   { id: 'M02-dosing', label: 'M02 劑量對接表' },
 ]
 
+const slideLinks = [
+  { id: 'M01', label: 'M01 病生理學 投影片' },
+  { id: 'M02', label: 'M02 PK/PD 投影片' },
+]
+
 export function Sidebar({ isOpen, onClose }: SidebarProps) {
   const location = useLocation()
 
   const navContent = (
     <nav className="flex flex-col gap-6 p-4">
+      {/* 投影片（Slidev） */}
+      <div>
+        <h3 className="mb-2 text-xs font-semibold uppercase tracking-wider text-gray-400">
+          投影片
+        </h3>
+        <div className="space-y-0.5">
+          {slideLinks.map((s) => {
+            const path = `/slides/${s.id}`
+            const isActive = location.pathname === path
+            return (
+              <Link
+                key={s.id}
+                to={path}
+                onClick={onClose}
+                className={cn(
+                  'flex items-center gap-2.5 rounded-md px-3 py-2 text-sm transition-colors',
+                  isActive
+                    ? 'bg-gray-100 font-medium text-gray-900'
+                    : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
+                )}
+              >
+                <span className="h-2.5 w-2.5 shrink-0 rounded-full bg-blue-500" />
+                <span>{s.label}</span>
+              </Link>
+            )
+          })}
+        </div>
+      </div>
+
       {/* 課程模組（移至最前） */}
       <div>
         <h3 className="mb-2 text-xs font-semibold uppercase tracking-wider text-gray-400">
