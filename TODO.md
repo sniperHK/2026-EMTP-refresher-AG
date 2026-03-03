@@ -22,3 +22,7 @@
 - [ ] 整理氧氣運輸、休克循環、酸鹼/CO2 生理機轉圖表
 - [ ] 視需要撰寫講師詳細教案（Instructor Notes）
 - [ ] 視需要建立課後回饋問卷
+
+## 部署與網站優化 (Web / Deployment)
+
+- [ ] 針對 Netlify 部署修復 SPA 路由 404 問題（例如在 `web/public/` 新增 `_redirects` 檔案，內容設定為 `/* /index.html 200`，確保 react-router-dom 在子路徑重整時正常運作）
