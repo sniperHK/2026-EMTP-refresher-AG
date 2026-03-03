@@ -8,7 +8,7 @@ import m02DosingRaw from '../../../docs/modules/M02_protocol-dosing-map.md?raw'
 
 const modules: Record<string, { title: string; content: string; color: string }> = {
   M01: { title: 'M01 ALS 病生理學', content: m01Raw, color: 'var(--medical-blue)' },
-  M02: { title: 'M02 藥物動力學 / PK-PD', content: m02Raw, color: 'var(--medical-purple)' },
+  M02: { title: 'M02 藥物動力學', content: m02Raw, color: 'var(--medical-purple)' },
   'M02-dosing': { title: 'M02 附錄：在地劑量對接表', content: m02DosingRaw, color: 'var(--medical-teal)' },
 }
 

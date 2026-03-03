@@ -1,4 +1,4 @@
-import { useParams, Link } from 'react-router-dom'
+import { useParams, Link, useNavigate } from 'react-router-dom'
 
 const slideMeta: Record<string, { title: string; desc: string }> = {
   M01: { title: 'M01 病生理學', desc: '休克、呼吸衰竭、心因性休克' },
@@ -7,6 +7,7 @@ const slideMeta: Record<string, { title: string; desc: string }> = {
 
 export function SlidesPage() {
   const { slideId = 'M01' } = useParams<{ slideId: string }>()
+  const navigate = useNavigate()
   const meta = slideMeta[slideId]
 
   if (!meta) {
@@ -22,14 +23,22 @@ export function SlidesPage() {
     <div className="flex flex-col gap-3">
       {/* Header row */}
       <div className="flex items-center justify-between">
-        <div>
-          <h1
-            className="text-xl font-bold md:text-2xl"
-            style={{ color: 'var(--medical-navy)' }}
+        <div className="flex items-center gap-3">
+          <button
+            onClick={() => navigate('/')}
+            className="rounded-md border border-gray-200 px-3 py-1.5 text-xs text-gray-600 hover:border-gray-400 hover:bg-gray-50 transition-colors"
           >
-            {meta.title}
-          </h1>
-          <p className="text-xs text-gray-500">{meta.desc}</p>
+            ← 首頁
+          </button>
+          <div>
+            <h1
+              className="text-xl font-bold md:text-2xl"
+              style={{ color: 'var(--medical-navy)' }}
+            >
+              {meta.title}
+            </h1>
+            <p className="text-xs text-gray-500">{meta.desc}</p>
+          </div>
         </div>
         <div className="flex gap-2">
           {Object.keys(slideMeta).map((id) => (
