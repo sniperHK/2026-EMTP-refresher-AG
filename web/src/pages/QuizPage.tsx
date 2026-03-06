@@ -110,28 +110,57 @@ export function QuizPage() {
   // ── Result phase ────────────────────────────────────────
   if (phase === 'result' && finalScore) {
     const pct = Math.round((finalScore.score / finalScore.total) * 100)
-    const passed = pct >= 70
+    const passThreshold = activeType === 'pre' ? null : 80
+    const passed = passThreshold === null ? null : pct >= passThreshold
 
     return (
       <div className="mx-auto max-w-xl space-y-6 py-8 text-center">
         <div
           className={cn(
             'rounded-2xl border-4 p-8',
-            passed ? 'border-green-400 bg-green-50' : 'border-orange-400 bg-orange-50',
+            passed === null
+              ? 'border-blue-300 bg-blue-50'
+              : passed
+                ? 'border-green-400 bg-green-50'
+                : 'border-orange-400 bg-orange-50',
           )}
         >
-          <div className={cn('text-6xl font-black', passed ? 'text-green-600' : 'text-orange-500')}>
+          <div
+            className={cn(
+              'text-6xl font-black',
+              passed === null
+                ? 'text-blue-600'
+                : passed
+                  ? 'text-green-600'
+                  : 'text-orange-500',
+            )}
+          >
             {pct}%
           </div>
           <div className="mt-2 text-lg font-semibold text-gray-700">
             {finalScore.score} / {finalScore.total} 題答對
           </div>
-          <div className={cn('mt-2 text-sm font-medium', passed ? 'text-green-700' : 'text-orange-600')}>
-            {passed ? '通過！' : '需要複習'}
-          </div>
+          {passed === null ? (
+            <div className="mt-2 text-sm font-medium text-blue-700">
+              基線測驗完成
+            </div>
+          ) : (
+            <div className={cn('mt-2 text-sm font-medium', passed ? 'text-green-700' : 'text-orange-600')}>
+              {passed ? `通過（>= ${passThreshold}%）` : `未達標（目標 >= ${passThreshold}%）`}
+            </div>
+          )}
           <p className="mt-3 text-sm text-gray-500">
             {meta.title}
           </p>
+          {activeType === 'pre' ? (
+            <p className="mt-2 text-xs text-gray-500">
+              前測用於課前基線評估，不作為通過門檻。
+            </p>
+          ) : (
+            <p className="mt-2 text-xs text-gray-500">
+              依課程 blueprint，後測建議通過門檻為 80%。
+            </p>
+          )}
         </div>
 
         <div className="flex flex-wrap justify-center gap-3">

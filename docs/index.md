@@ -12,6 +12,9 @@
 
 ## 目錄導覽
 
+### `docs/`
+- `course-improvement-review-2026-03-06.md`：本輪專案盤點與課程改進建議（含外部依據）
+
 ### `docs/modules/`
 - `M01_ALS-pathophysiology.md`：病生理學主模組
 - `M02_ALS-pharmacokinetics.md`：PK/PD 主模組
