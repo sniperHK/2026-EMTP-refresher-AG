@@ -81,6 +81,7 @@ function annotationsPlugin() {
 }
 
 export default defineConfig({
+  base: process.env.BASE_PATH ?? '/',
   plugins: [react(), tailwindcss(), slidesStaticPlugin(), annotationsPlugin()],
   resolve: {
     alias: {

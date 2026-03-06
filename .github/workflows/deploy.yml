@@ -1,0 +1,64 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+        working-directory: web
+
+      - name: Build Slidev slides (M01)
+        run: npx slidev build slides/M01.md --base /2026-EMTP-refresher-AG/slides/M01/ --out ../public/slides/M01
+        working-directory: web
+
+      - name: Build Slidev slides (M02)
+        run: npx slidev build slides/M02.md --base /2026-EMTP-refresher-AG/slides/M02/ --out ../public/slides/M02
+        working-directory: web
+
+      - name: Build React app
+        run: npm run build
+        working-directory: web
+        env:
+          BASE_PATH: /2026-EMTP-refresher-AG/
+
+      - name: Copy index.html to 404.html (SPA routing)
+        run: cp web/dist/index.html web/dist/404.html
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: web/dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
