@@ -133,7 +133,7 @@ mcg IV      + CPR
 | 途徑 | Onset | 適用 | 瀕死注意 |
 |:---:|:---:|---|---|
 | **IV** | 10-30 sec | ALS 黃金標準 | 推藥後 Flush, 上肢優於下肢 |
-| **IO** | 30-60 sec | 休克/OHCA 首選 | Humeral > Tibial; 清醒病人痛 |
+| **IO** | 30-60 sec | IV 失敗時合理替代 ⚠️ 非首選 | Humeral > Tibial; 清醒病人痛; 2025 AHA: IV first |
 | **IM** | 5-15 min | 躁動/無法 IV | **休克禁用!** Late Dump 風險 |
 | **IN** | 3-5 min | 兒童/止痛 | 每孔 < 1mL; 鼻血無效 |
 
@@ -219,3 +219,36 @@ _（請在此區記錄課堂重點）_
 > **Protocol 聲明**: 藥物劑量依據 AHA ACLS 2020 通用準則。實際執行請以台北市醫療指導醫師核准之在地 Protocol 為準。
 >
 > 2026 台北市 EMTP 複訓 | ALS 病生理學 & 藥物動力學
+
+---
+
+## ROSC 後前 5 分鐘 Pocket Card
+
+> 依據 AHA 2025 Part 11: Post-Cardiac Arrest Care
+
+### 氧合目標（Oxygenation）
+
+| 目標 | 說明 |
+|:---:|---|
+| **SpO₂ 90–98%** | 避免過度氧化（Hyperoxia）與缺氧（Hypoxia）皆有害 |
+| FiO₂ 從 100% 開始 | 待 SpO₂ 穩定後滴定下調 FiO₂ |
+
+### 血壓目標（Hemodynamics）
+
+| 目標 | 說明 |
+|:---:|---|
+| **MAP ≥ 65 mmHg** | 避免低血壓（Hypotension）；必要時使用升壓藥 |
+| 首選 Norepinephrine | ROSC 後若血壓低，繼續或啟動 Norepi drip |
+
+### 注意 Epi 蓄積（Post-ROSC Surge）
+
+- ROSC 前每 3–5 分鐘給 Epi → ROSC 後可能積累 3–5 mg
+- 表現：突發高血壓 / 心搏過速 / 新發心律不整
+- 處置：密切監測 12 導程 ECG；勿再追加 Epi
+
+### 移交優先順序（Handoff Priorities）
+
+1. **ECG 12 導程** — 排除 STEMI / acute coronary lesion
+2. **血糖** — 避免低血糖；目標 140–180 mg/dL
+3. **通報接收醫院** — 若懷疑 ACS，告知可能需 primary PCI
+4. **體溫管理** — 避免發燒（> 37.7°C 有害）

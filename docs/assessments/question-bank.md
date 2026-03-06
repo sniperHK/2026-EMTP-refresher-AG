@@ -167,6 +167,7 @@ C. IV = IO > IN > IM
 D. IM > IN > IV
 > **Answer: C**
 > **解析**：IV 與 IO 基本相當 (Central IV > Humeral IO > Peripheral IV > Tibial IO)，IN 次之，IM 最慢。
+> **注意**：2025 AHA 建議成人 cardiac arrest 時先嘗試 IV；IO 為 IV 失敗時的合理替代，非首選。
 
 **Q17.** `M02` `Apply` `Pre`
 **在休克 (Shock) 病人身上，為何不建議使用 IM (肌肉注射) 給予鎮靜藥物？**
@@ -275,6 +276,7 @@ C. Tibial IO 比較不痛
 D. Humeral IO 較不易滑脫
 > **Answer: B**
 > **解析**：肱骨接近軀幹，路徑短，流速快。Tibial 離心臟遠，且骨髓腔壓力大，流速較慢。
+> **注意**：比較的前提是已選擇使用 IO。2025 AHA 建議 cardiac arrest 時先嘗試 IV，IO 為備選。
 
 **Q29.** `M02` `Analyze` `Post`
 **哪一類休克病人對 Vasopressor (升壓劑) 的反應可能最差？**

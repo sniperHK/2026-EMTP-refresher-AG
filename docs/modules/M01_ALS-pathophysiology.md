@@ -140,7 +140,7 @@
 **為何重要**：
 - 42-86% 的 PEA cardiac arrest 可能其實是 pseudoPEA
 - True PEA 存活率 < 1%；pseudoPEA（有心臟收縮）ROSC 率可達 70-94%
-- **POCUS 是唯一可靠鑑別**：超音波看到心臟有收縮 = pseudoPEA
+- **POCUS 可協助鑑別**：超音波看到心臟有收縮提示 pseudoPEA，但需受過訓練者操作且不可延長 CPR 暫停（2025 AHA：intra-arrest POCUS 診斷價值尚未完全建立）
 
 **處置差異**：
 
@@ -149,7 +149,7 @@
 | 心臟狀態 | 無有效收縮 | 有收縮但極弱 |
 | 處置 | ACLS：CPR + Epi 1 mg + 找可逆原因 | **當作重度休克**：push-dose epi 10-20 mcg + 升壓藥 drip + 找原因 |
 | Epi 劑量 | 1 mg（標準 ACLS） | **10-20 mcg**（全量 1 mg 會打垮還在跳的心臟 → VF） |
-| CPR | 持續壓胸 | 若 POCUS 確認有收縮，**考慮暫停壓胸**，改用升壓支持 |
+| CPR | 持續壓胸 | 若 POCUS（受訓者操作，不延長暫停）顯示有收縮，**可考慮暫停壓胸**改升壓；無 POCUS 能力則依臨床判斷 |
 
 **休克→心搏停止的連續體**：
 

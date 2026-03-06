@@ -28,7 +28,7 @@
 | 途徑 | Onset (平均) | 適用情境 | 瀕死/休克病人注意事項 |
 | :--- | :--- | :--- | :--- |
 | **IV (Central/Upper limb)** | 10-30 sec | ALS 黃金標準 | 確保管路通暢，推藥後需 Flush。上肢優於下肢。 |
-| **IO (Tibial/Humeral)** | 30-60 sec | 休克/OHCA 首選 | **Humeral IO (肱骨)** 到達心臟速度接近 Central line。**Tibial IO** 需加壓輸液 (Pressure bag/Push) 才能進入循環。**痛！清醒病人慎用 (Lidocaine pre-medication)。** |
+| **IO (Tibial/Humeral)** | 30-60 sec | IV 失敗或無法建立時的合理替代 | **Humeral IO (肱骨)** 到達心臟速度接近 Central line；IO 首選位置。**Tibial IO** 需加壓輸液 (Pressure bag/Push) 才能進入循環。**痛！清醒病人慎用 (Lidocaine pre-medication)。**<br>⚠️ **2025 AHA**：成人 cardiac arrest 建議先嘗試 IV；IV 失敗或不可行時，IO 為合理替代。 |
 | **IM (Muscle)** | 5-15 min | 躁動/無法 IV 時 (Ketamine/Midazolam) | **休克病人禁用 IM！** 血流不到肌肉，藥物積在肌肉裡，等休克改善後再一次釋放 (Late Dump) 造成危險。 |
 | **IN (Mucosa)** | 3-5 min | 兒童/鎮靜/止痛 (Fentanyl/Midazolam) | 劑量限制 (體積不可太大，每孔 < 1ml)。鼻塞/鼻血無效。 |
 
@@ -146,8 +146,8 @@
 
 ## 6. 模組總結
 
-1. **休克病人不要 IM**，請打 IO/IV。
-2. **Humeral IO** 快於 Tibial IO。
+1. **休克病人不要 IM**，優先建立 IV；IV 失敗才改 IO。
+2. **若需 IO**：Humeral IO 藥物到達心臟速度接近 CVC，優於 Tibial IO。
 3. **老人的鎮靜藥量要減半**。
 4. **Push-dose Epinephrine** 是現代 EMS 處理休克的重要技能，比單純輸液更有效且避免水腫。
 5. **NTG 是肺水腫利器**，但 SBP < 90 或右心梗禁用。低灌流時 SL 吸收差。

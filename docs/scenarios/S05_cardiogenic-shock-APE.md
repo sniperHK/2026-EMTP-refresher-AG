@@ -79,7 +79,7 @@
 > - 但脈搏摸不到（心輸出量極低）
 > - **這不是 cardiac arrest → 不要啟動標準 ACLS（1 mg Epi 會打爆還在跳的心臟）**
 > - **處置**：push-dose epi 10-20 mcg IV q 1-2 min + Norepinephrine drip + 持續 BVM + 快速轉送
-> - 若有 POCUS：確認心臟有收縮 → 確認 pseudoPEA → 持續升壓策略
+> - 若有 POCUS（受訓操作者，不延長 rhythm check 暫停）：心臟有收縮支持 pseudoPEA 診斷 → 持續升壓策略（2025 AHA：intra-arrest POCUS 診斷價值尚未完全建立，作為輔助工具，非必要條件）
 
 **結局**：Push-dose Epi 反覆 2 次（共 40 mcg）+ Norepi drip 啟動 → BP 回到 85/55，脈搏可觸及，SpO₂ 回升至 90%。快速轉送心導管室。
 
