@@ -64,7 +64,7 @@ export function Layout() {
         </div>
       </main>
 
-      <AnnotationLayer />
+      {import.meta.env.DEV && <AnnotationLayer />}
     </div>
   )
 }
