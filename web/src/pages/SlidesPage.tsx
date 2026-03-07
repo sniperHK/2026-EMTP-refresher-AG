@@ -56,7 +56,7 @@ export function SlidesPage() {
             </Link>
           ))}
           <a
-            href={`/slides/${slideId}/`}
+            href={`${import.meta.env.BASE_URL}slides/${slideId}/`}
             target="_blank"
             rel="noopener noreferrer"
             className="rounded-md border border-gray-200 px-3 py-1.5 text-xs text-gray-600 hover:border-gray-400 transition-colors"
@@ -74,7 +74,7 @@ export function SlidesPage() {
       >
         <iframe
           key={slideId}
-          src={`/slides/${slideId}/`}
+          src={`${import.meta.env.BASE_URL}slides/${slideId}/`}
           title={meta.title}
           className="w-full h-full"
           allow="fullscreen"
