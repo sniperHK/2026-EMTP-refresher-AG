@@ -75,7 +75,7 @@ export function HomePage() {
           {[
             { id: 'M01', title: 'M01 瀕死生理學', desc: '休克、呼吸衰竭、心因性休克病生理決策導向', color: 'var(--medical-blue)' },
             { id: 'M02', title: 'M02 藥物動力學', desc: 'PK/PD 原則、給藥途徑、現場用藥決策', color: 'var(--medical-purple)' },
-            { id: 'M03', title: 'M03 補充資料', desc: '4 個高風險微型案例，補強複訓廣度保護網', color: 'var(--medical-orange)' },
+            { id: 'M03', title: 'M03 補充資料', desc: '高風險微型案例 — 敗血症、代謝異常、神經急症、中毒', color: 'var(--medical-orange)' },
             { id: 'M09', title: 'M09 劑量參考表', desc: '在地協議劑量速查與關鍵警示', color: 'var(--medical-teal)' },
           ].map((m) => (
             <Link key={m.id} to={`/content/${m.id}`} className="group">
@@ -151,9 +151,6 @@ export function HomePage() {
                       {pptLabels[s.pumpPipeTank]}
                     </Badge>
                     <span className="text-xs text-gray-400">{s.duration}</span>
-                  </div>
-                  <div className="mt-2 text-xs text-gray-500">
-                    {s.stages.length} 階段 / {s.criticalActions.length} 關鍵動作
                   </div>
                 </CardContent>
               </Card>

@@ -29,7 +29,7 @@ export const S03: Scenario = {
   },
   debrief: {
     minutes: 8,
-    focus: "同樣是低血壓，S03 要學的是 Pipe 太鬆而不是 Tank 太空，Epi 要快且要早。",
+    focus: "同樣是低血壓，但機轉完全不同：Pipe 太鬆（血管擴張）而非 Tank 太空（失血）。Epi 是唯一第一線藥物，要快且要早。",
   },
   stages: [
     {

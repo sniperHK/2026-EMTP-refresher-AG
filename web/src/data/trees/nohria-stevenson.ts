@@ -43,13 +43,13 @@ export const nohriaStevensonData: Quadrant[] = [
     perfusion: "cold",
     congestion: "wet",
     clinicalPicture: "低灌流 + 肺水腫（最危險）",
-    treatment: ["升壓藥", "強心藥", "禁止大量輸液"],
+    treatment: ["升壓藥", "強心藥", "避免大量輸液"],
     drugs: [
       "Push-dose Epi 10-20 mcg",
       "Norepinephrine drip",
       "Dobutamine",
     ],
-    danger: "最危險！不能輸液！",
+    danger: "最危險！避免大量輸液（肺已充血，加水更糟）",
     scenarioLink: "S05",
   },
 ];

@@ -55,11 +55,10 @@
 
 ---
 
-## 4. 常見藥物速查表（ACLS 2020 通用劑量）
+## 4. 常見藥物速查表（ACLS 2020/2025 通用劑量）
 
 > [!NOTE]
-> 以下劑量依據 AHA ACLS 2020 通用準則。台北市在地 protocol 確認後請以在地版為準。
-> 完整劑量對接表：`docs/modules/M02_protocol-dosing-map.md`
+> 以下劑量依據 AHA ACLS 2020 通用準則，IO 部分已納入 2025 AHA 更新。實際執行請以台北市醫療指導醫師核准之在地 Protocol 為準。
 
 ### 循環與強心 (Cardiovascular)
 - **Epinephrine (Adrenaline)**
@@ -113,9 +112,7 @@
   - **泡製**: 4 mg/250 mL D5W (16 mcg/mL)
   - **陷阱**: 外滲致組織壞死 → 優先 central line 或大口徑 IV。確保已補充足夠 volume。
 
-### 肺水腫/心衰附錄（速查表，課堂不另講解）
-
-> 以下藥物放在學員講義中作為參考，課堂時間有限不逐一講解。
+### 肺水腫/心衰附錄
 
 - **Furosemide (Lasix)**
   - 適應症：真正 volume overload（慢性心衰急性惡化+全身水腫），**非 SCAPE 首選**
@@ -149,12 +146,7 @@
 1. **休克病人不要 IM**；需要快速中樞藥效時優先建立 IV，若 IV 延遲/失敗再改 IO。
 2. **若需 IO**：Humeral IO 常較快接近 central circulation，但 Tibial IO 仍是可接受位置；重點是最快建立可用管路。
 3. **老人的鎮靜藥量要減半**。
-4. **Push-dose Epinephrine** 是現代 EMS 處理休克的重要技能，比單純輸液更有效且避免水腫。
+4. **Push-dose Epinephrine** 是現代 EMS 處理休克的重要技能，比單純輸液更有效且避免水腫。（⚠️ 此技術目前尚未納入國內正式 guideline，實際執行請依照現行在地 protocol 規範。）
 5. **NTG 是肺水腫利器**，但 SBP < 90 或右心梗禁用。低灌流時 SL 吸收差。
-6. **PseudoPEA 用 push-dose（10-20 mcg），不是 ACLS 劑量（1 mg）**——心臟還在跳，全量會打成 VF。
+6. **PseudoPEA 用 push-dose（10-20 mcg），不是 ACLS 劑量（1 mg）**——心臟還在跳，全量會打成 VF。（⚠️ Push-dose Epi 概念源自北美急診/EMS 實務，國內尚無正式 guideline 收錄，執行前請確認在地 protocol 授權。）
 
-## 7. 在地 Protocol 對接（授課前檢查）
-
-- [x] 已確認 protocol 名稱、版次、日期（ACLS 2020 通用版，待在地確認）
-- [x] 已完成 `M02_protocol-dosing-map.md` 藥物欄位（ACLS 通用劑量）
-- [ ] 已將在地劑量同步到題庫（Q16-Q30）與 scenario debrief — 待在地 protocol 確認後核對

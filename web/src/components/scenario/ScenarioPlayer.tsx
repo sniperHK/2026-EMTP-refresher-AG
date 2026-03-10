@@ -140,6 +140,7 @@ export function ScenarioPlayer({
         currentIndex={currentStageIndex}
         onStageClick={goToStage}
         accentColor={scenario.color}
+        isCurrentStageAnswered={isAnswered}
       />
 
       {/* Main content area */}
@@ -220,12 +221,14 @@ export function ScenarioPlayer({
 
         {/* Right sidebar: critical actions */}
         <div className="order-first space-y-4 lg:order-last">
-          <ScenarioQuickEntryCard
-            scenarioId={scenario.id}
-            scenarioTitle={scenario.title}
-            instructorMode={instructorMode}
-            onInstructorModeChange={onInstructorModeChange}
-          />
+          {import.meta.env.DEV && (
+            <ScenarioQuickEntryCard
+              scenarioId={scenario.id}
+              scenarioTitle={scenario.title}
+              instructorMode={instructorMode}
+              onInstructorModeChange={onInstructorModeChange}
+            />
+          )}
           <CriticalActions
             actions={scenario.criticalActions}
             completedIds={completedActions}

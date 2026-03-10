@@ -56,7 +56,7 @@ export const questions: Question[] = [
     question: "在監測休克病人時，End-tidal CO₂ (EtCO₂) 數值由 35 mmHg 驟降至 15 mmHg，且波形仍規律，最可能代表？",
     options: [
       "氣管內管滑脫 (Extubation)",
-      "嚴重低灌流 (Severe Hypoperfusion) 或心搏停止 (Cardiac Arrest)",
+      "嚴重低灌流 (Severe Hypoperfusion) 或心跳停止 (Cardiac Arrest)",
       "呼吸性酸中毒 (Respiratory Acidosis)",
       "病人換氣過度 (Hyperventilation)",
     ],
@@ -319,7 +319,7 @@ export const questions: Question[] = [
   },
   {
     id: 26, module: "M02", level: "Apply", usage: ["Pre"],
-    question: "在心搏停止 (Cardiac Arrest) 急救中，為何我們給藥後要推 20ml NS 並抬手？",
+    question: "在心跳停止 (Cardiac Arrest) 急救中，為何我們給藥後要推 20ml NS 並抬手？",
     options: [
       "因為藥物很黏稠",
       "為了減少靜脈炎",
@@ -408,7 +408,7 @@ export const questions: Question[] = [
     question: "OHCA 急救中，電擊後 ECG 轉為 sinus tachycardia，但頸動脈脈搏仍摸不到。POCUS 顯示心臟有收縮。此狀態最可能是？",
     options: [
       "True PEA（真無脈搏電氣活動）",
-      "Asystole（心搏停止）",
+      "Asystole（心跳停止）",
       "PseudoPEA（假無脈搏電氣活動）",
       "VF（心室顫動）",
     ],

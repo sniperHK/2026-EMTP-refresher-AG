@@ -29,7 +29,7 @@ export const S01: Scenario = {
   },
   debrief: {
     minutes: 8,
-    focus: "把呼吸問題一路串到阻塞性休克，避免只停在 needle decompression 技巧。",
+    focus: "從呼吸問題一路串到阻塞性休克的完整病程演變，重點在辨識 Pipe Blocked 的機轉而非單純的 needle decompression 技巧。",
   },
   stages: [
     {

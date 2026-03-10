@@ -78,6 +78,13 @@ export const S02: Scenario = {
             feedback:
               "在明確的穿刺傷 + 休克徵兆下，不需要更多資訊。過度評估會浪費寶貴時間。創傷病人的黃金時間有限，「Load and Go」比「Stay and Play」重要。",
           },
+          {
+            id: "S02-T0-D",
+            text: "輕微出血 — 傷口只有少量滲血，不太可能大量失血",
+            correct: false,
+            feedback:
+              "外部出血量不能代表內部出血量！腹部穿刺傷的致命性在於腹腔內出血，體表傷口可能很小但腹腔內已大量失血。此病人的蒼白冰冷、CRT 延長、心跳加速已經告訴你 Tank 正在漏水。「看起來沒流多少血」是創傷評估中最危險的錯覺之一。",
+          },
         ],
       },
       teachingPoint:
@@ -143,7 +150,7 @@ export const S02: Scenario = {
     },
     {
       id: "S02-T10",
-      label: "T+10 min — 失代償",
+      label: "T+10 min — 失代償（Decompensated）",
       narrative:
         "後送途中，病人突然血壓驟降。意識變差，只能發出呻吟聲。橈動脈幾乎摸不到，股動脈脈搏微弱。HR 飆升至 138。剛剛還「穩定」的病人，怎麼突然崩潰了？",
       vitals: {

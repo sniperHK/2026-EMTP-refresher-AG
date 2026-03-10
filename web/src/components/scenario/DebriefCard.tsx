@@ -70,9 +70,6 @@ export function DebriefCard({ debrief, interactive = false }: DebriefCardProps) 
     <Card className="gap-4 border-gray-200 bg-white">
       <CardHeader className="gap-1 border-b pb-4">
         <CardTitle className="text-base">Debrief Script</CardTitle>
-        <p className="text-sm text-gray-500">
-          建議 debrief {debrief.minutes} 分鐘，固定四問，順序不變。
-        </p>
       </CardHeader>
 
       <CardContent className="space-y-3">

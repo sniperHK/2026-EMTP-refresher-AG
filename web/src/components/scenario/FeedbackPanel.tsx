@@ -83,7 +83,7 @@ export function FeedbackPanel({
         )}
       </div>
 
-      {/* 教學要點（可收合，供講師用） */}
+      {/* 學習要點（可收合） */}
       {teachingPoint && (
         <div className="border-t border-gray-200 pt-3">
           <button
@@ -96,7 +96,7 @@ export function FeedbackPanel({
             )}>
               &#9654;
             </span>
-            <span>教學要點（講師用）</span>
+            <span>學習要點</span>
           </button>
           {showTeachingPoint && (
             <div className="animate-in slide-in-from-top-2 fade-in duration-300 mt-2 rounded-md border bg-white p-3" style={{ borderColor: 'var(--medical-purple)' }}>

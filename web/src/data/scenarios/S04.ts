@@ -29,7 +29,7 @@ export const S04: Scenario = {
   },
   debrief: {
     minutes: 10,
-    focus: "S04 是整堂課的收尾，要把 VF workflow、Hs & Ts、pseudoPEA 與 post-ROSC 一次串起來。",
+    focus: "回顧 VF 處理流程，思考 Hs & Ts 可逆原因、PseudoPEA 鑑別、以及 Post-ROSC 前 5 分鐘的目標設定。",
   },
   stages: [
     {

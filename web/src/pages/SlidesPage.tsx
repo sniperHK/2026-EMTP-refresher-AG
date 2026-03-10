@@ -1,7 +1,7 @@
 import { useParams, Link, useNavigate } from 'react-router-dom'
 
 const slideMeta: Record<string, { title: string; desc: string }> = {
-  M01: { title: 'M01 病生理學', desc: '休克、呼吸衰竭、心因性休克' },
+  M01: { title: 'M01 瀕死生理學', desc: '休克、呼吸衰竭、心因性休克' },
   M02: { title: 'M02 藥物動力學', desc: 'PK/PD、給藥途徑、現場用藥決策' },
 }
 

@@ -29,7 +29,7 @@ export const S05: Scenario = {
   },
   debrief: {
     minutes: 7,
-    focus: "S05 debrief 只抓 Warm+Wet 轉 Cold+Wet、S02 對照、以及 pseudoPEA 三件事。",
+    focus: "回顧三個關鍵轉折：Warm+Wet → Cold+Wet 象限轉移、與 S02 低血容休克的處置差異、以及 PseudoPEA 的辨識與處置。",
   },
   stages: [
     {

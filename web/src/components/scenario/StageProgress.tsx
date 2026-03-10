@@ -7,6 +7,7 @@ interface StageProgressProps {
   onStageClick: (index: number) => void
   accentColor?: string
   className?: string
+  isCurrentStageAnswered?: boolean
 }
 
 export function StageProgress({
@@ -15,14 +16,15 @@ export function StageProgress({
   onStageClick,
   accentColor = 'var(--medical-blue)',
   className,
+  isCurrentStageAnswered = false,
 }: StageProgressProps) {
   return (
     <div className={cn('w-full', className)}>
       {/* Desktop: horizontal step indicator */}
       <div className="flex items-center justify-center gap-0">
         {stages.map((stage, idx) => {
-          const isCompleted = idx < currentIndex
-          const isCurrent = idx === currentIndex
+          const isCompleted = idx < currentIndex || (idx === currentIndex && isCurrentStageAnswered)
+          const isCurrent = idx === currentIndex && !isCurrentStageAnswered
 
           return (
             <div key={stage.id} className="flex items-center">

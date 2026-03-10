@@ -32,9 +32,6 @@ export function AssessmentPathwayCard({
         >
           Assessment Pathway
         </CardTitle>
-        <p className="text-sm text-gray-500">
-          先做不確定性導向的開場判讀，再進入 stage-by-stage 決策。
-        </p>
       </CardHeader>
 
       <CardContent className="grid gap-4 md:grid-cols-2">
