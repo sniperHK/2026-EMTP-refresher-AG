@@ -10,6 +10,7 @@ import {
   type QuizGroup,
   type QuizSubmission,
   type QuizType,
+  getQuizBackendLabel,
   getQuizGroups,
   loadParticipantProfile,
   normalizeQuizType,
@@ -18,6 +19,7 @@ import {
 } from '@/lib/quiz-results'
 
 const quizGroups = getQuizGroups()
+const backendLabel = getQuizBackendLabel()
 
 const quizMeta: Record<QuizType, { title: string; description: string; count: number; color: string }> = {
   pre: {
@@ -44,11 +46,21 @@ type Phase = 'select' | 'playing' | 'result'
 type SaveStatus = 'idle' | 'saving' | 'saved' | 'error'
 
 function makeSubmissionId() {
-  if (typeof crypto !== 'undefined' && 'randomUUID' in crypto) {
-    return crypto.randomUUID()
+  const cryptoApi = globalThis.crypto
+
+  if (cryptoApi?.randomUUID) {
+    return cryptoApi.randomUUID()
   }
 
-  return `quiz-${Date.now()}-${Math.random().toString(36).slice(2, 10)}`
+  if (cryptoApi?.getRandomValues) {
+    const bytes = cryptoApi.getRandomValues(new Uint8Array(16))
+    bytes[6] = (bytes[6] & 0x0f) | 0x40
+    bytes[8] = (bytes[8] & 0x3f) | 0x80
+    const hex = [...bytes].map((byte) => byte.toString(16).padStart(2, '0'))
+    return `${hex.slice(0, 4).join('')}-${hex.slice(4, 6).join('')}-${hex.slice(6, 8).join('')}-${hex.slice(8, 10).join('')}-${hex.slice(10, 16).join('')}`
+  }
+
+  return '00000000-0000-4000-8000-000000000000'
 }
 
 export function QuizPage() {
@@ -143,7 +155,7 @@ export function QuizPage() {
       .catch((error) => {
         console.error(error)
         setSaveStatus('error')
-        setSaveError('結果未送出到教師儀表板。請確認目前是使用本機 Vite dev server。')
+        setSaveError('結果未送出到教師儀表板。請確認 Supabase 環境變數已設定，或目前是在本機 dev 模式。')
       })
   }
 
@@ -221,7 +233,7 @@ export function QuizPage() {
           )}
 
           <p className="mt-3 text-xs text-gray-500">
-            若你從課程地圖直接進入前測或後測，輸入完資料後按對應卡片即可開始。
+            若你從課程地圖直接進入前測或後測，輸入完資料後按對應卡片即可開始。當前資料來源：{backendLabel}。
           </p>
         </div>
 

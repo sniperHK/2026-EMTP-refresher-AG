@@ -1,0 +1,2 @@
+-- Local Supabase seed placeholder.
+-- Keep empty unless you want local sample quiz submissions for development.

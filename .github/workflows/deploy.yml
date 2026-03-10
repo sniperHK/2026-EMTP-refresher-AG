@@ -43,6 +43,8 @@ jobs:
         working-directory: web
         env:
           BASE_PATH: /2026-EMTP-refresher-AG/
+          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
+          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
 
       - name: Copy index.html to 404.html (SPA routing)
         run: cp web/dist/index.html web/dist/404.html
