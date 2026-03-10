@@ -68,7 +68,7 @@
 | 正確處置 Warm+Wet：NTG SL + CPAP + 坐姿（非大量輸液） | `Yes` |  |
 | 辨識 Warm+Wet → Cold+Wet 轉折（SBP < 90 + 末梢冰冷） | `Yes` |  |
 | Cold+Wet 時立即停 NTG 並轉向升壓策略（push-dose epi） | `Yes` |  |
-| 能區分 PseudoPEA vs True PEA（不啟動標準 ACLS 1mg Epi） |  |  |
+| 能區分 PseudoPEA vs True PEA（快速確認後調整處置，不為鑑別拖慢 resuscitation） |  |  |
 | 能說明 S05 vs S02 同為低血壓但處置相反的病生理原因 |  |  |
 
 ## 講師紀錄

@@ -1,14 +1,10 @@
 import { useParams, Link, useNavigate } from 'react-router-dom'
-
-const slideMeta: Record<string, { title: string; desc: string }> = {
-  M01: { title: 'M01 瀕死生理學', desc: '休克、呼吸衰竭、心因性休克' },
-  M02: { title: 'M02 藥物動力學', desc: 'PK/PD、給藥途徑、現場用藥決策' },
-}
+import { slideMeta, slideOrder } from '@/data/siteMeta'
 
 export function SlidesPage() {
   const { slideId = 'M01' } = useParams<{ slideId: string }>()
   const navigate = useNavigate()
-  const meta = slideMeta[slideId]
+  const meta = slideMeta[slideId as keyof typeof slideMeta]
 
   if (!meta) {
     return (
@@ -41,7 +37,7 @@ export function SlidesPage() {
           </div>
         </div>
         <div className="flex gap-2">
-          {Object.keys(slideMeta).map((id) => (
+          {slideOrder.map((id) => (
             <Link
               key={id}
               to={`/slides/${id}`}

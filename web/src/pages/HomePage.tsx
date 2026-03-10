@@ -2,33 +2,7 @@ import { Link } from 'react-router-dom'
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { scenarios } from '@/data/scenarios'
-
-const tools = [
-  {
-    id: 'pump-pipe-tank',
-    title: 'Pump-Pipe-Tank',
-    description: '休克分類決策樹 — 從低血壓鑑別到休克類型',
-    color: 'var(--medical-navy)',
-  },
-  {
-    id: 'nohria-stevenson',
-    title: 'Nohria-Stevenson',
-    description: '急性心衰竭 2x2 血流動力學分類',
-    color: 'var(--medical-red)',
-  },
-  {
-    id: 'pseudopea',
-    title: 'Pseudo-PEA 鑑別',
-    description: 'True PEA vs Pseudo-PEA 流程與比較',
-    color: 'var(--medical-purple)',
-  },
-  {
-    id: 'oxygenation',
-    title: 'Oxygenation vs Ventilation',
-    description: '呼吸衰竭分類：Type I 氧合 vs Type II 通氣',
-    color: 'var(--medical-teal)',
-  },
-]
+import { courseTitle, moduleMeta, moduleOrder, slideMeta, slideOrder, toolMeta, toolOrder } from '@/data/siteMeta'
 
 const pptLabels: Record<string, string> = {
   pump: 'Pump',
@@ -45,7 +19,7 @@ export function HomePage() {
           className="text-3xl font-bold md:text-4xl lg:text-5xl"
           style={{ color: 'var(--medical-navy)' }}
         >
-          2026 北市 EMTP 複訓
+          {courseTitle}
         </h1>
         <p className="mx-auto mt-3 max-w-xl text-base text-gray-600 md:text-lg">
           互動式情境模擬與決策工具，強化院前緊急救護臨床判斷能力
@@ -72,46 +46,44 @@ export function HomePage() {
           課程模組
         </h2>
         <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-          {[
-            { id: 'M01', title: 'M01 瀕死生理學', desc: '休克、呼吸衰竭、心因性休克病生理決策導向', color: 'var(--medical-blue)' },
-            { id: 'M02', title: 'M02 藥物動力學', desc: 'PK/PD 原則、給藥途徑、現場用藥決策', color: 'var(--medical-purple)' },
-            { id: 'M03', title: 'M03 補充資料', desc: '高風險微型案例 — 敗血症、代謝異常、神經急症、中毒', color: 'var(--medical-orange)' },
-            { id: 'M09', title: 'M09 劑量參考表', desc: '在地協議劑量速查與關鍵警示', color: 'var(--medical-teal)' },
-          ].map((m) => (
-            <Link key={m.id} to={`/content/${m.id}`} className="group">
-              <Card className="h-full transition-all hover:shadow-lg group-hover:-translate-y-0.5">
-                <CardHeader>
-                  <CardTitle className="text-base" style={{ color: m.color }}>
-                    {m.title}
-                  </CardTitle>
-                  <CardDescription className="text-xs">{m.desc}</CardDescription>
-                </CardHeader>
-              </Card>
-            </Link>
-          ))}
+          {moduleOrder.map((id) => {
+            const module = moduleMeta[id]
+            return (
+              <Link key={id} to={`/content/${id}`} className="group">
+                <Card className="h-full transition-all hover:shadow-lg group-hover:-translate-y-0.5">
+                  <CardHeader>
+                    <CardTitle className="text-base" style={{ color: module.color }}>
+                      {module.title}
+                    </CardTitle>
+                    <CardDescription className="text-xs">{module.desc}</CardDescription>
+                  </CardHeader>
+                </Card>
+              </Link>
+            )
+          })}
         </div>
         {/* 投影片（Slidev） */}
         <div className="mt-4 grid gap-4 sm:grid-cols-2">
-          {[
-            { id: 'M01', title: 'M01 投影片', desc: '病生理學互動式 Slidev 投影片' },
-            { id: 'M02', title: 'M02 投影片', desc: '藥物動力學互動式 Slidev 投影片' },
-          ].map((s) => (
-            <Link key={s.id} to={`/slides/${s.id}`} className="group">
-              <Card className="h-full transition-all hover:shadow-lg group-hover:-translate-y-0.5">
-                <CardHeader>
-                  <div className="flex items-center gap-2">
-                    <span className="text-base">&#9654;</span>
-                    <div>
-                      <CardTitle className="text-sm" style={{ color: 'var(--medical-blue)' }}>
-                        {s.title}
-                      </CardTitle>
-                      <CardDescription className="text-xs">{s.desc}</CardDescription>
+          {slideOrder.map((id) => {
+            const slide = slideMeta[id]
+            return (
+              <Link key={id} to={`/slides/${id}`} className="group">
+                <Card className="h-full transition-all hover:shadow-lg group-hover:-translate-y-0.5">
+                  <CardHeader>
+                    <div className="flex items-center gap-2">
+                      <span className="text-base">&#9654;</span>
+                      <div>
+                        <CardTitle className="text-sm" style={{ color: 'var(--medical-blue)' }}>
+                          {slide.title} 投影片
+                        </CardTitle>
+                        <CardDescription className="text-xs">{slide.desc}</CardDescription>
+                      </div>
                     </div>
-                  </div>
-                </CardHeader>
-              </Card>
-            </Link>
-          ))}
+                  </CardHeader>
+                </Card>
+              </Link>
+            )
+          })}
         </div>
       </section>
 
@@ -168,23 +140,26 @@ export function HomePage() {
           決策工具
         </h2>
         <div className="grid gap-4 sm:grid-cols-2">
-          {tools.map((t) => (
-            <Link key={t.id} to={`/tools/${t.id}`} className="group">
-              <Card className="h-full transition-all hover:shadow-lg group-hover:-translate-y-0.5">
-                <CardHeader>
-                  <CardTitle
-                    className="text-base"
-                    style={{ color: t.color }}
-                  >
-                    {t.title}
-                  </CardTitle>
-                  <CardDescription className="text-xs">
-                    {t.description}
-                  </CardDescription>
-                </CardHeader>
-              </Card>
-            </Link>
-          ))}
+          {toolOrder.map((id) => {
+            const tool = toolMeta[id]
+            return (
+              <Link key={id} to={`/tools/${id}`} className="group">
+                <Card className="h-full transition-all hover:shadow-lg group-hover:-translate-y-0.5">
+                  <CardHeader>
+                    <CardTitle
+                      className="text-base"
+                      style={{ color: tool.color }}
+                    >
+                      {tool.title}
+                    </CardTitle>
+                    <CardDescription className="text-xs">
+                      {tool.description}
+                    </CardDescription>
+                  </CardHeader>
+                </Card>
+              </Link>
+            )
+          })}
         </div>
       </section>
 

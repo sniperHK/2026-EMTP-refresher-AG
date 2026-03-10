@@ -203,11 +203,11 @@ export const questions: Question[] = [
     options: [
       "IV > IO > IM",
       "IO > IV > IM",
-      "IV = IO > IN > IM",
+      "IV > IO > IN > IM",
       "IM > IN > IV",
     ],
     answer: "C",
-    explanation: "IV 與 IO 都屬快速 route，IN 次之，IM 最慢。成人 cardiac arrest 依 2025 AHA 應先嘗試 IV；若 IV 延遲、失敗或不可行，再改 IO。",
+    explanation: "整體而言 IV 最快，IO 次之，IN 再慢，IM 最慢。成人 cardiac arrest 依 2025 AHA 應先嘗試 IV；若 IV 延遲、失敗或不可行，再改 IO。",
   },
   {
     id: 17, module: "M02", level: "Apply", usage: ["Pre"],

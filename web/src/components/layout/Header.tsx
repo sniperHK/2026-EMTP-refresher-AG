@@ -1,5 +1,6 @@
 import { useFullscreen } from '@/hooks/useFullscreen'
 import { Button } from '@/components/ui/button'
+import { courseTitle } from '@/data/siteMeta'
 
 interface HeaderProps {
   currentPageName?: string
@@ -16,7 +17,7 @@ export function Header({ currentPageName }: HeaderProps) {
           className="text-base font-bold md:text-lg"
           style={{ color: 'var(--medical-navy)' }}
         >
-          2026 EMTP 複訓
+          {courseTitle}
         </span>
       </div>
 

@@ -103,6 +103,8 @@ flowchart TD
 | 處置 | CPR + Epi 1mg | **Push-dose epi 10-20 mcg** |
 | 預後 | < 1% | **ROSC 70%+** |
 
+> **提醒**：若無法在不延長 rhythm-check 暫停下快速確認 pseudoPEA，不要為了鑑別拖慢標準 resuscitation 節奏。
+
 ---
 
 ## 酸鹼與 EtCO2

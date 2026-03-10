@@ -62,7 +62,7 @@ export const S05: Scenario = {
             text: "B 象限（Warm + Wet）→ NTG 舌下 + CPAP — 這是 SCAPE",
             correct: true,
             feedback:
-              "正確！末梢溫暖（灌流正常 = Warm）+ 肺水腫（充血 = Wet）= B 象限。高血壓 + 急性肺水腫 = SCAPE（Sympathetic Crashing Acute Pulmonary Edema）。治療核心是降低後負荷（NTG 擴張血管）+ CPAP（正壓通氣將肺水推回血管）。SCAPE 不是容量過多 — 是血管痙攣把血液擠進肺部。",
+              "正確！末梢溫暖（灌流正常 = Warm）+ 肺水腫（充血 = Wet）= B 象限。高血壓 + 急性肺水腫 = SCAPE（Sympathetic Crashing Acute Pulmonary Edema）。治療核心是降低前/後負荷（NTG 擴張血管）+ CPAP（改善 alveolar recruitment、減少呼吸功與肺充血壓力）。SCAPE 不是單純總水量過多，而是壓力與血流分布突然失衡。",
           },
           {
             id: "S05-T0-B",
@@ -83,12 +83,12 @@ export const S05: Scenario = {
             text: "低血容休克 — 先大量輸液",
             correct: false,
             feedback:
-              "絕對禁忌！此病人血壓 180/110 + 肺已經充滿水了。大量輸液會讓肺水腫更嚴重，可能直接淹死病人。這是 SCAPE，需要的是減少容量負荷（NTG 擴張血管）和正壓通氣（CPAP 把水擠出肺泡），不是加水。",
+              "絕對不對！此病人血壓 180/110 + 肺已經明顯充血。大量輸液會進一步增加肺循環與左心負荷，使肺水腫更惡化。這是 SCAPE，需要的是降低前/後負荷與正壓支持，不是補水。",
           },
         ],
       },
       teachingPoint:
-        "SCAPE（Sympathetic Crashing Acute Pulmonary Edema）= 交感神經風暴引起的急性肺水腫。機轉：交感神經過度活化 → 全身血管痙攣 → 後負荷劇增 → 左心無法排空 → 血液回堵到肺部 → 肺水腫。所以 SCAPE 的核心治療不是利尿劑（病人不是水太多），而是 NTG（擴張血管、降低後負荷）+ CPAP（正壓支持、減少呼吸做功、將肺水推回血管）。",
+        "SCAPE（Sympathetic Crashing Acute Pulmonary Edema）= 交感神經風暴引起的急性肺水腫。機轉：交感神經過度活化 → 全身血管痙攣 → 後負荷劇增 → 左心無法排空 → 血液回堵到肺部 → 肺水腫。所以 SCAPE 的核心治療不是利尿劑（病人不是單純水太多），而是 NTG（降低前/後負荷）+ CPAP（改善 alveolar recruitment、減少呼吸做功、降低肺充血壓力）。",
     },
     {
       id: "S05-T5",
@@ -202,7 +202,7 @@ export const S05: Scenario = {
         ],
       },
       teachingPoint:
-        "PseudoPEA 是介於「有脈搏」和「真正心跳停止」之間的灰色地帶。心臟還在跳，只是太弱了。治療邏輯：\n- Push-dose Epi：10-20 mcg IV q2-5min（製備方法：Epi 1mg/10mL 取 1mL + NS 9mL → 10 mcg/mL → 推 1-2 mL）\n- 同時考慮 Norepinephrine drip\n- 處理根本原因（此案例是 STEMI → 需要 PCI）\n\nS05 整體教學重點：從 Warm+Wet（SCAPE）→ Cold+Wet（心因性休克）→ PseudoPEA 的惡化過程，每個階段的處置都不同。認識 Nohria-Stevenson 象限轉移，才能在正確的時機做正確的事。",
+        "PseudoPEA 是介於「有脈搏」和「真正心跳停止」之間的灰色地帶。心臟還在跳，只是太弱了。治療邏輯：\n- Push-dose Epi：10-20 mcg IV q1-2min（製備方法：Epi 1mg/10mL 取 1mL + NS 9mL → 10 mcg/mL → 推 1-2 mL）\n- 同時考慮 Norepinephrine drip\n- 處理根本原因（此案例是 STEMI → 需要 PCI）\n- 若無法快速確認，不要為了 pseudoPEA 鑑別而拖慢標準 resuscitation 節奏\n\nS05 整體教學重點：從 Warm+Wet（SCAPE）→ Cold+Wet（心因性休克）→ PseudoPEA 的惡化過程，每個階段的處置都不同。認識 Nohria-Stevenson 象限轉移，才能在正確的時機做正確的事。",
     },
   ],
   criticalActions: [

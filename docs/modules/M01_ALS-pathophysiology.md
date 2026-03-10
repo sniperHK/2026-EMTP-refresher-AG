@@ -135,7 +135,7 @@
 
 > **Critical Concept**:
 > PseudoPEA 不是心跳停了——是心臟還在跳，但打出來的血壓太低（SBP < 40-50 mmHg），低到你摸不到脈搏。
-> 它不是 cardiac arrest，它是 **extreme shock**。處置方式完全不同。
+> 它代表 **extreme shock / very low-flow state**。若無法快速確認，不要為了 pseudoPEA 假設而延誤標準 resuscitation 節奏。
 
 **為何重要**：
 - 42-86% 的 PEA cardiac arrest 可能其實是 pseudoPEA
@@ -149,7 +149,7 @@
 | 心臟狀態 | 無有效收縮 | 有收縮但極弱 |
 | 處置 | ACLS：CPR + Epi 1 mg + 找可逆原因 | **當作重度休克**：push-dose epi 10-20 mcg + 升壓藥 drip + 找原因 |
 | Epi 劑量 | 1 mg（標準 ACLS） | **10-20 mcg**（全量 1 mg 會打垮還在跳的心臟 → VF） |
-| CPR | 持續壓胸 | 若 POCUS（受訓者操作，不延長暫停）顯示有收縮，**可考慮暫停壓胸**改升壓；無 POCUS 能力則依臨床判斷 |
+| CPR | 持續壓胸 | **不要為了鑑別而延長暫停**；若受訓者在不延長暫停下快速確認有收縮，優先處理 low-flow shock |
 
 **休克→心搏停止的連續體**：
 
@@ -196,5 +196,5 @@
 2. **休克識別在血壓掉之前**：看 HR, CRT, 皮膚, 意識。
 3. **Pump-Pipe-Tank 定位休克類型**：Tank 空（輸液）vs Pipe 鬆（Epi）vs Pump 不力（升壓/強心）→ 處置方向完全不同。
 4. **Nohria-Stevenson 分四象限**：Warm+Wet（NTG+NIV）、Cold+Wet（升壓+強心）、Cold+Dry（輸液試探）。
-5. **PseudoPEA ≠ 心搏停止**：心臟還在跳但脈搏摸不到 → 當重度休克治療，不是 ACLS protocol。
+5. **PseudoPEA ≠ 自動跳離 ACLS**：若快速確認仍有收縮，可轉向重度休克/low-flow 思維；若無法快速確認，不要拖慢標準 resuscitation 節奏。
 6. **Resuscitation 優先於 Intubation**：不要對一個休克瀕死的病人直接插管（HOP: Hypotension, Oxygenation, pH），先穩定循環再插管。肺水腫優先用 CPAP/BiPAP，而非插管。

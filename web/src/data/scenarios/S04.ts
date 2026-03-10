@@ -280,21 +280,21 @@ export const S04: Scenario = {
             text: "用 POCUS（超音波）看心臟是否有收縮 — 有收縮 = PseudoPEA，無收縮 = True PEA",
             correct: true,
             feedback:
-              "正確！PEA 的定義是「心電圖有組織性電氣活動但無可觸知的脈搏」。但這分兩種：True PEA（心臟完全沒有機械性收縮 — 電跟機械完全脫鉤）和 PseudoPEA（心臟其實有收縮，只是太弱摸不到脈搏）。POCUS 是區分兩者的最佳工具。PseudoPEA 的治療重點是升壓（push-dose epi 10-20 mcg），而非 ACLS 的 epi 1mg + CPR。",
+              "正確！PEA 的定義是「心電圖有組織性電氣活動但無可觸知的脈搏」。但這分兩種：True PEA（心臟完全沒有機械性收縮 — 電跟機械完全脫鉤）和 PseudoPEA（心臟其實有收縮，只是太弱摸不到脈搏）。若有受訓操作者且不延長 rhythm-check 暫停，POCUS 是很有用的輔助工具。若快速確認有收縮，治療重點會轉向 low-flow shock 的升壓與找原因，而不是直接套用 ACLS 的 epi 1mg。",
           },
           {
             id: "S04-T7-B",
             text: "無法區分 — 摸不到脈搏就是 PEA，按照 ACLS 流程處理",
             correct: false,
             feedback:
-              "這是傳統做法，但可能錯過了救命的機會。PseudoPEA 的心臟其實在跳，只是太弱。如果對它做 CPR（壓在正在跳的心臟上），可能反而有害。而給予 ACLS 劑量的 Epi 1mg 可能造成 ROSC 後的劇烈高血壓。用 POCUS 快速確認心臟是否有收縮，可以改變處置方向。",
+              "這是保守但不完整的做法。若 POCUS 能在不延長暫停的前提下快速確認心臟仍有收縮，確實可能改變處置方向；但如果現場沒有這個條件，也不應為了追求 pseudoPEA 鑑別而拖慢標準 resuscitation 節奏。",
           },
           {
             id: "S04-T7-C",
             text: "看血壓 — 有血壓就不是 PEA",
             correct: false,
             feedback:
-              "摸不到脈搏時通常也量不到常規血壓（NIBP）。但 PseudoPEA 的病人可能在動脈線（A-line）上看到微弱的波形。在院前環境中沒有 A-line，所以 POCUS 是最實用的鑑別工具。",
+              "摸不到脈搏時通常也量不到常規血壓（NIBP）。PseudoPEA 的病人可能只剩極低的動脈壓波形；在院前環境沒有 A-line 時，POCUS 若可立即取得，會比等 NIBP 更實用。",
           },
           {
             id: "S04-T7-D",
@@ -306,7 +306,7 @@ export const S04: Scenario = {
         ],
       },
       teachingPoint:
-        "PEA 不是一個疾病，而是一個臨床狀態的描述。分辨 True PEA vs PseudoPEA 至關重要：\n- True PEA：心臟完全沒有機械性收縮 → 標準 ACLS（CPR + Epi 1mg + 找可逆原因 H's & T's）\n- PseudoPEA：心臟有微弱收縮但產生的血壓太低以至於摸不到脈搏 → Push-dose Epi 10-20 mcg + 輸液 + 找原因\n兩者的治療方向截然不同。POCUS 是鑑別的最佳工具。",
+        "PEA 不是一個疾病，而是一個臨床狀態的描述。分辨 True PEA vs PseudoPEA 可能影響後續判斷：\n- True PEA：心臟完全沒有機械性收縮 → 標準 ACLS（CPR + Epi 1mg + 找可逆原因 H's & T's）\n- PseudoPEA：心臟有微弱收縮但產生的血壓太低以至於摸不到脈搏 → 重點轉為 low-flow shock 的升壓與找原因\nPOCUS 若由受訓者在不延長暫停下快速取得，可作為重要輔助；若沒有這個條件，不要為了鑑別而拖慢標準 resuscitation 節奏。",
     },
     {
       id: "S04-T9",

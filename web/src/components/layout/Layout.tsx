@@ -3,30 +3,29 @@ import { Outlet, useLocation } from 'react-router-dom'
 import { Header } from '@/components/layout/Header'
 import { Sidebar } from '@/components/layout/Sidebar'
 import { AnnotationLayer } from '@/components/annotation/AnnotationLayer'
+import { scenarioMap } from '@/data/scenarios'
+import { moduleMeta, slideMeta, toolMeta } from '@/data/siteMeta'
 
 function getPageName(pathname: string): string | undefined {
   if (pathname === '/') return '首頁'
   if (pathname.startsWith('/scenario/')) {
     const id = pathname.split('/')[2]
-    const names: Record<string, string> = {
-      S01: '心因性休克',
-      S02: '張力性氣胸',
-      S03: '過敏性休克',
-      S04: '敗血性休克',
-      S05: '急性肺栓塞',
-    }
-    return names[id] || '情境模擬'
+    return scenarioMap[id]?.title || '情境模擬'
   }
   if (pathname.startsWith('/tools/')) {
     const id = pathname.split('/')[2]
-    const names: Record<string, string> = {
-      'pump-pipe-tank': 'Pump-Pipe-Tank',
-      'nohria-stevenson': 'Nohria-Stevenson',
-      pseudopea: 'Pseudo-PEA',
-      oxygenation: 'Oxy vs Vent',
-    }
-    return names[id] || '決策工具'
+    return toolMeta[id as keyof typeof toolMeta]?.title || '決策工具'
   }
+  if (pathname.startsWith('/content/')) {
+    const id = pathname.split('/')[2]
+    return moduleMeta[id as keyof typeof moduleMeta]?.title || '課程模組'
+  }
+  if (pathname.startsWith('/slides/')) {
+    const id = pathname.split('/')[2] ?? 'M01'
+    return slideMeta[id as keyof typeof slideMeta]?.title || '投影片'
+  }
+  if (pathname === '/handout') return '學員講義'
+  if (pathname.startsWith('/quiz')) return '評量測驗'
   return undefined
 }
 

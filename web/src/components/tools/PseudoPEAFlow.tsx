@@ -31,7 +31,7 @@ export function PseudoPEAFlow() {
           className="text-2xl font-bold md:text-3xl"
           style={{ color: 'var(--medical-navy)' }}
         >
-          Pseudo-PEA vs True PEA 鑑別流程
+          PseudoPEA vs True PEA 鑑別流程
         </h2>
         <p className="mt-1 text-sm text-gray-500">
           逐步點選以跟隨決策流程
@@ -150,7 +150,7 @@ export function PseudoPEAFlow() {
           className="mb-4 text-lg font-bold md:text-xl"
           style={{ color: 'var(--medical-navy)' }}
         >
-          True PEA vs Pseudo-PEA 比較
+          True PEA vs PseudoPEA 比較
         </h3>
         <div className="overflow-x-auto">
           <table className="w-full text-sm">

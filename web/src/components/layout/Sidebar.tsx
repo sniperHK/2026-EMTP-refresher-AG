@@ -1,37 +1,18 @@
 import { Link, useLocation } from 'react-router-dom'
 import { cn } from '@/lib/utils'
+import { scenarios } from '@/data/scenarios'
+import { moduleMeta, moduleOrder, slideMeta, slideOrder, toolMeta, toolOrder } from '@/data/siteMeta'
 
 interface SidebarProps {
   isOpen: boolean
   onClose: () => void
 }
 
-const scenarioLinks = [
-  { id: 'S01', label: '心因性休克', color: 'var(--medical-red)' },
-  { id: 'S02', label: '張力性氣胸', color: 'var(--medical-blue)' },
-  { id: 'S03', label: '過敏性休克', color: 'var(--medical-orange)' },
-  { id: 'S04', label: '敗血性休克', color: 'var(--medical-purple)' },
-  { id: 'S05', label: '急性肺栓塞', color: 'var(--medical-teal)' },
-]
-
-const toolLinks = [
-  { id: 'pump-pipe-tank', label: 'Pump-Pipe-Tank' },
-  { id: 'nohria-stevenson', label: 'Nohria-Stevenson' },
-  { id: 'pseudopea', label: 'Pseudo-PEA' },
-  { id: 'oxygenation', label: 'Oxy vs Vent' },
-]
-
-const contentLinks = [
-  { id: 'M01', label: 'M01 瀕死生理學' },
-  { id: 'M02', label: 'M02 藥物動力學' },
-  { id: 'M03', label: 'M03 補充資料' },
-  { id: 'M09', label: 'M09 劑量參考表' },
-]
-
-const slideLinks = [
-  { id: 'M01', label: 'M01 瀕死生理學 投影片' },
-  { id: 'M02', label: 'M02 藥物動力學 投影片' },
-]
+const scenarioLinks = scenarios.map(({ id, title, color }) => ({
+  id,
+  label: title,
+  color,
+}))
 
 export function Sidebar({ isOpen, onClose }: SidebarProps) {
   const location = useLocation()
@@ -44,12 +25,13 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
           課程模組
         </h3>
         <div className="space-y-0.5">
-          {contentLinks.map((c) => {
-            const path = `/content/${c.id}`
+          {moduleOrder.map((id) => {
+            const module = moduleMeta[id]
+            const path = `/content/${id}`
             const isActive = location.pathname === path
             return (
               <Link
-                key={c.id}
+                key={id}
                 to={path}
                 onClick={onClose}
                 className={cn(
@@ -60,7 +42,7 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
                 )}
               >
                 <span className="h-2.5 w-2.5 shrink-0 rounded-full bg-purple-400" />
-                <span>{c.label}</span>
+                <span>{module.title}</span>
               </Link>
             )
           })}
@@ -73,12 +55,13 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
           投影片
         </h3>
         <div className="space-y-0.5">
-          {slideLinks.map((s) => {
-            const path = `/slides/${s.id}`
+          {slideOrder.map((id) => {
+            const slide = slideMeta[id]
+            const path = `/slides/${id}`
             const isActive = location.pathname === path
             return (
               <Link
-                key={s.id}
+                key={id}
                 to={path}
                 onClick={onClose}
                 className={cn(
@@ -89,7 +72,7 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
                 )}
               >
                 <span className="h-2.5 w-2.5 shrink-0 rounded-full bg-blue-500" />
-                <span>{s.label}</span>
+                <span>{slide.title} 投影片</span>
               </Link>
             )
           })}
@@ -134,12 +117,13 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
           決策工具
         </h3>
         <div className="space-y-0.5">
-          {toolLinks.map((t) => {
-            const path = `/tools/${t.id}`
+          {toolOrder.map((id) => {
+            const tool = toolMeta[id]
+            const path = `/tools/${id}`
             const isActive = location.pathname === path
             return (
               <Link
-                key={t.id}
+                key={id}
                 to={path}
                 onClick={onClose}
                 className={cn(
@@ -150,7 +134,7 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
                 )}
               >
                 <span className="h-2.5 w-2.5 shrink-0 rounded-full bg-gray-400" />
-                <span>{t.label}</span>
+                <span>{tool.title}</span>
               </Link>
             )
           })}

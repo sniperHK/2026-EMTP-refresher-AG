@@ -104,7 +104,7 @@
 
 3. **「如果脈搏摸不到但 ECG 有心跳，你要壓胸嗎？」**
    - PseudoPEA 核心問題
-   - 期待答案：不一定！先用 POCUS 確認心臟有無收縮 → 有收縮 = pseudoPEA → 升壓（10-20 mcg epi），不壓胸
+   - 期待答案：不一定！若有受訓者可在不延長暫停下快速用 POCUS 確認，看到收縮可轉向 pseudoPEA / low-flow shock 思維；若無法快速確認，不要拖慢標準 resuscitation
    - 追問：「為什麼不能打 ACLS 劑量 1 mg？」（心臟還在跳，1 mg 會打成 VF）
 
 ### 常見迷思
@@ -112,7 +112,7 @@
 | 迷思 | 修正 |
 |------|------|
 | 「肺水腫就是打 Lasix」 | SCAPE 是 afterload 問題（血管太緊），不是 volume overload — Furosemide 不是首選，NTG 才是 |
-| 「摸不到脈搏就壓胸」 | PseudoPEA 的心臟還在跳，壓胸可能干擾本來就微弱的心輸出量 → 先用 POCUS 判斷 |
+| 「摸不到脈搏就壓胸」 | 若能在不延長暫停下快速確認 pseudoPEA，壓胸未必是第一優先；若無法快速確認，仍以標準 resuscitation 節奏為主 |
 | 「低血壓就要輸液」 | Cold+Wet 輸液 = 把水倒進已經淹水的肺 → 更濕更喘 |
 
 ### 教學陷阱

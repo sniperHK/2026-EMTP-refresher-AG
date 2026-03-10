@@ -163,10 +163,10 @@ D. 不用摸，直接壓胸
 **關於給藥途徑的 Onset 時間，由快至慢排列何者正確？**
 A. IV > IO > IM
 B. IO > IV > IM
-C. IV = IO > IN > IM
+C. IV > IO > IN > IM
 D. IM > IN > IV
 > **Answer: C**
-> **解析**：IV 與 IO 都屬快速 route，IN 次之，IM 最慢。成人 cardiac arrest 依 2025 AHA 應先嘗試 IV；若 IV 延遲、失敗或不可行，再改 IO。
+> **解析**：整體而言 IV 最快，IO 次之，IN 再慢，IM 最慢。成人 cardiac arrest 依 2025 AHA 應先嘗試 IV；若 IV 延遲、失敗或不可行，再改 IO。
 > **注意**：2025 AHA 建議成人 cardiac arrest 時先嘗試 IV；IO 為 IV 失敗、延遲或不可行時的合理替代，非首選。
 
 **Q17.** `M02` `Apply` `Pre`

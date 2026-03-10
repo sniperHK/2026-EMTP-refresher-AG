@@ -6,12 +6,13 @@ import m01Raw from '../../../docs/modules/M01_ALS-pathophysiology.md?raw'
 import m02Raw from '../../../docs/modules/M02_ALS-pharmacokinetics.md?raw'
 import m02DosingRaw from '../../../docs/modules/M02_protocol-dosing-map.md?raw'
 import m03Raw from '../../../docs/modules/M03_high-risk-blind-spots.md?raw'
+import { moduleMeta, moduleOrder } from '@/data/siteMeta'
 
-const modules: Record<string, { title: string; content: string; color: string }> = {
-  M01: { title: 'M01 瀕死生理學', content: m01Raw, color: 'var(--medical-blue)' },
-  M02: { title: 'M02 藥物動力學', content: m02Raw, color: 'var(--medical-purple)' },
-  M03: { title: 'M03 補充資料', content: m03Raw, color: 'var(--medical-orange)' },
-  M09: { title: 'M09 劑量參考表', content: m02DosingRaw, color: 'var(--medical-teal)' },
+const moduleContent: Record<string, string> = {
+  M01: m01Raw,
+  M02: m02Raw,
+  M03: m03Raw,
+  M09: m02DosingRaw,
 }
 
 function makeMdComponents(accentColor: string): ComponentProps<typeof ReactMarkdown>['components'] {
@@ -139,7 +140,9 @@ function makeMdComponents(accentColor: string): ComponentProps<typeof ReactMarkd
 
 export function ContentPage() {
   const { moduleId } = useParams<{ moduleId: string }>()
-  const mod = moduleId ? modules[moduleId] : undefined
+  const meta = moduleId ? moduleMeta[moduleId as keyof typeof moduleMeta] : undefined
+  const content = moduleId ? moduleContent[moduleId] : undefined
+  const mod = meta && content ? { ...meta, content } : undefined
 
   if (!mod) {
     return (
@@ -176,20 +179,23 @@ export function ContentPage() {
 
       {/* Navigation between modules */}
       <div className="mt-10 flex flex-wrap gap-3 border-t pt-6">
-        {Object.entries(modules).map(([id, m]) => (
-          <Link
-            key={id}
-            to={`/content/${id}`}
-            className="rounded-lg border px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-50"
-            style={{
-              borderColor: id === moduleId ? m.color : '#e5e7eb',
-              color: id === moduleId ? m.color : '#6b7280',
-              fontWeight: id === moduleId ? 600 : undefined,
-            }}
-          >
-            {m.title}
-          </Link>
-        ))}
+        {moduleOrder.map((id) => {
+          const module = moduleMeta[id]
+          return (
+            <Link
+              key={id}
+              to={`/content/${id}`}
+              className="rounded-lg border px-4 py-2 text-sm font-medium transition-colors hover:bg-gray-50"
+              style={{
+                borderColor: id === moduleId ? module.color : '#e5e7eb',
+                color: id === moduleId ? module.color : '#6b7280',
+                fontWeight: id === moduleId ? 600 : undefined,
+              }}
+            >
+              {module.title}
+            </Link>
+          )
+        })}
       </div>
 
       <div className="h-16" />

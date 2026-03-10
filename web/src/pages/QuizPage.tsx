@@ -100,7 +100,7 @@ export function QuizPage() {
 
         <div className="rounded-lg border bg-gray-50 p-4 text-xs text-gray-500">
           <strong>說明：</strong>所有題目出自 2026 北市 EMTP 複訓題庫（Q1-Q35）。
-          題目分類：M01 病生理學 / M02 藥物動力學・PK-PD。
+          題目分類：M01 ALS 病生理學 / M02 藥物動力學/藥效學。
           認知層級：Remember / Apply / Analyze。
         </div>
       </div>

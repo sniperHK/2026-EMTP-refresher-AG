@@ -115,7 +115,7 @@
 3. **Epinephrine 在 CPR 期間的角色不是「讓心臟跳起來」——那它到底在做什麼？**（提示：冠狀動脈灌流壓）
 4. **第一次電擊沒成功 → 為什麼要先壓胸 2 分鐘，而不是馬上再電？**
 5. **回顧前四個案例（S01-S03 + S05）——如果都沒處理，最終都會走到什麼共同結局？各自的「H's and T's」對應是什麼？**
-6. **假設第三次電擊後節律轉為 organized rhythm（sinus tachycardia），但頸動脈脈搏仍摸不到——這是 True PEA 還是 PseudoPEA？你會怎麼判斷和處置？**（提示：POCUS → 若有心臟收縮 = pseudoPEA → push-dose epi 10-20 mcg，而非 ACLS 1 mg）
+6. **假設第三次電擊後節律轉為 organized rhythm（sinus tachycardia），但頸動脈脈搏仍摸不到——這是 True PEA 還是 PseudoPEA？你會怎麼判斷和處置？**（提示：若有受訓者可在不延長暫停下用 POCUS 快速確認心臟收縮，可能支持 pseudoPEA；若無法快速確認，不要拖慢標準 resuscitation 節奏）
 7. **ROSC 後前 5 分鐘，你會追哪些目標？**（提示：SpO₂ 90–98%、避免 hyperventilation、MAP ≥ 65、12-lead ECG、依病因安排 coronary evaluation / echo / CT）
 
 ## Debrief 重點
@@ -191,10 +191,10 @@ Epi 1 mg IV → α1 受體 → 周邊血管收縮
 |---|---|---|
 | 心臟 | 無有效收縮（心肌耗竭/電機分離） | **有收縮但太弱**（心輸出量極低） |
 | POCUS | 心臟不動或僅蠕動 | **可見心室收縮** |
-| 處置 | 繼續 CPR + Epi 1 mg + 找 H's/T's | **考慮暫停壓胸 + push-dose epi 10-20 mcg + 升壓** |
+| 處置 | 繼續 CPR + Epi 1 mg + 找 H's/T's | **不延長暫停；若快速確認有收縮，轉向 low-flow shock 的升壓與找原因** |
 | 預後 | 存活 < 1% | ROSC 可達 70%+ |
 
-**臨床意義**：如果你有 POCUS 能力，在「PEA」階段花 10 秒看一下心臟——看到收縮就是 pseudoPEA，處置策略完全不同。這連結了 S05 的 pseudoPEA 教學。
+**臨床意義**：如果你有 POCUS 能力，可在不延長 rhythm-check 暫停的前提下快速看一下心臟。看到收縮時，會把思路拉向 pseudoPEA / low-flow shock；但若沒有這個條件，不要為了鑑別而拖慢標準 resuscitation。
 
 ### ROSC 後前 5 分鐘：第二階段 resuscitation
 

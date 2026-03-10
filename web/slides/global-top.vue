@@ -16,7 +16,7 @@ const hide = computed(() => {
   <header v-if="!hide" class="emtp-header">
     <!-- Left: brand (matches website Header.tsx left side) -->
     <div class="emtp-left">
-      <span class="emtp-brand">2026 EMTP 複訓</span>
+      <span class="emtp-brand">2026 北市 EMTP 複訓</span>
       <span class="emtp-sep"></span>
       <span class="emtp-sub">院前高級救命術</span>
     </div>

@@ -37,7 +37,7 @@ D. 傷口疼痛
 **6. 關於給藥途徑的 Onset 時間，由快至慢排列何者正確？**
 A. IV > IO > IM
 B. IO > IV > IM
-C. IV = IO > IN > IM
+C. IV > IO > IN > IM
 D. IM > IN > IV
 
 **7. 在休克 (Shock) 病人身上，為何不建議使用 IM (肌肉注射) 給予鎮靜藥物？**

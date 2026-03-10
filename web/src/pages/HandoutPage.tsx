@@ -4,6 +4,7 @@ import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import handoutRaw from '../../../docs/teaching/student-handout.md?raw'
 import { MermaidBlock } from '@/components/markdown/MermaidBlock'
+import { studentHandoutPdfFile } from '@/data/siteMeta'
 
 function extractMermaidChart(children: ReactNode): string | null {
   const [firstChild] = Children.toArray(children)
@@ -177,6 +178,8 @@ const mdComponents: ComponentProps<typeof ReactMarkdown>['components'] = {
 // ── Page ────────────────────────────────────────────────────────────────
 
 export function HandoutPage() {
+  const pdfHref = `${import.meta.env.BASE_URL}${studentHandoutPdfFile}`
+
   return (
     <div className="mx-auto max-w-3xl">
       {/* Header */}
@@ -191,7 +194,7 @@ export function HandoutPage() {
           快速參考卡 — 涵蓋 Pump-Pipe-Tank、Nohria-Stevenson、SCAPE、PseudoPEA 核心速查
         </p>
         <a
-          href="/exports/2026-02-26_v2/student-handout.pdf"
+          href={pdfHref}
           target="_blank"
           rel="noopener noreferrer"
           className="mt-3 inline-flex items-center gap-1.5 rounded-md border px-3 py-1.5 text-xs font-medium transition-colors hover:bg-white"

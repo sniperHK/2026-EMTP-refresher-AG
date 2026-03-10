@@ -120,7 +120,7 @@ const _ovNodes: TreeNode[] = [
     type: "action",
     label: "高濃度 O\u2082 + CPAP",
     description:
-      "NRM 15L/min 或 CPAP 10 cmH\u2082O。CPAP 可將肺泡內液體推回血管（適用於 APE），並增加功能殘餘容量（FRC）",
+      "NRM 15L/min 或 CPAP 10 cmH\u2082O。CPAP 可改善 alveolar recruitment、增加功能殘餘容量（FRC），並降低呼吸功與肺充血壓力（適用於 APE）。",
   },
   {
     id: "ov-action-bvm",
