@@ -26,6 +26,7 @@ function getPageName(pathname: string): string | undefined {
   }
   if (pathname === '/handout') return '學員講義'
   if (pathname === '/roadmap') return '課程地圖'
+  if (pathname === '/teacher-dashboard') return '教師儀表板'
   if (pathname.startsWith('/quiz')) return '評量測驗'
   return undefined
 }

@@ -1,5 +1,6 @@
 import { useState, useCallback } from 'react'
 import type { Question } from '@/data/questions'
+import type { QuizAnswerRecord, OptionKey } from '@/lib/quiz-results'
 import { Button } from '@/components/ui/button'
 import { Progress } from '@/components/ui/progress'
 import { Badge } from '@/components/ui/badge'
@@ -7,11 +8,15 @@ import { cn } from '@/lib/utils'
 
 interface Props {
   questions: Question[]
-  onFinish: (score: number, total: number) => void
+  onFinish: (result: QuizFinishResult) => void
   onReset: () => void
 }
 
-type OptionKey = 'A' | 'B' | 'C' | 'D'
+export interface QuizFinishResult {
+  score: number
+  total: number
+  answers: QuizAnswerRecord[]
+}
 
 const levelColor: Record<string, string> = {
   Remember: 'var(--medical-blue)',
@@ -24,6 +29,7 @@ export function QuizPlayer({ questions, onFinish, onReset }: Props) {
   const [selected, setSelected] = useState<OptionKey | null>(null)
   const [showFeedback, setShowFeedback] = useState(false)
   const [score, setScore] = useState(0)
+  const [answers, setAnswers] = useState<QuizAnswerRecord[]>([])
 
   const q = questions[currentIdx]
   const total = questions.length
@@ -34,18 +40,29 @@ export function QuizPlayer({ questions, onFinish, onReset }: Props) {
     if (showFeedback) return
     setSelected(key)
     setShowFeedback(true)
+    setAnswers((prev) => [
+      ...prev,
+      {
+        questionId: q.id,
+        selected: key,
+        correctAnswer: q.answer,
+        isCorrect: key === q.answer,
+        module: q.module,
+        level: q.level,
+      },
+    ])
     if (key === q.answer) setScore((s) => s + 1)
-  }, [showFeedback, q.answer])
+  }, [showFeedback, q.answer, q.id, q.level, q.module])
 
   const handleNext = useCallback(() => {
     if (isLast) {
-      onFinish(score, total)
+      onFinish({ score, total, answers })
       return
     }
     setCurrentIdx((i) => i + 1)
     setSelected(null)
     setShowFeedback(false)
-  }, [isLast, onFinish, score, total])
+  }, [answers, isLast, onFinish, score, total])
 
   const optionKeys: OptionKey[] = ['A', 'B', 'C', 'D']
 

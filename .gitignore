@@ -18,6 +18,10 @@ references/raw/**
 .env.local
 .env.*.local
 
+# Dev-only local data stores
+web/annotations.json
+web/quiz-results.json
+
 # age private key - never commit
 age-key.txt
 

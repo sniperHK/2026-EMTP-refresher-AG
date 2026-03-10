@@ -1,12 +1,23 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { getQuiz } from '@/data/questions'
-import { QuizPlayer } from '@/components/quiz/QuizPlayer'
+import { QuizPlayer, type QuizFinishResult } from '@/components/quiz/QuizPlayer'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { cn } from '@/lib/utils'
+import {
+  type ParticipantProfile,
+  type QuizGroup,
+  type QuizSubmission,
+  type QuizType,
+  getQuizGroups,
+  loadParticipantProfile,
+  normalizeQuizType,
+  saveParticipantProfile,
+  saveQuizSubmission,
+} from '@/lib/quiz-results'
 
-type QuizType = 'pre' | 'post' | 'all'
+const quizGroups = getQuizGroups()
 
 const quizMeta: Record<QuizType, { title: string; description: string; count: number; color: string }> = {
   pre: {
@@ -30,36 +41,122 @@ const quizMeta: Record<QuizType, { title: string; description: string; count: nu
 }
 
 type Phase = 'select' | 'playing' | 'result'
+type SaveStatus = 'idle' | 'saving' | 'saved' | 'error'
+
+function makeSubmissionId() {
+  if (typeof crypto !== 'undefined' && 'randomUUID' in crypto) {
+    return crypto.randomUUID()
+  }
+
+  return `quiz-${Date.now()}-${Math.random().toString(36).slice(2, 10)}`
+}
 
 export function QuizPage() {
-  const { type } = useParams<{ type?: QuizType }>()
-  const [phase, setPhase] = useState<Phase>(type ? 'playing' : 'select')
-  const [activeType, setActiveType] = useState<QuizType>(type ?? 'pre')
+  const { type } = useParams<{ type?: string }>()
+  const normalizedType = normalizeQuizType(type)
+  const initialProfile = loadParticipantProfile()
+
+  const [phase, setPhase] = useState<Phase>(normalizedType && initialProfile.name.trim() ? 'playing' : 'select')
+  const [activeType, setActiveType] = useState<QuizType>(normalizedType ?? 'pre')
   const [finalScore, setFinalScore] = useState<{ score: number; total: number } | null>(null)
+  const [participant, setParticipant] = useState<ParticipantProfile>(initialProfile)
+  const [nameInput, setNameInput] = useState(initialProfile.name)
+  const [groupInput, setGroupInput] = useState<QuizGroup>(initialProfile.group)
+  const [attemptStartedAt, setAttemptStartedAt] = useState<string | null>(
+    normalizedType && initialProfile.name.trim() ? new Date().toISOString() : null,
+  )
+  const [profileError, setProfileError] = useState<string | null>(null)
+  const [saveStatus, setSaveStatus] = useState<SaveStatus>('idle')
+  const [saveError, setSaveError] = useState<string | null>(null)
+
+  useEffect(() => {
+    setActiveType(normalizedType ?? 'pre')
+    setFinalScore(null)
+    setSaveStatus('idle')
+    setSaveError(null)
+
+    if (normalizedType && participant.name.trim()) {
+      setPhase('playing')
+      setAttemptStartedAt(new Date().toISOString())
+      return
+    }
+
+    setPhase('select')
+    setAttemptStartedAt(null)
+  }, [normalizedType, participant.name])
 
   const questions = getQuiz(activeType)
   const meta = quizMeta[activeType]
 
-  const handleStart = (t: QuizType) => {
-    setActiveType(t)
+  const persistParticipant = () => {
+    const name = nameInput.trim()
+    if (!name) {
+      setProfileError('請先輸入學員姓名、代號或座號。')
+      return null
+    }
+
+    const nextProfile = { name, group: groupInput }
+    saveParticipantProfile(nextProfile)
+    setParticipant(nextProfile)
+    setNameInput(name)
+    setProfileError(null)
+    return nextProfile
+  }
+
+  const handleStart = (quizType: QuizType) => {
+    const profile = persistParticipant()
+    if (!profile) return
+
+    setActiveType(quizType)
     setFinalScore(null)
+    setSaveStatus('idle')
+    setSaveError(null)
+    setAttemptStartedAt(new Date().toISOString())
     setPhase('playing')
   }
 
-  const handleFinish = (score: number, total: number) => {
-    setFinalScore({ score, total })
+  const handleFinish = (result: QuizFinishResult) => {
+    const startedAt = attemptStartedAt ?? new Date().toISOString()
+    const submittedAt = new Date().toISOString()
+    const durationSeconds = Math.max(0, Math.round((Date.parse(submittedAt) - Date.parse(startedAt)) / 1000))
+    const submission: QuizSubmission = {
+      id: makeSubmissionId(),
+      quizType: activeType,
+      participantName: participant.name || nameInput.trim() || '未命名學員',
+      participantGroup: participant.group ?? groupInput,
+      score: result.score,
+      total: result.total,
+      percent: Math.round((result.score / result.total) * 100),
+      startedAt,
+      submittedAt,
+      durationSeconds,
+      answers: result.answers,
+    }
+
+    setFinalScore({ score: result.score, total: result.total })
+    setSaveStatus('saving')
+    setSaveError(null)
     setPhase('result')
+
+    void saveQuizSubmission(submission)
+      .then(() => setSaveStatus('saved'))
+      .catch((error) => {
+        console.error(error)
+        setSaveStatus('error')
+        setSaveError('結果未送出到教師儀表板。請確認目前是使用本機 Vite dev server。')
+      })
   }
 
   const handleReset = () => {
     setFinalScore(null)
+    setSaveStatus('idle')
+    setSaveError(null)
     setPhase('select')
   }
 
-  // ── Select phase ────────────────────────────────────────
   if (phase === 'select') {
     return (
-      <div className="mx-auto max-w-2xl space-y-6">
+      <div className="mx-auto max-w-3xl space-y-6">
         <div className="text-center">
           <h1
             className="text-2xl font-bold md:text-3xl"
@@ -68,30 +165,86 @@ export function QuizPage() {
             評量測驗
           </h1>
           <p className="mt-2 text-sm text-gray-500">
-            選擇測驗類型，每題作答後立即顯示解析
+            選擇測驗類型；完成後會把成績送到教師儀表板
+          </p>
+          {type && !normalizedType && (
+            <p className="mt-2 text-xs font-medium text-orange-600">
+              找不到測驗類型「{type}」，已切回預設測驗頁。
+            </p>
+          )}
+        </div>
+
+        <div className="rounded-xl border bg-white p-5 shadow-sm">
+          <div className="flex flex-wrap items-center justify-between gap-2">
+            <div>
+              <h2 className="text-lg font-semibold" style={{ color: 'var(--medical-navy)' }}>
+                作答識別
+              </h2>
+              <p className="mt-1 text-sm text-gray-500">
+                同一裝置只要填一次，前測與後測會沿用這份資料。
+              </p>
+            </div>
+            <Badge variant="outline" className="text-xs">
+              教師儀表板可追蹤
+            </Badge>
+          </div>
+
+          <div className="mt-4 grid gap-3 md:grid-cols-[minmax(0,1.8fr)_minmax(0,1fr)]">
+            <label className="space-y-1.5 text-sm">
+              <span className="font-medium text-gray-700">姓名 / 座號 / 代號</span>
+              <input
+                value={nameInput}
+                onChange={(event) => setNameInput(event.target.value)}
+                placeholder="例如：王小明 / 12 號 / A07"
+                className="w-full rounded-md border border-gray-300 px-3 py-2 outline-none transition-colors focus:border-blue-400"
+              />
+            </label>
+
+            <label className="space-y-1.5 text-sm">
+              <span className="font-medium text-gray-700">組別</span>
+              <select
+                value={groupInput}
+                onChange={(event) => setGroupInput(event.target.value as QuizGroup)}
+                className="w-full rounded-md border border-gray-300 bg-white px-3 py-2 outline-none transition-colors focus:border-blue-400"
+              >
+                {quizGroups.map((group) => (
+                  <option key={group} value={group}>
+                    {group}
+                  </option>
+                ))}
+              </select>
+            </label>
+          </div>
+
+          {profileError && (
+            <p className="mt-3 text-sm font-medium text-red-600">{profileError}</p>
+          )}
+
+          <p className="mt-3 text-xs text-gray-500">
+            若你從課程地圖直接進入前測或後測，輸入完資料後按對應卡片即可開始。
           </p>
         </div>
 
         <div className="grid gap-4">
-          {(Object.entries(quizMeta) as [QuizType, typeof meta][]).map(([key, m]) => (
+          {(Object.entries(quizMeta) as [QuizType, typeof meta][]).map(([key, item]) => (
             <button
               key={key}
               onClick={() => handleStart(key)}
-              className="group rounded-xl border-2 p-5 text-left transition-all hover:shadow-md hover:-translate-y-0.5"
-              style={{ borderColor: m.color }}
+              className="group rounded-xl border-2 bg-white p-5 text-left transition-all hover:-translate-y-0.5 hover:shadow-md"
+              style={{ borderColor: item.color }}
             >
-              <div className="flex items-start justify-between">
+              <div className="flex items-start justify-between gap-3">
                 <div>
-                  <h2 className="text-lg font-bold" style={{ color: m.color }}>
-                    {m.title}
+                  <h2 className="text-lg font-bold" style={{ color: item.color }}>
+                    {item.title}
                   </h2>
-                  <p className="mt-1 text-sm text-gray-600">{m.description}</p>
+                  <p className="mt-1 text-sm text-gray-600">{item.description}</p>
                 </div>
                 <Badge
-                  className="ml-4 shrink-0 text-sm font-bold"
-                  style={{ backgroundColor: `${m.color}15`, color: m.color }}
+                  className="shrink-0 text-sm font-bold"
+                  style={{ backgroundColor: `${item.color}15`, color: item.color }}
                 >
-                  {m.count} 題
+                  {item.count} 題
                 </Badge>
               </div>
             </button>
@@ -107,7 +260,6 @@ export function QuizPage() {
     )
   }
 
-  // ── Result phase ────────────────────────────────────────
   if (phase === 'result' && finalScore) {
     const pct = Math.round((finalScore.score / finalScore.total) * 100)
     const passThreshold = activeType === 'pre' ? null : 80
@@ -163,6 +315,23 @@ export function QuizPage() {
           )}
         </div>
 
+        <div className="rounded-xl border bg-white p-4 text-sm">
+          {saveStatus === 'saving' && (
+            <p className="font-medium text-blue-700">正在送出結果到教師儀表板...</p>
+          )}
+          {saveStatus === 'saved' && (
+            <p className="font-medium text-green-700">
+              已送出：{participant.group}／{participant.name}
+            </p>
+          )}
+          {saveStatus === 'error' && (
+            <div className="space-y-1">
+              <p className="font-medium text-red-600">送出失敗</p>
+              {saveError && <p className="text-xs text-gray-500">{saveError}</p>}
+            </div>
+          )}
+        </div>
+
         <div className="flex flex-wrap justify-center gap-3">
           <Button onClick={() => handleStart(activeType)}>
             再做一次
@@ -178,13 +347,15 @@ export function QuizPage() {
     )
   }
 
-  // ── Playing phase ───────────────────────────────────────
   return (
     <div className="mx-auto max-w-2xl">
-      <div className="mb-6 flex items-center gap-3">
+      <div className="mb-6 flex flex-wrap items-center gap-3">
         <h1 className="text-xl font-bold md:text-2xl" style={{ color: meta.color }}>
           {meta.title}
         </h1>
+        <Badge variant="outline">
+          {participant.group} / {participant.name}
+        </Badge>
       </div>
       <QuizPlayer
         questions={questions}

@@ -31,8 +31,11 @@ const blocks: TimeBlock[] = [
     title: 'Pre-test',
     duration: '10 min',
     type: 'assessment',
-    notes: ['10 題（休克分類、判讀框架、給藥路徑）', '不公布答案：「答案藏在今天的課裡」'],
-    links: [{ label: 'Pre-test', to: '/quiz/pretest' }],
+    notes: ['10 題（休克分類、判讀框架、給藥路徑）', '不公布答案：「答案藏在今天的課裡」', '完成後會自動送到教師儀表板'],
+    links: [
+      { label: 'Pre-test', to: '/quiz/pre' },
+      { label: '教師儀表板', to: '/teacher-dashboard' },
+    ],
   },
   {
     time: '20–55',
@@ -86,6 +89,7 @@ const blocks: TimeBlock[] = [
     duration: '10 min',
     type: 'break',
     notes: ['講師可趁此時看 Pre-test 統計，掌握學員弱點'],
+    links: [{ label: '教師儀表板', to: '/teacher-dashboard' }],
   },
   {
     time: '95–105',
@@ -153,8 +157,11 @@ const blocks: TimeBlock[] = [
     title: 'Post-test',
     duration: '10 min',
     type: 'assessment',
-    notes: ['10 題（情境決策、NTG、Push-dose Epi、PseudoPEA）'],
-    links: [{ label: 'Post-test', to: '/quiz/posttest' }],
+    notes: ['課後驗證學習成效', '完成後會自動送到教師儀表板'],
+    links: [
+      { label: 'Post-test', to: '/quiz/post' },
+      { label: '教師儀表板', to: '/teacher-dashboard' },
+    ],
   },
   {
     time: '195–200',
@@ -223,6 +230,24 @@ export function RoadmapPage() {
             </span>
           ))}
         </div>
+      </section>
+
+      <section className="grid gap-3 md:grid-cols-4">
+        {[
+          { label: '開前測', to: '/quiz/pre', hint: '學員個別作答', tone: 'border-blue-200 bg-blue-50 text-blue-700' },
+          { label: '開後測', to: '/quiz/post', hint: '課後成效驗證', tone: 'border-orange-200 bg-orange-50 text-orange-700' },
+          { label: '教師儀表板', to: '/teacher-dashboard', hint: '看班級結果與進步', tone: 'border-emerald-200 bg-emerald-50 text-emerald-700' },
+          { label: '學員講義', to: '/handout', hint: '課堂速查表', tone: 'border-slate-200 bg-slate-50 text-slate-700' },
+        ].map((item) => (
+          <Link
+            key={item.to}
+            to={item.to}
+            className={`rounded-xl border p-4 transition-all hover:-translate-y-0.5 hover:shadow-md ${item.tone}`}
+          >
+            <div className="text-sm font-bold">{item.label}</div>
+            <div className="mt-1 text-xs opacity-80">{item.hint}</div>
+          </Link>
+        ))}
       </section>
 
       {/* 分組配置 */}

@@ -8,6 +8,7 @@ import fs from 'node:fs'
 // Stores annotations in web/annotations.json so they survive browser cache clears.
 // Only active during `vite dev`; has no effect in the production build.
 const ANNOTATIONS_FILE = path.join(__dirname, 'annotations.json')
+const QUIZ_RESULTS_FILE = path.join(__dirname, 'quiz-results.json')
 
 // ── Dev-only: serve Slidev static builds for /slides/{id}/* ──────────────────
 // Vite's SPA fallback would otherwise intercept /slides/M01/ and serve the
@@ -80,9 +81,65 @@ function annotationsPlugin() {
   }
 }
 
+function readJsonFile<T>(filePath: string, fallback: T): T {
+  try {
+    if (!fs.existsSync(filePath)) return fallback
+    return JSON.parse(fs.readFileSync(filePath, 'utf-8')) as T
+  } catch {
+    return fallback
+  }
+}
+
+function writeJsonFile(filePath: string, data: unknown) {
+  fs.writeFileSync(filePath, JSON.stringify(data, null, 2), 'utf-8')
+}
+
+function quizResultsPlugin() {
+  return {
+    name: 'quiz-results-api',
+    configureServer(server: import('vite').ViteDevServer) {
+      server.middlewares.use('/api/quiz-results', (req, res) => {
+        res.setHeader('Content-Type', 'application/json')
+
+        if (req.method === 'GET') {
+          res.end(JSON.stringify(readJsonFile(QUIZ_RESULTS_FILE, { submissions: [] })))
+          return
+        }
+
+        if (req.method === 'POST') {
+          let body = ''
+          req.on('data', (chunk: Buffer) => { body += chunk.toString() })
+          req.on('end', () => {
+            try {
+              const submission = JSON.parse(body)
+              const store = readJsonFile<{ submissions: unknown[] }>(QUIZ_RESULTS_FILE, { submissions: [] })
+              store.submissions.push(submission)
+              writeJsonFile(QUIZ_RESULTS_FILE, store)
+              res.end(JSON.stringify({ ok: true }))
+            } catch (error) {
+              res.statusCode = 400
+              res.end(JSON.stringify({ error: String(error) }))
+            }
+          })
+          return
+        }
+
+        if (req.method === 'DELETE') {
+          writeJsonFile(QUIZ_RESULTS_FILE, { submissions: [] })
+          res.end(JSON.stringify({ ok: true }))
+          return
+        }
+
+        res.statusCode = 405
+        res.end('{"error":"Method Not Allowed"}')
+      })
+    },
+  }
+}
+
 export default defineConfig({
   base: process.env.BASE_PATH ?? '/',
-  plugins: [react(), tailwindcss(), slidesStaticPlugin(), annotationsPlugin()],
+  plugins: [react(), tailwindcss(), slidesStaticPlugin(), annotationsPlugin(), quizResultsPlugin()],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
