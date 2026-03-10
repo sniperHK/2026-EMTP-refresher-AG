@@ -25,6 +25,7 @@ function getPageName(pathname: string): string | undefined {
     return slideMeta[id as keyof typeof slideMeta]?.title || '投影片'
   }
   if (pathname === '/handout') return '學員講義'
+  if (pathname === '/roadmap') return '課程地圖'
   if (pathname.startsWith('/quiz')) return '評量測驗'
   return undefined
 }

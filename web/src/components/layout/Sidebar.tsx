@@ -148,6 +148,7 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
         </h3>
         <div className="space-y-0.5">
           {[
+            { to: '/roadmap', label: '課程地圖', dot: 'bg-amber-500' },
             { to: '/handout', label: '學員講義', dot: 'bg-blue-600' },
             { to: '/quiz', label: '評量測驗', dot: 'bg-red-500' },
           ].map((item) => (
