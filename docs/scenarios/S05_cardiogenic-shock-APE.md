@@ -40,6 +40,14 @@
 > Nohria-Stevenson 分類：**Warm+Wet（B 象限）** → NTG + CPAP。
 > ECG 提示前壁 STEMI — 這是 AMI 導致的急性肺水腫。
 
+## Assessment Pathway（開場 30-60 秒）
+
+- **Scene size-up**：胸痛 + 呼吸困難 + 粉紅泡沫痰，不要先入為主當成單純氣喘
+- **First impression**：先以 Warm+Wet 的 SCAPE / cardiogenic pulmonary edema 思考，但要隨時警覺掉進 Cold+Wet
+- **Focused exam**：肺音、末梢溫度、血壓趨勢、12-lead ECG 與 STEMI 線索
+- **Leading DDx**：AMI 相關 SCAPE / cardiogenic shock、肺栓塞、非心因性呼吸衰竭
+- **Discriminator**：高血壓 + bilateral crackles + pink frothy sputum + STEMI 線索，會把方向拉向 SCAPE
+
 ## 進程設計（時間軸）
 
 ### T+5 min — NTG SL + CPAP 後突然惡化

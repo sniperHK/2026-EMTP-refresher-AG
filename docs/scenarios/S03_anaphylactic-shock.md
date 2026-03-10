@@ -37,6 +37,14 @@
 
 > **教學提示**：低血壓 + 心跳快 → 跟出血性休克像？但皮膚是溫暖潮紅的，不是冰冷蒼白的。為什麼？
 
+## Assessment Pathway（開場 30-60 秒）
+
+- **Scene size-up**：蜂螫後快速出現皮膚、氣道與循環症狀，先當 anaphylaxis 看待
+- **First impression**：分布性休克合併氣道威脅，不是單純喘
+- **Focused exam**：stridor / wheeze、口唇舌頭腫脹、皮膚表現、脈搏品質與血壓趨勢
+- **Leading DDx**：過敏性休克、單純氣喘急性發作、血管迷走性昏厥
+- **Discriminator**：warm flushed hypotension + urticaria + stridor / wheeze，足以把 Epinephrine IM 拉到第一線
+
 ## 進程設計（時間軸）
 
 ### T+3 min — 給予 Epinephrine IM 前

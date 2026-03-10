@@ -58,6 +58,7 @@
 | 電擊時機與循環節奏正確 | `Yes` |  |
 | Epinephrine / Amiodarone 給藥時機正確 | `Yes` |  |
 | 能同步思考 H's and T's（可逆原因） | `Yes` |  |
+| ROSC 後前 5 分鐘目標正確（SpO₂ / 通氣 / MAP / 12-lead） | `Yes` |  |
 
 ## S05 心因性休克合併急性肺水腫（Scenario-specific）
 

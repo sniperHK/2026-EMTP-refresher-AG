@@ -125,15 +125,15 @@ export const questions: Question[] = [
   },
   {
     id: 10, module: "M01", level: "Apply", usage: ["Post"],
-    question: "在 ROSC (心跳恢復) 後，為何我們要避免過度通氣 (Hyperventilation)？",
+    question: "OHCA 病人 ROSC 後 2 分鐘，SpO₂ 100%（BVM + 100% O₂）、BP 78/46、EtCO₂ 22。下列何者最符合 post-ROSC 前 5 分鐘的處置目標？",
     options: [
-      "因為會造成高碳酸血症",
-      "因為正壓通氣會增加胸內壓，減少腦部與冠狀動脈灌流",
-      "因為會導致嚴重酸中毒",
-      "因為會造成肺部纖維化",
+      "維持 SpO₂ 100%，並把 EtCO₂ 壓到 <25 以降低腦壓",
+      "將氧氣滴定至 SpO₂ 90-98%，避免過度通氣、支持 MAP ≥ 65，並完成 12-lead ECG / 後續 coronary evaluation",
+      "繼續 Epi 1 mg q3-5 min，直到收縮壓回到 120 以上",
+      "先給 Furosemide 20 mg IV，預防 CPR 後肺水腫",
     ],
     answer: "B",
-    explanation: "過度通氣增加胸內壓 → 減少靜脈回流 (Preload) → 降低心輸出量 (CO) → 腦缺血。同時造成低 CO₂ → 腦血管收縮 → 進一步腦缺血。",
+    explanation: "Post-ROSC 是第二階段 resuscitation。目標包含：SpO₂ 90-98%、避免 hyperventilation（PaCO₂ 35-45 或 EtCO₂ 接近正常）、MAP ≥ 65、以及盡快完成 12-lead ECG 並依病因安排 coronary evaluation。過度通氣與持續 arrest dosing 的 Epi 都可能帶來傷害。",
   },
   {
     id: 11, module: "M01", level: "Analyze", usage: ["Post"],
@@ -207,7 +207,7 @@ export const questions: Question[] = [
       "IM > IN > IV",
     ],
     answer: "C",
-    explanation: "IV 與 IO 基本相當 (Central IV > Humeral IO > Peripheral IV > Tibial IO)，IN 次之，IM 最慢。",
+    explanation: "IV 與 IO 都屬快速 route，IN 次之，IM 最慢。成人 cardiac arrest 依 2025 AHA 應先嘗試 IV；若 IV 延遲、失敗或不可行，再改 IO。",
   },
   {
     id: 17, module: "M02", level: "Apply", usage: ["Pre"],
@@ -343,15 +343,15 @@ export const questions: Question[] = [
   },
   {
     id: 28, module: "M02", level: "Remember", usage: ["Post"],
-    question: "關於 Humeral IO (肱骨頭骨針) 與 Tibial IO (脛骨骨針) 的比較，何者正確？",
+    question: "關於成人 cardiac arrest 的血管通路策略，下列何者正確？",
     options: [
-      "Tibial IO 的流速與到達心臟速度優於 Humeral IO",
-      "Humeral IO 藥物到達心臟的速率接近中央靜脈導管 (CVC)",
-      "Tibial IO 比較不痛",
-      "Humeral IO 較不易滑脫",
+      "IO 應固定優先於 IV，因為一定更快",
+      "應先嘗試 IV；若 IV 延遲、失敗或不可行，IO 是合理替代",
+      "Tibial IO 在所有情境都比 Humeral IO 更快到達中心循環",
+      "建立 IO 後不需要 flush 或加壓輸液",
     ],
     answer: "B",
-    explanation: "肱骨接近軀幹，路徑短，流速快。Tibial 離心臟遠，且骨髓腔壓力大，流速較慢。",
+    explanation: "2025 AHA 建議成人 cardiac arrest 優先嘗試 IV access；若 IV 失敗、延遲或不可行，IO 是合理替代。Humeral IO 常較快接近中心循環，但不是無條件定論；重點是最快建立可用 route，且 IO 後仍需 flush，Tibial 常需加壓輸液。",
   },
   {
     id: 29, module: "M02", level: "Analyze", usage: ["Post"],

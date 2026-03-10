@@ -7,6 +7,30 @@ export const S05: Scenario = {
   duration: "10 分鐘",
   pumpPipeTank: "pump",
   color: "#16A085",
+  assessmentPathway: {
+    sceneSizeUp: [
+      "胸痛 + 呼吸困難 + 粉紅泡沫痰，不要先入為主當成單純氣喘",
+      "高血壓合併 crackles，先想 SCAPE / cardiogenic pulmonary edema",
+    ],
+    firstImpression:
+      "一開始是 Warm+Wet 的 SCAPE，但必須隨時監看是否掉進 Cold+Wet。",
+    focusedExam: [
+      "肺音、末梢溫度、JVD 與血壓趨勢",
+      "12-lead ECG 與 STEMI 線索",
+      "NTG / CPAP 後灌流是否改善還是開始崩潰",
+    ],
+    leadingDdx: [
+      "AMI 相關 SCAPE / cardiogenic shock",
+      "肺栓塞或其他 shock with dyspnea",
+      "非心因性呼吸衰竭（氣喘、肺炎）",
+    ],
+    discriminator:
+      "高血壓 + bilateral crackles + pink frothy sputum + STEMI 線索，會把你拉向 SCAPE，而不是把水再往病人身上倒。",
+  },
+  debrief: {
+    minutes: 7,
+    focus: "S05 debrief 只抓 Warm+Wet 轉 Cold+Wet、S02 對照、以及 pseudoPEA 三件事。",
+  },
   stages: [
     {
       id: "S05-T0",

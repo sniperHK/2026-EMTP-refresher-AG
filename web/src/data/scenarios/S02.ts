@@ -7,6 +7,30 @@ export const S02: Scenario = {
   duration: "14 分鐘",
   pumpPipeTank: "tank",
   color: "#C0392B",
+  assessmentPathway: {
+    sceneSizeUp: [
+      "穿刺傷合併腹部疼痛與持續出血，先假設有內出血",
+      "看起來還能對話，不代表沒有進入代償性休克",
+    ],
+    firstImpression:
+      "高風險的 compensated hemorrhagic shock，重點在辨識 Tank 正在持續漏水。",
+    focusedExam: [
+      "皮膚溫度、CRT、脈搏品質與意識變化",
+      "腹部膨隆、壓痛、外部可控制出血與機轉",
+      "HR / BP / pulse pressure 是否正在失代償前夕",
+    ],
+    leadingDdx: [
+      "腹腔內出血導致低血容性休克",
+      "合併骨盆或大血管損傷",
+      "其他創傷性低灌流狀態",
+    ],
+    discriminator:
+      "蒼白冰冷 + CRT 延長 + 腹部膨隆，比『目前血壓正常』更能定義他已在代償性失血。",
+  },
+  debrief: {
+    minutes: 8,
+    focus: "讓學員記住『正常血壓不等於穩定』，以及 hemorrhage control 優先於補液。",
+  },
   stages: [
     {
       id: "S02-T0",

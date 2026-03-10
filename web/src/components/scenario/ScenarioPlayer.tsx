@@ -7,6 +7,8 @@ import { ActionSelector } from '@/components/scenario/ActionSelector'
 import { FeedbackPanel } from '@/components/scenario/FeedbackPanel'
 import { StageProgress } from '@/components/scenario/StageProgress'
 import { CriticalActions } from '@/components/scenario/CriticalActions'
+import { AssessmentPathwayCard } from '@/components/scenario/AssessmentPathwayCard'
+import { DebriefCard } from '@/components/scenario/DebriefCard'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { Progress } from '@/components/ui/progress'
@@ -72,6 +74,13 @@ export function ScenarioPlayer({ scenario }: ScenarioPlayerProps) {
 
       {/* Progress bar */}
       <Progress value={progress} className="h-2" />
+
+      {scenario.assessmentPathway && (
+        <AssessmentPathwayCard
+          pathway={scenario.assessmentPathway}
+          accentColor={scenario.color}
+        />
+      )}
 
       {/* Stage Progress Steps */}
       <StageProgress
@@ -158,11 +167,12 @@ export function ScenarioPlayer({ scenario }: ScenarioPlayerProps) {
         </div>
 
         {/* Right sidebar: critical actions */}
-        <div className="order-first lg:order-last">
+        <div className="order-first space-y-4 lg:order-last">
           <CriticalActions
             actions={scenario.criticalActions}
             completedIds={completedActions}
           />
+          <DebriefCard debrief={scenario.debrief} />
         </div>
       </div>
 

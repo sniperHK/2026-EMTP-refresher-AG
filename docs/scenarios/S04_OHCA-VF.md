@@ -34,6 +34,14 @@
 | 節律 | **VF（心室顫動）** |
 | AED | 已貼上，提示「建議電擊」 |
 
+## Assessment Pathway（開場 30-60 秒）
+
+- **Scene size-up**：運動中胸痛後倒地、目擊者 CPR、AED 已在場，是高價值 OHCA 情境
+- **First impression**：最可能是 ACS-related VF/pVT，但整個 resuscitation 都要同步思考 H's and T's
+- **Focused exam**：downtime、旁觀者 CPR 品質、節律變化、通路建立與 ROSC 後 hemodynamics
+- **Leading DDx**：缺血性 VF/pVT、可逆原因導致的 PEA / pseudoPEA、其他非創傷性 OHCA
+- **Discriminator**：抓胸後倒地 + shockable rhythm + ROSC 後低血壓，代表教學不能只停在演算法，還要走到 post-ROSC
+
 ## 進程設計（時間軸）
 
 ### T0 — EMT-P 到場，確認 VF
@@ -88,6 +96,18 @@
 
 > **教學提示**：ROSC！但這不是結局——病人仍處於 post-cardiac arrest syndrome。
 
+### T+9 min — 初始 post-ROSC 穩定化
+
+| 事件 | 內容 |
+|---|---|
+| 節律 | Sinus tachycardia with PVCs |
+| 血壓 | 84/52 mmHg（MAP < 65） |
+| SpO₂ | 100%（BVM + 100% FiO₂） |
+| EtCO₂ | 22 mmHg |
+| 動作 | 開始思考 oxygenation / ventilation / MAP / 12-lead ECG / coronary evaluation |
+
+> **教學提示**：ROSC 後前 5 分鐘是第二階段 resuscitation，不是「有脈搏就收工」。
+
 ## 討論問題
 
 1. **VF 的心臟其實「在動」——為什麼沒有心輸出量？**（提示：想像心肌細胞各自為政 vs 協調收縮）
@@ -96,6 +116,7 @@
 4. **第一次電擊沒成功 → 為什麼要先壓胸 2 分鐘，而不是馬上再電？**
 5. **回顧前四個案例（S01-S03 + S05）——如果都沒處理，最終都會走到什麼共同結局？各自的「H's and T's」對應是什麼？**
 6. **假設第三次電擊後節律轉為 organized rhythm（sinus tachycardia），但頸動脈脈搏仍摸不到——這是 True PEA 還是 PseudoPEA？你會怎麼判斷和處置？**（提示：POCUS → 若有心臟收縮 = pseudoPEA → push-dose epi 10-20 mcg，而非 ACLS 1 mg）
+7. **ROSC 後前 5 分鐘，你會追哪些目標？**（提示：SpO₂ 90–98%、避免 hyperventilation、MAP ≥ 65、12-lead ECG、依病因安排 coronary evaluation / echo / CT）
 
 ## Debrief 重點
 
@@ -174,6 +195,15 @@ Epi 1 mg IV → α1 受體 → 周邊血管收縮
 | 預後 | 存活 < 1% | ROSC 可達 70%+ |
 
 **臨床意義**：如果你有 POCUS 能力，在「PEA」階段花 10 秒看一下心臟——看到收縮就是 pseudoPEA，處置策略完全不同。這連結了 S05 的 pseudoPEA 教學。
+
+### ROSC 後前 5 分鐘：第二階段 resuscitation
+
+- **Oxygenation**：SpO₂ 90–98%，避免 hyperoxia
+- **Ventilation**：避免 hyperventilation；PaCO₂ 35–45 mmHg 或 EtCO₂ 接近正常
+- **Hemodynamics**：MAP ≥ 65，必要時以 norepinephrine 支持
+- **Diagnostics**：盡快完成 12-lead ECG；若懷疑 ACS，啟動後續 coronary evaluation；病因不明或昏迷持續時準備 echo / CT
+
+**關鍵提醒**：ROSC 不等於急救結束，而是從「恢復循環」進入「保護腦、保護心、找病因」的新階段。
 
 ### Protocol 連結
 

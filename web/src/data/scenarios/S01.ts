@@ -7,6 +7,30 @@ export const S01: Scenario = {
   duration: "13 分鐘",
   pumpPipeTank: "pipe",
   color: "#2980B9",
+  assessmentPathway: {
+    sceneSizeUp: [
+      "高能量胸部鈍傷，先假設存在單側胸腔機械性問題",
+      "轉送途中快速惡化的呼吸困難，比單純疼痛更危險",
+    ],
+    firstImpression:
+      "單側胸部外傷合併機械性呼吸障礙，優先排除 tension physiology。",
+    focusedExam: [
+      "雙側呼吸音與胸壁起伏是否對稱",
+      "叩診音、氣管位置、JVD 與末梢灌流變化",
+      "給氧後 SpO₂ / HR / BP 的趨勢是否持續惡化",
+    ],
+    leadingDdx: [
+      "張力性氣胸",
+      "單純氣胸",
+      "血胸或肺挫傷",
+    ],
+    discriminator:
+      "單側呼吸音消失 + hyperresonance + JVD / hypotension = 張力性氣胸直到證明不是。",
+  },
+  debrief: {
+    minutes: 8,
+    focus: "把呼吸問題一路串到阻塞性休克，避免只停在 needle decompression 技巧。",
+  },
   stages: [
     {
       id: "S01-T0",

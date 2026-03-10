@@ -102,13 +102,13 @@ D. 變為直線
 > **解析**：Bohr Effect。酸/熱/高CO2 會讓曲線右移 (Right Shift)，讓血紅素更容易把氧氣丟給組織使用。
 
 **Q10.** `M01` `Apply` `Post`
-**在 ROSC (心跳恢復) 後，為何我們要避免過度通氣 (Hyperventilation)？**
-A. 因為會造成高碳酸血症
-B. 因為正壓通氣會增加胸內壓，減少腦部與冠狀動脈灌流
-C. 因為會導致嚴重酸中毒
-D. 因為會造成肺部纖維化
+**OHCA 病人 ROSC 後 2 分鐘，SpO₂ 100%（BVM + 100% O₂）、BP 78/46、EtCO₂ 22。下列何者最符合 post-ROSC 前 5 分鐘的處置目標？**
+A. 維持 SpO₂ 100%，並把 EtCO₂ 壓到 <25 以降低腦壓
+B. 將氧氣滴定至 SpO₂ 90-98%，避免過度通氣、支持 MAP ≥ 65，並完成 12-lead ECG / 後續 coronary evaluation
+C. 繼續 Epi 1 mg q3-5 min，直到收縮壓回到 120 以上
+D. 先給 Furosemide 20 mg IV，預防 CPR 後肺水腫
 > **Answer: B**
-> **解析**：過度通氣增加胸內壓 → 減少靜脈回流 (Preload) → 降低心輸出量 (CO) → 腦缺血。同時造成低 CO2 → 腦血管收縮 → 進一步腦缺血。
+> **解析**：Post-ROSC 是第二階段 resuscitation。目標包含：SpO₂ 90-98%、避免 hyperventilation（PaCO₂ 35-45 或 EtCO₂ 接近正常）、MAP ≥ 65、以及盡快完成 12-lead ECG 並依病因安排 coronary evaluation。過度通氣與持續 arrest dosing 的 Epi 都可能帶來傷害。
 
 **Q11.** `M01` `Analyze` `Post`
 **老年人跌倒，BP 110/70，HR 70。但他平時有服用 Beta-blocker。我們應如何解讀其生命徵象？**
@@ -166,8 +166,8 @@ B. IO > IV > IM
 C. IV = IO > IN > IM
 D. IM > IN > IV
 > **Answer: C**
-> **解析**：IV 與 IO 基本相當 (Central IV > Humeral IO > Peripheral IV > Tibial IO)，IN 次之，IM 最慢。
-> **注意**：2025 AHA 建議成人 cardiac arrest 時先嘗試 IV；IO 為 IV 失敗時的合理替代，非首選。
+> **解析**：IV 與 IO 都屬快速 route，IN 次之，IM 最慢。成人 cardiac arrest 依 2025 AHA 應先嘗試 IV；若 IV 延遲、失敗或不可行，再改 IO。
+> **注意**：2025 AHA 建議成人 cardiac arrest 時先嘗試 IV；IO 為 IV 失敗、延遲或不可行時的合理替代，非首選。
 
 **Q17.** `M02` `Apply` `Pre`
 **在休克 (Shock) 病人身上，為何不建議使用 IM (肌肉注射) 給予鎮靜藥物？**
@@ -269,14 +269,13 @@ D. 腎臟排泄增加
 > **解析**：體溫每降 1度，代謝率約降 6-7%。低體溫時肝臟酵素代謝藥物能力大幅下降，容易蓄積。
 
 **Q28.** `M02` `Remember` `Post`
-**關於 Humeral IO (肱骨頭骨針) 與 Tibial IO (脛骨骨針) 的比較，何者正確？**
-A. Tibial IO 的流速與到達心臟速度優於 Humeral IO
-B. Humeral IO 藥物到達心臟的速率接近中央靜脈導管 (CVC)
-C. Tibial IO 比較不痛
-D. Humeral IO 較不易滑脫
+**關於成人 cardiac arrest 的血管通路策略，下列何者正確？**
+A. IO 應固定優先於 IV，因為一定更快
+B. 應先嘗試 IV；若 IV 延遲、失敗或不可行，IO 是合理替代
+C. Tibial IO 在所有情境都比 Humeral IO 更快到達中心循環
+D. 建立 IO 後不需要 flush 或加壓輸液
 > **Answer: B**
-> **解析**：肱骨接近軀幹，路徑短，流速快。Tibial 離心臟遠，且骨髓腔壓力大，流速較慢。
-> **注意**：比較的前提是已選擇使用 IO。2025 AHA 建議 cardiac arrest 時先嘗試 IV，IO 為備選。
+> **解析**：2025 AHA 建議成人 cardiac arrest 優先嘗試 IV access；若 IV 失敗、延遲或不可行，IO 是合理替代。Humeral IO 常較快接近中心循環，但不是無條件定論；重點是最快建立可用 route，且 IO 後仍需 flush，Tibial 常需加壓輸液。
 
 **Q29.** `M02` `Analyze` `Post`
 **哪一類休克病人對 Vasopressor (升壓劑) 的反應可能最差？**

@@ -34,11 +34,11 @@ B. 向右位移，Hb 釋放氧氣能力變強，有利組織獲氧
 C. 不改變
 D. 變為直線
 
-**6. 在 ROSC (心跳恢復) 後，為何我們要避免過度通氣 (Hyperventilation)？**
-A. 因為會造成高碳酸血症
-B. 因為正壓通氣會增加胸內壓，減少腦部與冠狀動脈灌流
-C. 因為會導致嚴重酸中毒
-D. 因為會造成肺部纖維化
+**6. OHCA 病人 ROSC 後 2 分鐘，SpO₂ 100%（BVM + 100% O₂）、BP 78/46、EtCO₂ 22。下列何者最符合 post-ROSC 前 5 分鐘的處置目標？**
+A. 維持 SpO₂ 100%，並把 EtCO₂ 壓到 <25 以降低腦壓
+B. 將氧氣滴定至 SpO₂ 90-98%，避免過度通氣、支持 MAP ≥ 65，並完成 12-lead ECG / 後續 coronary evaluation
+C. 繼續 Epi 1 mg q3-5 min，直到收縮壓回到 120 以上
+D. 先給 Furosemide 20 mg IV，預防 CPR 後肺水腫
 
 **7. 老年人跌倒，BP 110/70，HR 70。但他平時有服用 Beta-blocker。我們應如何解讀其生命徵象？**
 A. 生命徵象穩定，可排除休克
@@ -106,11 +106,11 @@ B. 酵素活性下降，藥物代謝 (Metabolism) 變慢，藥效延長
 C. 腦細胞已經死亡
 D. 腎臟排泄增加
 
-**18. 關於 Humeral IO (肱骨頭骨針) 與 Tibial IO (脛骨骨針) 的比較，何者正確？**
-A. Tibial IO 的流速與到達心臟速度優於 Humeral IO
-B. Humeral IO 藥物到達心臟的速率接近中央靜脈導管 (CVC)
-C. Tibial IO 比較不痛
-D. Humeral IO 較不易滑脫
+**18. 關於成人 cardiac arrest 的血管通路策略，下列何者正確？**
+A. IO 應固定優先於 IV，因為一定更快
+B. 應先嘗試 IV；若 IV 延遲、失敗或不可行，IO 是合理替代
+C. Tibial IO 在所有情境都比 Humeral IO 更快到達中心循環
+D. 建立 IO 後不需要 flush 或加壓輸液
 
 **19. 哪一類休克病人對 Vasopressor (升壓劑) 的反應可能最差？**
 A. 敗血性休克

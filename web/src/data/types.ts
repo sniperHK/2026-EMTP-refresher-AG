@@ -5,8 +5,23 @@ export interface Scenario {
   duration: string;
   pumpPipeTank: "pump" | "pipe" | "tank";
   color: string;
+  assessmentPathway?: AssessmentPathway;
+  debrief?: DebriefGuide;
   stages: Stage[];
   criticalActions: CriticalAction[];
+}
+
+export interface AssessmentPathway {
+  sceneSizeUp: string[];
+  firstImpression: string;
+  focusedExam: string[];
+  leadingDdx: string[];
+  discriminator: string;
+}
+
+export interface DebriefGuide {
+  minutes: number;
+  focus?: string;
 }
 
 export interface Stage {

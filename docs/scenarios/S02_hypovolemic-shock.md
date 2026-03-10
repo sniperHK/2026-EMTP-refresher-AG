@@ -36,6 +36,14 @@
 
 > **教學提示**：血壓正常、SpO₂ 正常——但 HR 108 + 蒼白 + CRT 延長 = 身體已經在代償了。
 
+## Assessment Pathway（開場 30-60 秒）
+
+- **Scene size-up**：腹部穿刺傷 + 持續出血，先假設存在內出血
+- **First impression**：這不是「穩定外傷」，而是 compensated hemorrhagic shock
+- **Focused exam**：皮膚溫度、CRT、脈搏品質、腹部膨隆、意識與 HR / BP 趨勢
+- **Leading DDx**：腹腔內出血、骨盆/大血管損傷、其他創傷性低灌流
+- **Discriminator**：蒼白冰冷 + CRT 延長 + 腹部膨隆，比當下血壓更能定義這是正在失血的病人
+
 ## 進程設計（時間軸）
 
 ### T+5 min — 救護車上，建立 IV

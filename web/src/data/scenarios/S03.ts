@@ -7,6 +7,30 @@ export const S03: Scenario = {
   duration: "10 分鐘",
   pumpPipeTank: "pipe",
   color: "#F39C12",
+  assessmentPathway: {
+    sceneSizeUp: [
+      "蜂螫後快速出現皮膚、呼吸道與循環症狀，先假設為 anaphylaxis",
+      "低血壓合併 warm flushed skin，方向和 S02 完全不同",
+    ],
+    firstImpression:
+      "分布性休克合併上、下呼吸道威脅，第一線要找能同時處理氣道與血壓的藥。",
+    focusedExam: [
+      "有無 stridor、wheeze、聲音改變、口唇舌頭腫脹",
+      "皮膚表現、脈搏品質、末梢溫度與血壓趨勢",
+      "Epi IM 後症狀是否在 5–15 分鐘窗口內改善",
+    ],
+    leadingDdx: [
+      "過敏性休克",
+      "單純氣喘急性發作",
+      "血管迷走性昏厥或其他分布性休克",
+    ],
+    discriminator:
+      "蜂螫後的 warm flushed hypotension + stridor / wheeze + urticaria，足以把 Epinephrine IM 拉到第一線。",
+  },
+  debrief: {
+    minutes: 8,
+    focus: "同樣是低血壓，S03 要學的是 Pipe 太鬆而不是 Tank 太空，Epi 要快且要早。",
+  },
   stages: [
     {
       id: "S03-T0",

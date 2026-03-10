@@ -32,6 +32,14 @@
 | 血壓 | 128/82 mmHg |
 | 膚色 | 蒼白，微汗 |
 
+## Assessment Pathway（開場 30-60 秒）
+
+- **Scene size-up**：高能量胸部鈍傷，先假設有單側胸腔機械性問題
+- **First impression**：單側外傷後呼吸困難，先朝機械性呼吸障礙與 tension physiology 思考
+- **Focused exam**：雙側呼吸音與胸壁起伏、叩診音、氣管位置、JVD、氧氣後趨勢
+- **Leading DDx**：張力性氣胸、單純氣胸、血胸/肺挫傷
+- **Discriminator**：呼吸音消失 + hyperresonance + JVD / hypotension = 張力性氣胸直到證明不是
+
 ## 進程設計（時間軸）
 
 ### T+5 min — 救護車上，開始轉送

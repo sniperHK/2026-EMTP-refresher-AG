@@ -4,9 +4,33 @@ export const S04: Scenario = {
   id: "S04",
   title: "OHCA — 心室纖維顫動",
   subtitle: "58 歲男性公園目擊心跳停止",
-  duration: "7 分鐘（至 ROSC）",
+  duration: "9 分鐘（含初始 post-ROSC 穩定化）",
   pumpPipeTank: "pump",
   color: "#8E44AD",
+  assessmentPathway: {
+    sceneSizeUp: [
+      "運動中胸痛後倒地、目擊者 CPR、AED 在場，是典型 OHCA 高存活情境",
+      "shockable rhythm 的時間敏感度極高，先把 CPR / defib 節奏做對",
+    ],
+    firstImpression:
+      "最可能是 ACS-related VF/pVT，但整個 resuscitation 過程都要同步思考 H's and T's。",
+    focusedExam: [
+      "旁觀者 CPR 品質、downtime、電擊時機與節律變化",
+      "電擊後是否迅速恢復高品質 CPR 並建立藥物通路",
+      "ROSC 後的 SpO₂、通氣、MAP 與 12-lead / coronary evaluation 需求",
+    ],
+    leadingDdx: [
+      "急性冠心症導致的 VF/pVT",
+      "未處理可逆原因導致的 PEA / pseudoPEA",
+      "其他心搏停止原因（低氧、張力性氣胸、低血容、toxins）",
+    ],
+    discriminator:
+      "『抓胸後倒地 + VF + ROSC 後低血壓』會把重心放在 ischemic arrest 的第二階段 resuscitation，而不只停在演算法本身。",
+  },
+  debrief: {
+    minutes: 10,
+    focus: "S04 是整堂課的收尾，要把 VF workflow、Hs & Ts、pseudoPEA 與 post-ROSC 一次串起來。",
+  },
   stages: [
     {
       id: "S04-T0",
@@ -284,6 +308,64 @@ export const S04: Scenario = {
       teachingPoint:
         "PEA 不是一個疾病，而是一個臨床狀態的描述。分辨 True PEA vs PseudoPEA 至關重要：\n- True PEA：心臟完全沒有機械性收縮 → 標準 ACLS（CPR + Epi 1mg + 找可逆原因 H's & T's）\n- PseudoPEA：心臟有微弱收縮但產生的血壓太低以至於摸不到脈搏 → Push-dose Epi 10-20 mcg + 輸液 + 找原因\n兩者的治療方向截然不同。POCUS 是鑑別的最佳工具。",
     },
+    {
+      id: "S04-T9",
+      label: "T+9 min — Post-ROSC 穩定化",
+      narrative:
+        "ROSC 後 2 分鐘，病人仍無意識。BVM 接 100% O₂ 時 SpO₂ 100%，但 ETCO₂ 只有 22 mmHg，血壓 84/52。團隊問：現在最重要的不是再背一次 ACLS，而是把 post-ROSC 前 5 分鐘做對。你會怎麼設定目標？",
+      vitals: {
+        hr: 102,
+        bp: "84/52",
+        spo2: 100,
+        rr: 16,
+        etco2: 22,
+        rhythm: "Sinus Tachycardia with PVCs",
+        gcs: "E1V1M3",
+      },
+      findings: [
+        "ROSC 後仍昏迷",
+        "SpO₂ 100%（仍在 100% FiO₂）",
+        "ETCO₂ 22 mmHg，提示可能過度通氣",
+        "MAP 仍低於 65",
+        "需盡快完成 12-lead ECG 並思考 coronary evaluation",
+      ],
+      decision: {
+        question:
+          "下列何者最符合 ROSC 後前 5 分鐘的整體目標？",
+        options: [
+          {
+            id: "S04-T9-A",
+            text: "維持 SpO₂ 100%，把 ETCO₂ 壓到 < 25，以降低腦壓並增加氧輸送",
+            correct: false,
+            feedback:
+              "這是常見錯誤。ROSC 後應避免 hyperoxia 與 hyperventilation。ETCO₂ / PaCO₂ 太低會造成腦血管收縮，反而減少腦灌流。",
+          },
+          {
+            id: "S04-T9-B",
+            text: "將氧氣滴定至 SpO₂ 90–98%，避免過度通氣，支持 MAP ≥ 65，完成 12-lead ECG 並安排後續 coronary evaluation",
+            correct: true,
+            feedback:
+              "正確！Post-ROSC 的第一段目標是第二階段 resuscitation：避免 hypoxia / hyperoxia、避免 hyperventilation（PaCO₂ 35–45 或 ETCO₂ 接近正常）、維持 MAP ≥ 65，並盡快用 12-lead ECG 與臨床資料評估 ACS / PCI 需求。",
+          },
+          {
+            id: "S04-T9-C",
+            text: "繼續 Epi 1mg q3-5 min，直到收縮壓回到 120 以上再說",
+            correct: false,
+            feedback:
+              "ROSC 後不應再沿用 arrest dosing。此時更重要的是精準 hemodynamic support，例如 norepinephrine，而不是機械式繼續給 ACLS 劑量 Epi。",
+          },
+          {
+            id: "S04-T9-D",
+            text: "先送走，不需要 12-lead；腦部 CT 或 echo 也都可以到院後再說",
+            correct: false,
+            feedback:
+              "Post-ROSC 不是『穩了再評估』。若是 ischemic arrest，12-lead ECG 和後續 coronary evaluation 需要盡早啟動；若病因不明或昏迷持續，也要在到院流程中準備 CT / echo 評估。",
+          },
+        ],
+      },
+      teachingPoint:
+        "ROSC 後前 5 分鐘 = 第二階段 resuscitation。\n- Oxygenation：SpO₂ 90–98%\n- Ventilation：避免 hyperventilation，PaCO₂ 35–45 或 ETCO₂ 接近正常\n- Hemodynamics：MAP ≥ 65，必要時以 norepinephrine 支持\n- Diagnostics：12-lead ECG；依病因考慮 coronary evaluation / echo / CT\n不要把『有脈搏』誤認成『已完成急救』。",
+    },
   ],
   criticalActions: [
     {
@@ -321,6 +403,12 @@ export const S04: Scenario = {
       text: "區分 True PEA vs PseudoPEA — 使用 POCUS 鑑別，調整處置方向",
       isCritical: true,
       stageId: "S04-T7",
+    },
+    {
+      id: "S04-CA7",
+      text: "Post-ROSC 前 5 分鐘：SpO₂ 90-98、避免過度通氣、MAP ≥ 65、盡快 12-lead / coronary evaluation",
+      isCritical: true,
+      stageId: "S04-T9",
     },
   ],
 };
