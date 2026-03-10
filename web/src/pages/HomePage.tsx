@@ -14,26 +14,38 @@ export function HomePage() {
   return (
     <div className="mx-auto max-w-6xl space-y-10">
       {/* Hero */}
-      <section className="text-center py-8 md:py-12">
-        <h1
-          className="text-3xl font-bold md:text-4xl lg:text-5xl"
-          style={{ color: 'var(--medical-navy)' }}
-        >
-          {courseTitle}
-        </h1>
-        <p className="mx-auto mt-3 max-w-xl text-base text-gray-600 md:text-lg">
-          互動式情境模擬與決策工具，強化院前緊急救護臨床判斷能力
-        </p>
-        <div className="mt-4 flex flex-wrap justify-center gap-2">
-          <Badge variant="outline" className="text-xs" style={{ borderColor: 'var(--medical-red)', color: 'var(--medical-red)' }}>
-            Pump
-          </Badge>
-          <Badge variant="outline" className="text-xs" style={{ borderColor: 'var(--medical-blue)', color: 'var(--medical-blue)' }}>
-            Pipe
-          </Badge>
-          <Badge variant="outline" className="text-xs" style={{ borderColor: 'var(--medical-orange)', color: 'var(--medical-orange)' }}>
-            Tank
-          </Badge>
+      <section className="py-8 md:py-12">
+        <div className="flex flex-col items-center gap-6 md:flex-row md:justify-center md:gap-10">
+          <div className="text-center md:text-left">
+            <h1
+              className="text-3xl font-bold md:text-4xl lg:text-5xl"
+              style={{ color: 'var(--medical-navy)' }}
+            >
+              {courseTitle}
+            </h1>
+            <p className="mt-3 max-w-xl text-base text-gray-600 md:text-lg">
+              互動式情境模擬與決策工具，強化院前緊急救護臨床判斷能力
+            </p>
+            <div className="mt-4 flex flex-wrap justify-center gap-2 md:justify-start">
+              <Badge variant="outline" className="text-xs" style={{ borderColor: 'var(--medical-red)', color: 'var(--medical-red)' }}>
+                Pump
+              </Badge>
+              <Badge variant="outline" className="text-xs" style={{ borderColor: 'var(--medical-blue)', color: 'var(--medical-blue)' }}>
+                Pipe
+              </Badge>
+              <Badge variant="outline" className="text-xs" style={{ borderColor: 'var(--medical-orange)', color: 'var(--medical-orange)' }}>
+                Tank
+              </Badge>
+            </div>
+          </div>
+          <div className="flex flex-col items-center gap-2">
+            <img
+              src={`${import.meta.env.BASE_URL}site-qr.png`}
+              alt="掃描 QR Code 進入課程網站"
+              className="h-36 w-36 rounded-lg border bg-white p-1 shadow-sm md:h-44 md:w-44"
+            />
+            <span className="text-xs text-gray-400">掃碼加入課程</span>
+          </div>
         </div>
       </section>
 
