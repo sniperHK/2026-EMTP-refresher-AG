@@ -265,7 +265,8 @@ export function TeacherDashboardPage() {
     setAuthError(null)
 
     try {
-      await signInTeacher(email.trim(), password)
+      const loginEmail = email.trim().includes('@') ? email.trim() : `${email.trim().toLowerCase()}@2026-emtp.local`
+      await signInTeacher(loginEmail, password)
       setPassword('')
     } catch (signInError) {
       console.error(signInError)
@@ -327,12 +328,12 @@ export function TeacherDashboardPage() {
           ) : (
             <form className="mt-6 space-y-4" onSubmit={handleSignIn}>
               <label className="block space-y-1.5 text-sm">
-                <span className="font-medium text-gray-700">教師 Email</span>
+                <span className="font-medium text-gray-700">教師帳號</span>
                 <input
-                  type="email"
+                  type="text"
                   value={email}
                   onChange={(event) => setEmail(event.target.value)}
-                  placeholder="teacher@example.com"
+                  placeholder="輸入帳號名稱"
                   className="w-full rounded-md border border-gray-300 px-3 py-2 outline-none transition-colors focus:border-blue-400"
                 />
               </label>
@@ -362,7 +363,7 @@ export function TeacherDashboardPage() {
               </div>
 
               <p className="text-xs text-gray-500">
-                先在 Supabase Auth 建立教師帳號，再用這裡登入。建議建立完後關閉公開 sign-up。
+                輸入帳號名稱（不含 @），系統會自動補全。如有完整 email 也可直接輸入。
               </p>
             </form>
           )}
