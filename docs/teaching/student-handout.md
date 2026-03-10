@@ -85,22 +85,15 @@ Wet      │  B 肺水腫      │  C 心因性      │
 
 ## PseudoPEA 辨識流程
 
-```
-ECG 有 organized rhythm + 脈搏摸不到
-              ↓
-        有 POCUS 嗎？
-         ↓           ↓
-        有            無
-         ↓           ↓
-   心臟有收縮？    臨床判斷
-    ↓       ↓        ↓
-   有       無     考慮升壓
-    ↓       ↓
-PseudoPEA  True PEA
-    ↓       ↓
-Push-dose   ACLS
-Epi 10-20   Epi 1mg
-mcg IV      + CPR
+```mermaid
+flowchart TD
+  A["ECG 有 organized rhythm<br/>+ 脈搏摸不到"] --> B{"有 POCUS 嗎？"}
+  B -->|有| C{"心臟有收縮？"}
+  B -->|無| D["依臨床 low-flow 狀態判斷<br/>考慮升壓與 reversible causes"]
+  C -->|有| E["PseudoPEA"]
+  C -->|無| F["True PEA"]
+  E --> G["Push-dose Epi 10-20 mcg IV"]
+  F --> H["ACLS Epi 1 mg + CPR"]
 ```
 
 | 項目 | True PEA | PseudoPEA |
@@ -114,12 +107,13 @@ mcg IV      + CPR
 
 ## 酸鹼與 EtCO2
 
-- 休克/DKA 病人 → EtCO2 偏低（< 25 mmHg）= **代償反應**
-- **不要刻意用 BVM 把 EtCO2 拉回 35-45** → 會破壞代償 → pH 驟降
+- 休克/DKA 病人 → EtCO₂ 偏低（< 25 mmHg）= **代償性過度通氣**（吹掉 CO₂ 來代償酸中毒）
+- **若 EtCO₂ 自行回升至 35–45** → 代表代償系統逐漸失敗 → 準備惡化
+- **插管後避免通氣過快** → 須匹配病人原本的高 RR，維持代償
 
 ---
 
-## Red Flags
+## 插管三殺 Red Flags（Peri-intubation Kill）
 
 | 情境 | 風險 | 對策 |
 |---|---|---|
@@ -134,7 +128,7 @@ mcg IV      + CPR
 |:---:|:---:|---|---|
 | **IV** | 10-30 sec | ALS 黃金標準 | 推藥後 Flush, 上肢優於下肢 |
 | **IO** | 30-60 sec | IV 失敗/延遲時合理替代 ⚠️ 非首選 | Humeral 常較快接近中心循環；Tibial 仍可接受；清醒病人痛；2025 AHA: IV first |
-| **IM** | 5-15 min | 躁動/無法 IV | **休克禁用!** Late Dump 風險 |
+| **IM** | 5-15 min | 躁動/無法 IV | **休克禁用!** Late Dump 風險（灌流恢復後肌肉蓄積藥物突然釋出，造成藥效過量） |
 | **IN** | 3-5 min | 兒童/止痛 | 每孔 < 1mL; 鼻血無效 |
 
 ---
@@ -145,7 +139,7 @@ mcg IV      + CPR
 |---|---|
 | **休克/低灌流** | Start Low, Go Slow; Paralytics onset 延遲 |
 | **心搏停止** | IV/IO 後 Flush 20mL + 抬高; ROSC 後 Epi 蓄積注意 |
-| **老年人** | Midazolam/Fentanyl 減量 50%; 脂溶性藥物蓄積 |
+| **老年人** | Midazolam/Fentanyl 起始劑量減 25–50%（依體重、肝腎功能、意識狀態調整）; 脂溶性藥物分布容積大、排除慢 → 藥效延長 |
 
 ---
 

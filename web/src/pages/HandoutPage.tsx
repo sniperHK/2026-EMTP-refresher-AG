@@ -1,7 +1,25 @@
-import type { ComponentProps } from 'react'
+import { Children, isValidElement } from 'react'
+import type { ComponentProps, ReactNode } from 'react'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import handoutRaw from '../../../docs/teaching/student-handout.md?raw'
+import { MermaidBlock } from '@/components/markdown/MermaidBlock'
+
+function extractMermaidChart(children: ReactNode): string | null {
+  const [firstChild] = Children.toArray(children)
+
+  if (!isValidElement<{ className?: string; children?: ReactNode }>(firstChild)) {
+    return null
+  }
+
+  const className = firstChild.props.className ?? ''
+  if (!className.includes('language-mermaid')) {
+    return null
+  }
+
+  const chart = firstChild.props.children
+  return typeof chart === 'string' ? chart.trim() : null
+}
 
 // ── Custom renderers for medical reference card styling ──────────────────
 
@@ -66,14 +84,22 @@ const mdComponents: ComponentProps<typeof ReactMarkdown>['components'] = {
   ),
 
   // Code blocks — monospace ASCII art box
-  pre: ({ children }) => (
-    <pre
-      className="my-3 overflow-x-auto rounded-lg border border-gray-200 bg-gray-50 p-4 font-mono text-xs leading-relaxed text-gray-700 whitespace-pre"
-      style={{ fontFamily: '"SF Mono", "Fira Code", "Cascadia Code", monospace' }}
-    >
-      {children}
-    </pre>
-  ),
+  pre: ({ children }) => {
+    const mermaidChart = extractMermaidChart(children)
+
+    if (mermaidChart) {
+      return <MermaidBlock chart={mermaidChart} />
+    }
+
+    return (
+      <pre
+        className="my-3 overflow-x-auto rounded-lg border border-gray-200 bg-gray-50 p-4 font-mono text-xs leading-relaxed text-gray-700 whitespace-pre"
+        style={{ fontFamily: '"SF Mono", "Fira Code", "Cascadia Code", monospace' }}
+      >
+        {children}
+      </pre>
+    )
+  },
 
   code: ({ children, className }) => {
     // inline code
