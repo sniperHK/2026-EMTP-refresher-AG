@@ -14,6 +14,7 @@
 
 ### `docs/`
 - `course-improvement-review-2026-03-06.md`：本輪專案盤點與課程改進建議（含外部依據）
+- `focused-improvement-plan-2026-03-10.md`：依使用者實際優先順序收斂的執行版改善計畫
 
 ### `docs/modules/`
 - `M01_ALS-pathophysiology.md`：病生理學主模組
