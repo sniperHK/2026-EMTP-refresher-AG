@@ -22,14 +22,15 @@ const toolLinks = [
 ]
 
 const contentLinks = [
-  { id: 'M01', label: 'M01 病生理學' },
+  { id: 'M01', label: 'M01 瀕死生理學' },
   { id: 'M02', label: 'M02 藥物動力學' },
-  { id: 'M02-dosing', label: 'M02 劑量對接表' },
+  { id: 'M03', label: 'M03 補充資料' },
+  { id: 'M09', label: 'M09 劑量參考表' },
 ]
 
 const slideLinks = [
-  { id: 'M01', label: 'M01 病生理學 投影片' },
-  { id: 'M02', label: 'M02 PK/PD 投影片' },
+  { id: 'M01', label: 'M01 瀕死生理學 投影片' },
+  { id: 'M02', label: 'M02 藥物動力學 投影片' },
 ]
 
 export function Sidebar({ isOpen, onClose }: SidebarProps) {

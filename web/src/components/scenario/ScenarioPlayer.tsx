@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import type { Scenario } from '@/data/types'
 import { useScenario } from '@/hooks/useScenario'
 import { useFullscreen } from '@/hooks/useFullscreen'
@@ -9,15 +10,32 @@ import { StageProgress } from '@/components/scenario/StageProgress'
 import { CriticalActions } from '@/components/scenario/CriticalActions'
 import { AssessmentPathwayCard } from '@/components/scenario/AssessmentPathwayCard'
 import { DebriefCard } from '@/components/scenario/DebriefCard'
+import { ScenarioQuickEntryCard } from '@/components/scenario/ScenarioQuickEntryCard'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { Progress } from '@/components/ui/progress'
 
 interface ScenarioPlayerProps {
   scenario: Scenario
+  instructorMode: boolean
+  onInstructorModeChange: (enabled: boolean) => void
 }
 
-export function ScenarioPlayer({ scenario }: ScenarioPlayerProps) {
+function downloadTextFile(fileName: string, content: string, mimeType: string) {
+  const blob = new Blob([content], { type: mimeType })
+  const url = URL.createObjectURL(blob)
+  const anchor = document.createElement('a')
+  anchor.href = url
+  anchor.download = fileName
+  anchor.click()
+  URL.revokeObjectURL(url)
+}
+
+export function ScenarioPlayer({
+  scenario,
+  instructorMode,
+  onInstructorModeChange,
+}: ScenarioPlayerProps) {
   const {
     currentStageIndex,
     selectedOptionId,
@@ -39,6 +57,11 @@ export function ScenarioPlayer({ scenario }: ScenarioPlayerProps) {
   } = useScenario(scenario)
 
   const { isFullscreen, toggleFullscreen } = useFullscreen()
+  const [instructorCheckedIds, setInstructorCheckedIds] = useState(new Set<string>())
+
+  useEffect(() => {
+    setInstructorCheckedIds(new Set<string>())
+  }, [scenario.id])
 
   if (!currentStage) return null
 
@@ -51,6 +74,30 @@ export function ScenarioPlayer({ scenario }: ScenarioPlayerProps) {
 
   const isLastStage = currentStageIndex >= scenario.stages.length - 1
   const hasDecision = !!currentStage.decision
+  const completedActionIds = new Set([
+    ...completedActions,
+    ...instructorCheckedIds,
+  ])
+
+  const exportPayload = {
+    scenarioId: scenario.id,
+    scenarioTitle: scenario.title,
+    exportedAt: new Date().toISOString(),
+    currentStageIndex: currentStageIndex + 1,
+    currentStageId: currentStage.id,
+    currentStageLabel: currentStage.label,
+    automaticCompletedActionIds: [...completedActions],
+    instructorCheckedActionIds: [...instructorCheckedIds],
+    actions: scenario.criticalActions.map((action) => ({
+      id: action.id,
+      text: action.text,
+      stageId: action.stageId,
+      isCritical: action.isCritical,
+      autoCompleted: completedActions.has(action.id),
+      instructorChecked: instructorCheckedIds.has(action.id),
+      completed: completedActionIds.has(action.id),
+    })),
+  }
 
   return (
     <div className="mx-auto max-w-6xl space-y-4 pb-24 md:space-y-6">
@@ -69,6 +116,11 @@ export function ScenarioPlayer({ scenario }: ScenarioPlayerProps) {
         >
           {pptLabel}
         </Badge>
+        {instructorMode && (
+          <Badge variant="secondary" className="text-xs">
+            Instructor
+          </Badge>
+        )}
         <span className="text-sm text-gray-500">{scenario.subtitle}</span>
       </div>
 
@@ -141,7 +193,7 @@ export function ScenarioPlayer({ scenario }: ScenarioPlayerProps) {
           )}
 
           {/* Instructor: show answer toggle */}
-          {hasDecision && !isAnswered && (
+          {instructorMode && hasDecision && !isAnswered && (
             <div className="flex justify-center">
               <button
                 onClick={toggleShowAnswer}
@@ -151,7 +203,7 @@ export function ScenarioPlayer({ scenario }: ScenarioPlayerProps) {
               </button>
             </div>
           )}
-          {showAnswer && !isAnswered && currentStage.decision && (
+          {instructorMode && showAnswer && !isAnswered && currentStage.decision && (
             <div className="rounded-md border border-purple-200 bg-purple-50 p-3">
               <p className="text-xs font-semibold text-purple-600">講師參考</p>
               <p className="mt-1 text-sm text-purple-800">
@@ -168,11 +220,59 @@ export function ScenarioPlayer({ scenario }: ScenarioPlayerProps) {
 
         {/* Right sidebar: critical actions */}
         <div className="order-first space-y-4 lg:order-last">
+          <ScenarioQuickEntryCard
+            scenarioId={scenario.id}
+            scenarioTitle={scenario.title}
+            instructorMode={instructorMode}
+            onInstructorModeChange={onInstructorModeChange}
+          />
           <CriticalActions
             actions={scenario.criticalActions}
             completedIds={completedActions}
+            instructorCheckedIds={instructorCheckedIds}
+            interactive={instructorMode}
+            onToggleInstructorCheck={(actionId) => {
+              setInstructorCheckedIds((prev) => {
+                const next = new Set(prev)
+                if (next.has(actionId)) {
+                  next.delete(actionId)
+                } else {
+                  next.add(actionId)
+                }
+                return next
+              })
+            }}
+            onExportJson={() => {
+              downloadTextFile(
+                `${scenario.id}-critical-actions.json`,
+                `${JSON.stringify(exportPayload, null, 2)}\n`,
+                'application/json'
+              )
+            }}
+            onExportCsv={() => {
+              const rows = [
+                ['scenario_id', 'scenario_title', 'stage_id', 'action_id', 'action_text', 'is_critical', 'auto_completed', 'instructor_checked', 'completed'],
+                ...exportPayload.actions.map((action) => [
+                  exportPayload.scenarioId,
+                  exportPayload.scenarioTitle,
+                  action.stageId,
+                  action.id,
+                  `"${action.text.replaceAll('"', '""')}"`,
+                  action.isCritical ? 'yes' : 'no',
+                  action.autoCompleted ? 'yes' : 'no',
+                  action.instructorChecked ? 'yes' : 'no',
+                  action.completed ? 'yes' : 'no',
+                ]),
+              ]
+
+              downloadTextFile(
+                `${scenario.id}-critical-actions.csv`,
+                `${rows.map((row) => row.join(',')).join('\n')}\n`,
+                'text/csv;charset=utf-8'
+              )
+            }}
           />
-          <DebriefCard debrief={scenario.debrief} />
+          <DebriefCard debrief={scenario.debrief} interactive={instructorMode} />
         </div>
       </div>
 
@@ -204,7 +304,15 @@ export function ScenarioPlayer({ scenario }: ScenarioPlayerProps) {
           <Button variant="ghost" size="sm" onClick={toggleFullscreen}>
             {isFullscreen ? '結束全螢幕' : '全螢幕'}
           </Button>
-          <Button variant="ghost" size="sm" onClick={resetScenario} className="text-red-500 hover:text-red-700">
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={() => {
+              resetScenario()
+              setInstructorCheckedIds(new Set<string>())
+            }}
+            className="text-red-500 hover:text-red-700"
+          >
             重置
           </Button>
         </div>

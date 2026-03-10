@@ -1,10 +1,12 @@
-import { useParams, Link } from 'react-router-dom'
+import { useParams, Link, useSearchParams } from 'react-router-dom'
 import { scenarioMap } from '@/data/scenarios'
 import { ScenarioPlayer } from '@/components/scenario/ScenarioPlayer'
 
 export function ScenarioPage() {
   const { id } = useParams<{ id: string }>()
+  const [searchParams, setSearchParams] = useSearchParams()
   const scenario = id ? scenarioMap[id] : undefined
+  const instructorMode = searchParams.get('mode') === 'instructor'
 
   if (!scenario) {
     return (
@@ -29,5 +31,19 @@ export function ScenarioPage() {
     )
   }
 
-  return <ScenarioPlayer scenario={scenario} />
+  return (
+    <ScenarioPlayer
+      scenario={scenario}
+      instructorMode={instructorMode}
+      onInstructorModeChange={(enabled) => {
+        const next = new URLSearchParams(searchParams)
+        if (enabled) {
+          next.set('mode', 'instructor')
+        } else {
+          next.delete('mode')
+        }
+        setSearchParams(next, { replace: true })
+      }}
+    />
+  )
 }

@@ -6,7 +6,7 @@
 
 1. `docs/roadmap.md`：掌握課程定位、交付物清單、缺口與下一步
 2. `docs/teaching/session-flow.md`：理解 4 小時課程節奏與教學配置
-3. `docs/modules/`：閱讀 M01 / M02 主模組內容
+3. `docs/modules/`：閱讀 M01 / M02 主模組與 M03 blind spots microcases
 4. `docs/assessments/`：確認 pre/post、題庫、評量藍圖與答案
 5. `docs/scenarios/`：查看案例設計與 debrief 重點
 
@@ -20,6 +20,7 @@
 - `M01_ALS-pathophysiology.md`：病生理學主模組
 - `M02_ALS-pharmacokinetics.md`：PK/PD 主模組
 - `M02_protocol-dosing-map.md`：在地 protocol 對接表（需持續維護）
+- `M03_high-risk-blind-spots.md`：10-15 分鐘 blind spots microcases（sepsis / endocrine-metabolic / stroke-neuro / tox）
 
 ### `docs/assessments/`
 - `question-bank.md`：題庫主檔（含標籤）

@@ -71,11 +71,12 @@ export function HomePage() {
         >
           課程模組
         </h2>
-        <div className="grid gap-4 sm:grid-cols-3">
+        <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
           {[
-            { id: 'M01', title: 'M01 病生理學', desc: '休克、呼吸衰竭、心因性休克病生理決策導向', color: 'var(--medical-blue)' },
+            { id: 'M01', title: 'M01 瀕死生理學', desc: '休克、呼吸衰竭、心因性休克病生理決策導向', color: 'var(--medical-blue)' },
             { id: 'M02', title: 'M02 藥物動力學', desc: 'PK/PD 原則、給藥途徑、現場用藥決策', color: 'var(--medical-purple)' },
-            { id: 'M02-dosing', title: 'M02 劑量對接表', desc: '在地協議劑量速查與關鍵警示', color: 'var(--medical-teal)' },
+            { id: 'M03', title: 'M03 補充資料', desc: '4 個高風險微型案例，補強複訓廣度保護網', color: 'var(--medical-orange)' },
+            { id: 'M09', title: 'M09 劑量參考表', desc: '在地協議劑量速查與關鍵警示', color: 'var(--medical-teal)' },
           ].map((m) => (
             <Link key={m.id} to={`/content/${m.id}`} className="group">
               <Card className="h-full transition-all hover:shadow-lg group-hover:-translate-y-0.5">

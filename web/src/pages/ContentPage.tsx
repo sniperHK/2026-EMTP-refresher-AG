@@ -5,11 +5,13 @@ import remarkGfm from 'remark-gfm'
 import m01Raw from '../../../docs/modules/M01_ALS-pathophysiology.md?raw'
 import m02Raw from '../../../docs/modules/M02_ALS-pharmacokinetics.md?raw'
 import m02DosingRaw from '../../../docs/modules/M02_protocol-dosing-map.md?raw'
+import m03Raw from '../../../docs/modules/M03_high-risk-blind-spots.md?raw'
 
 const modules: Record<string, { title: string; content: string; color: string }> = {
-  M01: { title: 'M01 ALS 病生理學', content: m01Raw, color: 'var(--medical-blue)' },
+  M01: { title: 'M01 瀕死生理學', content: m01Raw, color: 'var(--medical-blue)' },
   M02: { title: 'M02 藥物動力學', content: m02Raw, color: 'var(--medical-purple)' },
-  'M02-dosing': { title: 'M02 附錄：在地劑量對接表', content: m02DosingRaw, color: 'var(--medical-teal)' },
+  M03: { title: 'M03 補充資料', content: m03Raw, color: 'var(--medical-orange)' },
+  M09: { title: 'M09 劑量參考表', content: m02DosingRaw, color: 'var(--medical-teal)' },
 }
 
 function makeMdComponents(accentColor: string): ComponentProps<typeof ReactMarkdown>['components'] {
