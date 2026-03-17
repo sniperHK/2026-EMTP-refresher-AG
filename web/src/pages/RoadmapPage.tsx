@@ -426,7 +426,7 @@ export function RoadmapPage() {
             <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-amber-500 text-sm font-bold text-white">3</span>
             <div>
               <div className="text-sm font-bold text-gray-800">SCAPE 先 NTG + CPAP，不先 Lasix</div>
-              <div className="text-xs text-gray-600">SCAPE 是血管痙攣不是水太多</div>
+              <div className="text-xs text-gray-600">SCAPE 是血管張力異常，不是水太多</div>
             </div>
           </div>
         </div>

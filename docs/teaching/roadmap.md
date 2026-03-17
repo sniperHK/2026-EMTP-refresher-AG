@@ -178,7 +178,7 @@
 >
 > **(2)** 休克不要 IM — 灌流差時 IM 吸收不可預期；Push-dose Epi 用於有心跳的嚴重低血壓
 >
-> **(3)** SCAPE 先 NTG + CPAP，不先 Lasix — SCAPE 是血管痙攣不是水太多
+> **(3)** SCAPE 先 NTG + CPAP，不先 Lasix — SCAPE 是血管張力異常，不是水太多
 
 最後提醒：講義有速查表和 Pocket Card，回去可以複習。
 
