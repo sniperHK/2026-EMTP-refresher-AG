@@ -116,7 +116,7 @@
 4. **第一次電擊沒成功 → 為什麼要先壓胸 2 分鐘，而不是馬上再電？**
 5. **回顧前四個案例（S01-S03 + S05）——如果都沒處理，最終都會走到什麼共同結局？各自的「H's and T's」對應是什麼？**
 6. **假設第三次電擊後節律轉為 organized rhythm（sinus tachycardia），但頸動脈脈搏仍摸不到——這是 True PEA 還是 PseudoPEA？你會怎麼判斷和處置？**（提示：若有受訓者可在不延長暫停下用 POCUS 快速確認心臟收縮，可能支持 pseudoPEA；若無法快速確認，不要拖慢標準 resuscitation 節奏）
-7. **ROSC 後前 5 分鐘，你會追哪些目標？**（提示：SpO₂ 90–98%、避免 hyperventilation、MAP ≥ 65、12-lead ECG、依病因安排 coronary evaluation / echo / CT）
+7. **ROSC 後前 5 分鐘，你會追哪些目標？**（提示：SpO₂ 92–98%、避免 hyperventilation、MAP ≥ 65、12-lead ECG、依病因安排 coronary evaluation / echo / CT）
 
 ## Debrief 重點
 
@@ -198,7 +198,7 @@ Epi 1 mg IV → α1 受體 → 周邊血管收縮
 
 ### ROSC 後前 5 分鐘：第二階段 resuscitation
 
-- **Oxygenation**：SpO₂ 90–98%，避免 hyperoxia
+- **Oxygenation**：SpO₂ 92–98%，避免 hyperoxia
 - **Ventilation**：避免 hyperventilation；PaCO₂ 35–45 mmHg 或 EtCO₂ 接近正常
 - **Hemodynamics**：MAP ≥ 65，必要時以 norepinephrine 支持
 - **Diagnostics**：盡快完成 12-lead ECG；若懷疑 ACS，啟動後續 coronary evaluation；病因不明或昏迷持續時準備 echo / CT

@@ -14,7 +14,7 @@
 每題標註：
 - **模組**: M01 (病生理學) / M02 (PK/PD)
 - **認知層級**: Remember (記憶/理解) / Apply (應用) / Analyze (臨床判斷)
-- **用途**: Pre (前測) / Post (後測)
+- **用途**: Pre (前測) / Post (後測) / Bank (備用題)
 
 ---
 
@@ -39,13 +39,13 @@ D. 只要給予足夠輸液，任何階段的休克都能逆轉
 > **解析**：A 錯，低血壓是晚期；B 錯，代償期交感興奮 HR 會快；C 對，細胞缺氧轉無氧代謝產生乳酸；D 錯，不可逆休克期無法逆轉。
 
 **Q3.** `M01` `Apply` `Pre`
-**嚴重創傷休克病人，周邊脈搏摸不到，意識躁動。此時最優先的處置目標是？**
+**嚴重創傷休克病人，周邊脈搏摸不到，意識躁動。依 XABCDE 流程，此時最優先的處置目標是？**
 A. 插管 (Intubation) 以確保呼吸道
 B. 給予鎮靜劑 (Sedation) 讓病人安靜
 C. 文獻回顧顯示需維持 SBP > 140 mmHg
-D. 恢復組織灌流 (Fluid/Blood/Stop bleeding)
+D. 控制大出血並恢復灌流 (X: eXsanguinating hemorrhage control)
 > **Answer: D**
-> **解析**：休克優先處理循環 (Stop the bleed / Volume)。插管 (RSI) 的藥物會導致血管擴張，且正壓通氣會減少回心血流，可能導致病人當場 OHCA。
+> **解析**：依 XABCDE 流程，X（控制致命性大出血）優先於 A（呼吸道）。此情境病人為出血性休克，需先止血並補液。此時若貿然 RSI 插管，藥物會導致血管擴張，正壓通氣減少回心血流，可能導致病人當場 OHCA。
 
 **Q4.** `M01` `Analyze` `Pre`
 **在監測休克病人時，End-tidal CO2 (EtCO2) 數值由 35 mmHg 驟降至 15 mmHg，且波形仍規律，最可能代表？**
@@ -104,11 +104,11 @@ D. 變為直線
 **Q10.** `M01` `Apply` `Post`
 **OHCA 病人 ROSC 後 2 分鐘，SpO₂ 100%（BVM + 100% O₂）、BP 78/46、EtCO₂ 22。下列何者最符合 post-ROSC 前 5 分鐘的處置目標？**
 A. 維持 SpO₂ 100%，並把 EtCO₂ 壓到 <25 以降低腦壓
-B. 將氧氣滴定至 SpO₂ 90-98%，避免過度通氣、支持 MAP ≥ 65，並完成 12-lead ECG / 後續 coronary evaluation
+B. 將氧氣滴定至 SpO₂ 92-98%，避免過度通氣、支持 MAP ≥ 65，並完成 12-lead ECG / 後續 coronary evaluation
 C. 繼續 Epi 1 mg q3-5 min，直到收縮壓回到 120 以上
 D. 先給 Furosemide 20 mg IV，預防 CPR 後肺水腫
 > **Answer: B**
-> **解析**：Post-ROSC 是第二階段 resuscitation。目標包含：SpO₂ 90-98%、避免 hyperventilation（PaCO₂ 35-45 或 EtCO₂ 接近正常）、MAP ≥ 65、以及盡快完成 12-lead ECG 並依病因安排 coronary evaluation。過度通氣與持續 arrest dosing 的 Epi 都可能帶來傷害。
+> **解析**：Post-ROSC 是第二階段 resuscitation。目標包含：SpO₂ 92-98%、避免 hyperventilation（PaCO₂ 35-45 或 EtCO₂ 接近正常）、MAP ≥ 65、以及盡快完成 12-lead ECG 並依病因安排 coronary evaluation。過度通氣與持續 arrest dosing 的 Epi 都可能帶來傷害。
 
 **Q11.** `M01` `Analyze` `Post`
 **老年人跌倒，BP 110/70，HR 70。但他平時有服用 Beta-blocker。我們應如何解讀其生命徵象？**
@@ -152,8 +152,8 @@ A. 10 秒
 B. 30-45 秒
 C. 1 分鐘
 D. 不用摸，直接壓胸
-> **Answer: B** (AHA 建議 30-45s, 甚至到 60s)
-> **解析**：極度低體溫心跳極慢且微弱，太快判定無脈搏可能導致不必要的壓胸引發 VF。
+> **Answer: C**
+> **解析**：極度低體溫心跳極慢且微弱，太快判定無脈搏可能導致不必要的壓胸引發 VF。AHA 2020 / ERC 2021 建議至少 60 秒（1 分鐘），以避免誤判。
 
 ---
 
@@ -188,13 +188,13 @@ D. 改用 Ketamine
 > **解析**：Start low, go slow。老人對 BZD 類藥物敏感度高且代謝慢。
 
 **Q19.** `M02` `Apply` `Post`
-**IO (Intraosseous) 建立後，推藥前必須先做什麼動作以確保藥物能快速進入循環（尤其是 Conscious IO）？**
-A. 抽吸看有無骨髓
-B. 直接推藥
-C. 施打 Lidocaine (止痛) 並用 NS 快速沖洗 (Flush) 衝開骨髓腔
-D. 旋轉針頭確認深度
+**IO (Intraosseous) 建立後，依台北市作業手冊，正確的確認與給藥順序為？**
+A. 直接推藥，不需確認位置
+B. 旋轉針頭確認深度 → 直接推藥
+C. 抽吸確認骨髓回血 → Lidocaine 止痛（清醒者）→ NS Flush 衝開骨髓腔 → 給藥
+D. NS Flush → 抽吸確認 → 給藥
 > **Answer: C**
-> **解析**：Tibial IO 內有 Fibrin mesh，需 Flush 衝開才能建立流暢通道。清醒病人推 Flush 會非常痛，故建議先給 Lidocaine。
+> **解析**：依台北市消防員作業手冊：IO 建立後先抽吸確認有骨髓回血（驗證位置正確）→ 清醒病人先給 Lidocaine 40mg 止痛 → NS 20mL 快速 Flush 衝開骨髓腔 fibrin mesh → 再開始給藥。每次給藥後需再 Flush 20mL 確保藥物進入循環。
 
 **Q20.** `M02` `Remember` `Pre`
 **Epinephrine 用於治療過敏性休克 (Anaphylactic Shock) 的濃度與途徑首選為？**
@@ -308,7 +308,7 @@ D. Cold + Wet（C 象限）
 > **Answer: B**
 > **解析**：四肢尚溫暖（Warm）+ 雙側囉音/肺水腫（Wet）= B 象限。高血壓 + 急性肺水腫 + 呼吸窘迫 = SCAPE。處置方向：NTG + CPAP/BiPAP。
 
-**Q32.** `M01` `Analyze` `Post`
+**Q32.** `M01` `Analyze` `Bank`
 **承上題，給予 NTG SL + CPAP 後 5 分鐘，病人突然惡化：BP 75/50, HR 130, 皮膚冰冷濕黏，囉音加重。此時的最佳處置是？**
 A. 加大 NTG 劑量（加強降壓）
 B. 給予 Furosemide 20 mg IV（利尿排水）
@@ -318,13 +318,13 @@ D. 快速輸注 NS 1000 mL
 > **解析**：從 Warm+Wet 轉為 Cold+Wet（C 象限）——forward failure 加劇。NTG 在 SBP < 90 禁用（會更低）；Furosemide 在低灌流時無效且可能惡化低血壓；大量輸液會加重肺水腫。正確做法：停 NTG → 升壓（push-dose epi）。
 
 **Q33.** `M01` `Analyze` `Post`
-**OHCA 急救中，電擊後 ECG 轉為 sinus tachycardia，但頸動脈脈搏仍摸不到。POCUS 顯示心臟有收縮。此狀態最可能是？**
-A. True PEA（真無脈搏電氣活動）
-B. Asystole（心搏停止）
-C. PseudoPEA（假無脈搏電氣活動）
-D. VF（心室顫動）
+**內科 OHCA 病人，CPR 過程中 rhythm check 顯示 narrow-complex sinus rhythm（HR 65），頸動脈脈搏摸不到。快速 POCUS 確認心臟有微弱收縮活動。此狀態最可能是？**
+A. True PEA（心臟已無有效收縮）
+B. ROSC（已恢復自主循環）
+C. PseudoPEA（心臟仍有收縮但心輸出量極低）
+D. Pulseless VT（無脈搏心室頻脈）
 > **Answer: C**
-> **解析**：ECG 有 organized rhythm + 無脈搏 + POCUS 有心臟收縮 = PseudoPEA。心臟還在跳但心輸出量極低（extreme shock）。與 true PEA（POCUS 無收縮）不同，pseudoPEA 的管理方式是升壓（push-dose epi 10-20 mcg），而非標準 ACLS Epi 1 mg。
+> **解析**：ECG 有 organized rhythm + 無脈搏 + POCUS 確認有心臟收縮 = PseudoPEA。與 True PEA 不同，心臟還在跳但 CO 極低（SBP < 40-50 mmHg），摸不到脈搏。處置是 push-dose epi 10-20 mcg（非 ACLS 全量 1 mg），目標是提升 CO 讓脈搏可觸及。D 選項為 VT 波形（wide-complex），與題幹 narrow-complex sinus 不符。
 
 **Q34.** `M02` `Apply` `Pre`
 **關於 Nitroglycerin (NTG) 在急性肺水腫的應用，下列何者正確？**
@@ -335,7 +335,7 @@ D. NTG 舌下吸收不受灌流狀態影響
 > **Answer: B**
 > **解析**：NTG 是血管擴張劑（非利尿劑）。低劑量靜脈擴張→減前負荷→減肺水腫；高劑量動脈擴張→減後負荷→減心臟負擔。SBP < 90 禁用。低灌流時 SL 吸收差（黏膜血流不足）。
 
-**Q35.** `M02` `Analyze` `Post`
+**Q35.** `M02` `Analyze` `Bank`
 **在 PseudoPEA 狀態下（POCUS 確認心臟有收縮），為什麼不能使用標準 ACLS 劑量 Epinephrine 1 mg IV？**
 A. 因為 PseudoPEA 不需要任何 Epinephrine
 B. 因為心臟還在跳，全量 Epi 會導致心肌過度興奮→VF/VT

@@ -186,7 +186,7 @@ flowchart TD
 
 | 藥物 | 適應症 | 劑量 | 關鍵提醒 |
 |---|---|---|---|
-| **NTG** | SCAPE/APE（Warm+Wet） | SL 0.4 mg q3-5min / IV 10-200 mcg/min | 低劑量降前負荷（擴靜脈）、高劑量降後負荷（擴動脈）; **SBP<90 禁用**; RV infarct 禁用 |
+| **NTG** | SCAPE/APE（Warm+Wet） | SL 0.4 mg q3-5min / IV 10-200 mcg/min | 低劑量降前負荷（擴靜脈）、高劑量降後負荷（擴動脈）; **SBP<90 禁用**; RV infarct 禁用; 近 24-48 hr 內使用 PDE-5 抑制劑（Sildenafil/Tadalafil）禁用 |
 | **Furosemide** | Volume overload 肺水腫 | 20-80 mg IV | Flash APE ≠ volume overload → 非首選 |
 
 ### 鎮靜止痛 & 呼吸
@@ -196,9 +196,10 @@ flowchart TD
 | **Midazolam** | Seizure/Sedation | IV 2-5mg / IM 5-10mg / IN 0.2mg/kg | 老人減半; 呼吸抑制 |
 | **Fentanyl** | Analgesia | IV 1-2mcg/kg / IN 1.5mcg/kg | **不釋放組織胺 → 血壓穩定**; 胸壁僵硬(罕見) |
 | **Morphine** | Analgesia | IV 2-4mg q5-15min | ⚠️ **組織胺釋放 → 低血壓**; 休克病人避免使用 |
+| **Ketamine** | Analgesia (sub-dissociative) | IV **0.1-0.3 mg/kg** 慢推 / IN 0.5-1 mg/kg | 不抑制呼吸、不降血壓；噁心/幻覺可能；RSI 劑量不同（1-2 mg/kg） |
 | **Albuterol** | Bronchospasm | 2.5mg nebulizer q15-20min | Tachycardia |
 
-> **止痛選藥口訣**：休克/血壓不穩 → Fentanyl（不釋放組織胺）；避免 Morphine（組織胺釋放 → 血管擴張 → 加劇低血壓）
+> **止痛選藥口訣**：休克/血壓不穩 → Fentanyl 或 Ketamine（兩者均不降血壓）；避免 Morphine（組織胺 → 低血壓）。Ketamine sub-dissociative（0.1-0.3 mg/kg）遠低於 RSI 劑量（1-2 mg/kg），不會造成解離。
 
 ---
 
@@ -323,7 +324,7 @@ Step 2: 從 Step 1 再抽 1 mL (= 100 mcg)
 
 | 目標 | 說明 |
 |:---:|---|
-| **SpO₂ 90–98%** | 避免過度氧化（Hyperoxia）與缺氧（Hypoxia）皆有害 |
+| **SpO₂ 92–98%** | 避免過度氧化（Hyperoxia）與缺氧（Hypoxia）皆有害 |
 | FiO₂ 從 100% 開始 | 待 SpO₂ 穩定後滴定下調 FiO₂ |
 
 ### 通氣目標（Ventilation）

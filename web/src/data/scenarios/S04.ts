@@ -342,7 +342,7 @@ export const S04: Scenario = {
           },
           {
             id: "S04-T9-B",
-            text: "將氧氣滴定至 SpO₂ 90–98%，避免過度通氣，支持 MAP ≥ 65，完成 12-lead ECG 並安排後續 coronary evaluation",
+            text: "將氧氣滴定至 SpO₂ 92–98%，避免過度通氣，支持 MAP ≥ 65，完成 12-lead ECG 並安排後續 coronary evaluation",
             correct: true,
             feedback:
               "正確！Post-ROSC 的第一段目標是第二階段 resuscitation：避免 hypoxia / hyperoxia、避免 hyperventilation（PaCO₂ 35–45 或 ETCO₂ 接近正常）、維持 MAP ≥ 65，並盡快用 12-lead ECG 與臨床資料評估 ACS / PCI 需求。",
@@ -364,7 +364,7 @@ export const S04: Scenario = {
         ],
       },
       teachingPoint:
-        "ROSC 後前 5 分鐘 = 第二階段 resuscitation。\n- Oxygenation：SpO₂ 90–98%\n- Ventilation：避免 hyperventilation，PaCO₂ 35–45 或 ETCO₂ 接近正常\n- Hemodynamics：MAP ≥ 65，必要時以 norepinephrine 支持\n- Diagnostics：12-lead ECG；依病因考慮 coronary evaluation / echo / CT\n不要把『有脈搏』誤認成『已完成急救』。",
+        "ROSC 後前 5 分鐘 = 第二階段 resuscitation。\n- Oxygenation：SpO₂ 92–98%\n- Ventilation：避免 hyperventilation，PaCO₂ 35–45 或 ETCO₂ 接近正常\n- Hemodynamics：MAP ≥ 65，必要時以 norepinephrine 支持\n- Diagnostics：12-lead ECG；依病因考慮 coronary evaluation / echo / CT\n不要把『有脈搏』誤認成『已完成急救』。",
     },
   ],
   criticalActions: [
@@ -406,7 +406,7 @@ export const S04: Scenario = {
     },
     {
       id: "S04-CA7",
-      text: "Post-ROSC 前 5 分鐘：SpO₂ 90-98、避免過度通氣、MAP ≥ 65、盡快 12-lead / coronary evaluation",
+      text: "Post-ROSC 前 5 分鐘：SpO₂ 92-98、避免過度通氣、MAP ≥ 65、盡快 12-lead / coronary evaluation",
       isCritical: true,
       stageId: "S04-T9",
     },

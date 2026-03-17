@@ -36,7 +36,7 @@ D. 變為直線
 
 **6. OHCA 病人 ROSC 後 2 分鐘，SpO₂ 100%（BVM + 100% O₂）、BP 78/46、EtCO₂ 22。下列何者最符合 post-ROSC 前 5 分鐘的處置目標？**
 A. 維持 SpO₂ 100%，並把 EtCO₂ 壓到 <25 以降低腦壓
-B. 將氧氣滴定至 SpO₂ 90-98%，避免過度通氣、支持 MAP ≥ 65，並完成 12-lead ECG / 後續 coronary evaluation
+B. 將氧氣滴定至 SpO₂ 92-98%，避免過度通氣、支持 MAP ≥ 65，並完成 12-lead ECG / 後續 coronary evaluation
 C. 繼續 Epi 1 mg q3-5 min，直到收縮壓回到 120 以上
 D. 先給 Furosemide 20 mg IV，預防 CPR 後肺水腫
 
@@ -70,11 +70,11 @@ B. 劑量加倍，因為老人對痛覺敏感
 C. 劑量減半或更少，因為老人代謝慢、分布體積改變，容易呼吸抑制
 D. 改用 Ketamine
 
-**12. IO (Intraosseous) 建立後，推藥前必須先做什麼動作以確保藥物能快速進入循環（尤其是 Conscious IO）？**
-A. 抽吸看有無骨髓
-B. 直接推藥
-C. 施打 Lidocaine (止痛) 並用 NS 快速沖洗 (Flush) 衝開骨髓腔
-D. 旋轉針頭確認深度
+**12. IO (Intraosseous) 建立後，依台北市作業手冊，正確的確認與給藥順序為？**
+A. 直接推藥，不需確認位置
+B. 旋轉針頭確認深度 → 直接推藥
+C. 抽吸確認骨髓回血 → Lidocaine 止痛（清醒者）→ NS Flush 衝開骨髓腔 → 給藥
+D. NS Flush → 抽吸確認 → 給藥
 
 **13. Amiodarone 若採快速 IV 推注 (IV push)，最常見且顯著的副作用是？**
 A. 高血壓 (Hypertension)
@@ -118,8 +118,8 @@ B. 心因性休克
 C. 末期失代償性休克 (酸中毒嚴重)
 D. 神經性休克
 
-**20. OHCA 急救中，電擊後 ECG 轉為 sinus tachycardia，但頸動脈脈搏仍摸不到。POCUS 顯示心臟有收縮。此狀態最可能是？**
-A. True PEA（真無脈搏電氣活動）
-B. Asystole（心搏停止）
-C. PseudoPEA（假無脈搏電氣活動）
-D. VF（心室顫動）
+**20. 內科 OHCA 病人，CPR 過程中 rhythm check 顯示 narrow-complex sinus rhythm（HR 65），頸動脈脈搏摸不到。快速 POCUS 確認心臟有微弱收縮活動。此狀態最可能是？**
+A. True PEA（心臟已無有效收縮）
+B. ROSC（已恢復自主循環）
+C. PseudoPEA（心臟仍有收縮但心輸出量極低）
+D. Pulseless VT（無脈搏心室頻脈）

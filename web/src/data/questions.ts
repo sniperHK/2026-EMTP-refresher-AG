@@ -1,5 +1,5 @@
 export type CognitiveLevel = "Remember" | "Apply" | "Analyze";
-export type QuizModule = "M01" | "M02";
+export type QuizModule = "M01" | "M02" | "M03";
 export type QuizUsage = "Pre" | "Post";
 
 export interface Question {
@@ -128,12 +128,12 @@ export const questions: Question[] = [
     question: "OHCA 病人 ROSC 後 2 分鐘，SpO₂ 100%（BVM + 100% O₂）、BP 78/46、EtCO₂ 22。下列何者最符合 post-ROSC 前 5 分鐘的處置目標？",
     options: [
       "維持 SpO₂ 100%，並把 EtCO₂ 壓到 <25 以降低腦壓",
-      "將氧氣滴定至 SpO₂ 90-98%，避免過度通氣、支持 MAP ≥ 65，並完成 12-lead ECG / 後續 coronary evaluation",
+      "將氧氣滴定至 SpO₂ 92-98%，避免過度通氣、支持 MAP ≥ 65，並完成 12-lead ECG / 後續 coronary evaluation",
       "繼續 Epi 1 mg q3-5 min，直到收縮壓回到 120 以上",
       "先給 Furosemide 20 mg IV，預防 CPR 後肺水腫",
     ],
     answer: "B",
-    explanation: "Post-ROSC 是第二階段 resuscitation。目標包含：SpO₂ 90-98%、避免 hyperventilation（PaCO₂ 35-45 或 EtCO₂ 接近正常）、MAP ≥ 65、以及盡快完成 12-lead ECG 並依病因安排 coronary evaluation。過度通氣與持續 arrest dosing 的 Epi 都可能帶來傷害。",
+    explanation: "Post-ROSC 是第二階段 resuscitation。目標包含：SpO₂ 92-98%、避免 hyperventilation（PaCO₂ 35-45 或 EtCO₂ 接近正常）、MAP ≥ 65、以及盡快完成 12-lead ECG 並依病因安排 coronary evaluation。過度通氣與持續 arrest dosing 的 Epi 都可能帶來傷害。",
   },
   {
     id: 11, module: "M01", level: "Analyze", usage: ["Post"],
@@ -192,8 +192,8 @@ export const questions: Question[] = [
       "1 分鐘",
       "不用摸，直接壓胸",
     ],
-    answer: "B",
-    explanation: "極度低體溫心跳極慢且微弱，太快判定無脈搏可能導致不必要的壓胸引發 VF。AHA 建議 30-45 秒，甚至到 60 秒。",
+    answer: "C",
+    explanation: "極度低體溫心跳極慢且微弱，太快判定無脈搏可能導致不必要的壓胸引發 VF。AHA 2020 / ERC 2021 建議至少 60 秒（1 分鐘），以避免誤判。",
   },
 
   // ── M02 藥物動力學/藥效學 ─────────────────────────────
@@ -438,6 +438,31 @@ export const questions: Question[] = [
     ],
     answer: "B",
     explanation: "PseudoPEA 的心臟仍有收縮能力，只是心輸出量極低。ACLS 劑量 1 mg = push-dose 劑量的 50–100 倍。對還在跳的心臟打全量 Epi → 心肌氧耗暴增 + 受體過度興奮 → 極易打成 VF/VT。正確：push-dose epi 10–20 mcg IV q1–2 min。",
+  },
+  // ── M03 高風險盲點（敗血症）──────────────────────────────
+  {
+    id: 36, module: "M03", level: "Apply", usage: ["Post"],
+    question: "72 歲女性，發燒 2 天，今日嗜睡。到場：皮膚溫熱、HR 125、BP 85/50、RR 28、SpO₂ 93%、GCS E3V4M6。使用 qSOFA 篩檢，此病人符合幾項？",
+    options: [
+      "0 項",
+      "1 項（僅 RR ≥ 22）",
+      "2 項（RR ≥ 22 + SBP ≤ 100）",
+      "3 項（RR ≥ 22 + SBP ≤ 100 + GCS < 15）",
+    ],
+    answer: "D",
+    explanation: "qSOFA 三項：(1) RR 28 ≥ 22 ✓ (2) SBP 85 ≤ 100 ✓ (3) GCS 13 < 15 ✓。三項全符合，高度懷疑 sepsis。院前應立即建立 IV、輸液 30 mL/kg、監測 EtCO₂、啟動 Sepsis Alert 通報接收醫院。",
+  },
+  {
+    id: 37, module: "M03", level: "Remember", usage: ["Post"],
+    question: "關於院前敗血症處置，下列何者正確？",
+    options: [
+      "院前應先給予經驗性抗生素再後送",
+      "輸液目標為首小時 30 mL/kg，分次 bolus 並評估反應",
+      "qSOFA ≥ 1 項即可確診敗血症",
+      "低體溫的感染病人可排除敗血症",
+    ],
+    answer: "B",
+    explanation: "A 錯：院前通常無抗生素可用，但提早通報讓醫院備好是關鍵。B 對：Surviving Sepsis Campaign 建議首小時 30 mL/kg 晶體液，分次 250-500 mL bolus 評估反應。C 錯：qSOFA ≥ 2 項才高度懷疑，且不能單獨確診。D 錯：低體溫（< 36°C）本身就是敗血症的危險警訊，比發燒預後更差。",
   },
 ];
 
