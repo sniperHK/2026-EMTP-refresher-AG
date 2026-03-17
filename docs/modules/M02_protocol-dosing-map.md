@@ -16,8 +16,8 @@
 
 | 藥物 | 適應症 | 路徑 | 濃度/泡製 | 成人劑量 | 重複間隔 | 最大劑量 | 重要禁忌/警訊 | 來源條文 |
 |---|---|---|---|---|---|---|---|---|
-| Epinephrine | OHCA VF/pVT/PEA/Asystole | IV/IO | 1:10,000 (0.1mg/mL) | 1 mg | q 3-5 min | 無上限（持續至 ROSC 或終止急救） | ROSC 後體內蓄積致高血壓/心律不整；確認濃度避免誤用 1:1,000 | AHA ACLS 2020 §5.2 |
-| Epinephrine | Anaphylaxis | IM (大腿外側) | 1:1,000 (1mg/mL) 原液 | 0.3-0.5 mg | q 5-15 min PRN | 無絕對上限（依臨床反應） | 休克病人 IM 吸收差 → 考慮 IV push-dose；確認濃度避免誤用 1:10,000 | AHA ACLS 2020; WAO Anaphylaxis Guidelines 2020 |
+| Epinephrine | OHCA VF/pVT/PEA/Asystole | IV/IO | 1:1,000 (1mg/1mL) 原液一支 | 1 mg | q 3-5 min | 無上限（持續至 ROSC 或終止急救） | ROSC 後體內蓄積致高血壓/心律不整；台灣只有 1:1,000，心停用原液一支 (1mg) 直接 IV/IO | AHA ACLS 2020 §5.2 |
+| Epinephrine | Anaphylaxis | IM (大腿外側) | 1:1,000 (1mg/1mL) 原液 | 0.3-0.5 mg | q 5-15 min PRN | 無絕對上限（依臨床反應） | 休克病人 IM 吸收差 → 考慮 IV push-dose | AHA ACLS 2020; WAO Anaphylaxis Guidelines 2020 |
 | Amiodarone | Refractory VF/pVT (OHCA) | IV/IO | 原液 50mg/mL 或預混 | 1st: 300 mg bolus; 2nd: 150 mg bolus | 1st 後 3-5 min 可給 2nd | 單次急救共 450 mg | **活人勿快推** — 非 arrest 須 10-15 min 慢滴（150mg/100mL D5W）以免低血壓；Arrest 時可 push | AHA ACLS 2020 §5.3 |
 | Adenosine | Stable SVT (Regular narrow-complex) | IV (肘前靜脈優先) | 原液 3mg/mL | 1st: 6 mg rapid push + 20mL NS flush; 2nd/3rd: 12 mg | 1-2 min | 共 30 mg (6+12+12) | 半衰期 <10 sec → 必須最近心臟的 IV + rapid push + flush；禁用於 irregular WCT、2nd/3rd degree AVB | AHA ACLS 2020 §7.3 |
 | Midazolam | Seizure / Sedation | IV/IM/IN | 原液 5mg/mL | IV: 2-5 mg; IM: 5-10 mg; IN: 0.2 mg/kg (MAD) | IV: q 5-10 min; IM: q 15 min | IV 累計 10 mg; IM 累計 10 mg | 呼吸抑制（尤與 opioid 併用）；老人/休克減量 50%；備好 BVM 及 Flumazenil | AHA ACLS 2020; Neurocritical Care Society 2012 |
@@ -27,7 +27,7 @@
 
 ## 高風險錯誤防呆（教學必講）
 
-- [x] Epi 1:1000 vs 1:10000 濃度混淆 — **IM 用原液 1:1000，IV 用稀釋 1:10000**
+- [x] Epi 濃度/用法混淆 — **台灣只有 1:1,000；IM 原液用於過敏，IV/IO 原液一支用於心停，稀釋後用於 push-dose**
 - [x] 休克病人誤用 IM 導致吸收失敗 — **低灌流 → 改 IV/IO**
 - [x] 低灌流狀態下重複補藥過快造成 ROSC 後過量 — **尊重 circulation time，勿 < 3 min 就追加**
 - [x] IO 未充分 flush 造成藥效延遲 — **每次給藥後 20 mL NS flush + 抬高肢體**

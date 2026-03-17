@@ -62,11 +62,11 @@
 
 ### 循環與強心 (Cardiovascular)
 - **Epinephrine (Adrenaline)**
-  - **Cardiac Arrest**: IV/IO 1 mg (1:10,000) q 3-5 min
+  - **Cardiac Arrest**: IV/IO 1 mg (1:1,000 原液一支) q 3-5 min
   - **Anaphylaxis**: IM 0.3-0.5 mg (1:1,000 原液) q 5-15 min
   - **Push-dose (低血壓)**: 10-20 mcg IV q 1-2 min（泡製見 Section 5）
   - **PK**: IV Onset 快 (1-2 min), Duration 短 (5-10 min) → 需持續輸注。
-  - **陷阱**: 1:1,000 (1mg/1mL) vs 1:10,000 (1mg/10mL) 千萬別搞混。IM 用原液，IV 用稀釋液。
+  - **陷阱**: 台灣現場只有 1:1,000 (1mg/1mL)，沒有 1:10,000 預充針。心停用原液一支 (1mg) 直接 IV/IO push；IM 打原液用於過敏；push-dose 需稀釋（1 支 + NS 至 100mL = 10mcg/mL）。
 
 - **Amiodarone**
   - **OHCA VF/pVT**: 1st 300 mg IV/IO bolus → 2nd 150 mg bolus
@@ -87,8 +87,20 @@
 
 - **Fentanyl**
   - **Analgesia**: IV 1-2 mcg/kg (通常 50-100 mcg) / IN 1.5 mcg/kg
-  - **PK**: IV Onset 1-2 min, Duration 30-60 min。不釋放組織胺 (Histamine)，比 Morphine 更不影響血壓。
+  - **PK**: IV Onset 1-2 min, Duration 30-60 min。**不釋放組織胺 (Histamine)**，血流動力學穩定 (Hemodynamic stable)。
   - **陷阱**: **胸壁僵硬 (Chest Wall Rigidity)**（罕見，極快推注大劑量時可能發生，導致無法 BVM）。
+
+- **Morphine vs Fentanyl — 為什麼急救現場優先選 Fentanyl？**
+
+  | | Morphine | Fentanyl |
+  |---|---|---|
+  | **組織胺釋放** | ✅ 會 → 血管擴張 → **低血壓** | ❌ 不會 → 血壓穩定 |
+  | **血流動力學** | 不穩定（休克病人更危險） | 穩定 |
+  | **Onset** | IV 5-10 min（較慢） | IV 1-2 min（快） |
+  | **IN 給藥** | 不適合 | ✅ 可 IN（1.5 mcg/kg） |
+  | **呼吸抑制** | ✅ 會 | ✅ 會（兩者都要監測） |
+
+  > **結論**：休克或血壓不穩的病人止痛，Fentanyl 優於 Morphine。Morphine 的組織胺釋放可能加劇低血壓。
 
 ### 呼吸與過敏 (Respiratory/Allergy)
 - **Albuterol (Combivent/Ventolin)**
@@ -131,7 +143,7 @@
 ## 5. 藥物計算與泡製 (Practical Skills)
 
 - **Push-dose Epinephrine (急救升壓)**:
-  - 取 1ml (1:10,000) + 9ml NS = 10mcg/ml
+  - 取 1:1,000 Epinephrine 1 支 (1mg/1ml) 加入 NS 至總量 100ml → 濃度 10mcg/ml
   - 每次給 1-2ml (10-20mcg)，每 1-2 分鐘 titrate 直到 SBP > 90。
   - **PseudoPEA 專用情境**：心臟還在跳但脈搏摸不到 → 用 push-dose（10-20 mcg），**絕對不能用 ACLS 劑量 1 mg**——心臟還有收縮力，全量 Epi 會打成 VF/VT。
 

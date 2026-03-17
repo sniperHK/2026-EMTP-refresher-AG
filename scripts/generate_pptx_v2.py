@@ -602,14 +602,14 @@ def build_m02():
 
     # Slide 15 — Epinephrine
     add_table_slide(prs,
-                    "Epinephrine — 三種情境，三種劑量",
-                    ["情境", "濃度", "劑量", "途徑"],
+                    "Epinephrine — 同一支藥、兩種用法",
+                    ["情境", "濃度/泡製", "劑量", "途徑"],
                     [
-                        ["Cardiac Arrest", "1:10,000", "1 mg q3-5min", "IV/IO"],
-                        ["Anaphylaxis", "1:1,000", "0.3-0.5 mg q5-15min", "IM"],
-                        ["Push-dose (低 BP)", "10 mcg/mL", "10-20 mcg q1-2min", "IV"],
+                        ["Cardiac Arrest", "1:1,000 原液一支", "1 mg q3-5min", "IV/IO"],
+                        ["Anaphylaxis", "1:1,000 原液", "0.3-0.5 mg q5-15min", "IM"],
+                        ["Push-dose (低 BP)", "1支+NS至100mL=10mcg/mL", "10-20 mcg q1-2min", "IV"],
                     ],
-                    note_text="千萬別搞混 1:1,000 vs 1:10,000！IM 用原液, IV 用稀釋液")
+                    note_text="台灣只有 1:1,000 (1mg/1mL)。心停用原液一支直接 IV/IO；過敏用原液 IM；push-dose 需稀釋")
 
     # Slide 16 — Amiodarone
     add_content_slide(prs,
@@ -701,8 +701,8 @@ def build_m02():
     add_content_slide(prs,
                       "Push-dose Epinephrine 泡製",
                       [
-                          "Step 1: 取 Epi 1:10,000 (1mg/10mL) → 抽出 1 mL",
-                          "Step 2: 加入 9 mL NS",
+                          "Step 1: 取 Epi 1:1,000 (1mg/1mL) 一支",
+                          "Step 2: 加入 NS 至總量 100 mL",
                           "Step 3: 最終濃度 = 10 mcg/mL",
                           "給藥: 每次 1-2 mL (10-20 mcg) IV push",
                           "Titrate 至 SBP > 90，每 1-2 分鐘可重複",
@@ -736,7 +736,7 @@ def build_m02():
     add_content_slide(prs,
                       "高風險錯誤防呆 — 5 條",
                       [
-                          "Epi 濃度混淆: IM 用 1:1,000 / IV 用 1:10,000",
+                          "Epi 用法混淆: 台灣只有 1:1,000；心停原液 IV/IO、過敏原液 IM、push-dose 需稀釋",
                           "休克打 IM: 血流不到肌肉 → 改用 IV/IO",
                           "追藥太快: 尊重 circulation time, 至少等 3 min",
                           "IO 忘 Flush: 每次給藥後 20 mL NS flush + 抬高",

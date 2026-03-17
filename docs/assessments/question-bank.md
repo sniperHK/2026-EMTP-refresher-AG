@@ -54,7 +54,7 @@ B. 嚴重低灌流 (Severe Hypoperfusion) 或心搏停止 (Cardiac Arrest)
 C. 呼吸性酸中毒 (Respiratory Acidosis)
 D. 病人換氣過度 (Hyperventilation)
 > **Answer: B**
-> **解析**：EtCO2 反映心輸出量 (Cardiac Output)。當循環衰竭，肺部血流減少，無法將 CO2 帶到肺泡排出，導致 EtCO2 驟降。這是即將或已經 Cardiac Arrest 的重要警訊。
+> **解析**：EtCO2 反映心輸出量 (Cardiac Output)。當循環衰竭，肺部血流減少，無法將 CO2 帶到肺泡排出，導致 EtCO2 驟降。這是即將或已經 Cardiac Arrest 的重要警訊。關鍵鑑別：**若氣管內管滑脫 (Extubation)，EtCO2 波形會突然消失（降至 0 或接近 0）且波形不規則或完全消失**，而非維持規律波形。本題題幹強調「波形仍規律」，代表管路仍在氣管內，但肺循環血流大幅減少，指向循環衰竭而非管路問題。
 
 **Q5.** `M01` `Remember` `Post`
 **下列哪一項生命徵象組合最符合「神經性休克 (Neurogenic Shock)」的特徵？**
@@ -198,21 +198,21 @@ D. 旋轉針頭確認深度
 
 **Q20.** `M02` `Remember` `Pre`
 **Epinephrine 用於治療過敏性休克 (Anaphylactic Shock) 的濃度與途徑首選為？**
-A. 1:10,000 (1mg/10ml) IV push
+A. 1:1,000 (1mg/1ml) IV push（原液靜脈推注）
 B. 1:1,000 (1mg/1ml) IM 肌肉注射
-C. 1:1,000 (1mg/1ml) IV push
-D. 1:10,000 (1mg/10ml) IM 肌肉注射
+C. 稀釋後 10mcg/mL IV push（Push-dose 濃度）
+D. 1:1,000 (1mg/1ml) SC 皮下注射
 > **Answer: B**
-> **解析**：過敏性休克首選 IM (大腿外側)，濃度用原液 1:1000。IV push 對心臟風險太大，通常用於已 Cardiac arrest 或極端嚴重且 Monitor 監測下的休克。
+> **解析**：過敏性休克首選 IM (大腿外側)，濃度用原液 1:1,000。台灣現場只有 1:1,000 (1mg/1mL) 一種 Epinephrine。A 錯：原液 IV push 1mg 對心臟風險極大（等同 ACLS arrest dose），通常僅用於心停。C 錯：Push-dose 濃度是用於低血壓升壓，非過敏首選。D 錯：SC 吸收太慢且不穩定，已非建議途徑。
 
 **Q21.** `M02` `Apply` `Pre`
 **關於 Push-dose Epinephrine 的泡製，下列何者正確？**
 A. 直接抽 1:1000 原液 1ml 打入
-B. 取 1ml 的 1:10,000 Epinephrine (0.1mg) 加水稀釋至 10ml → 濃度變為 10mcg/ml
+B. 取 1:1,000 Epinephrine 1 支 (1mg/1ml) 加入 NS 至總量 100ml → 濃度為 10mcg/ml
 C. 取 1ml 的 1:1000 Epinephrine 加水稀釋至 10ml
 D. 用 D5W 泡製
 > **Answer: B**
-> **解析**：標準泡法是將 Cardiac arrest 用的 Epi (1mg/10ml) 抽 1ml 出來，再加 9ml NS，變成 10mcg/ml。
+> **解析**：台灣現場常備 1:1,000 (1mg/1ml) Epinephrine。泡法：取 1 支 (1mg) 加入 NS 至總量 100ml，最終濃度 10mcg/ml。Push-dose 每次推 1-2ml (10-20mcg) IV，q1-2 min。直接打原液 1mg = push-dose 的 50-100 倍，極易打成 VF/VT。D5W 會加速 Epinephrine 分解，應用 NS 稀釋。
 
 **Q22.** `M02` `Remember` `Post`
 **Amiodarone 若採快速 IV 推注 (IV push)，最常見且顯著的副作用是？**
