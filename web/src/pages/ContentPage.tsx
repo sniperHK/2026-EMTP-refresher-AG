@@ -2,6 +2,7 @@ import type { ComponentProps } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
+import rehypeRaw from 'rehype-raw'
 import m01Raw from '../../../docs/modules/M01_ALS-pathophysiology.md?raw'
 import m02Raw from '../../../docs/modules/M02_ALS-pharmacokinetics.md?raw'
 import m02DosingRaw from '../../../docs/modules/M02_protocol-dosing-map.md?raw'
@@ -172,7 +173,7 @@ export function ContentPage() {
 
       {/* Markdown content */}
       <div className="space-y-0">
-        <ReactMarkdown remarkPlugins={[remarkGfm]} components={components}>
+        <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]} components={components}>
           {mod.content}
         </ReactMarkdown>
       </div>

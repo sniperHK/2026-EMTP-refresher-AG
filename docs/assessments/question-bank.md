@@ -208,11 +208,11 @@ D. 1:1,000 (1mg/1ml) SC 皮下注射
 **Q21.** `M02` `Apply` `Pre`
 **關於 Push-dose Epinephrine 的泡製，下列何者正確？**
 A. 直接抽 1:1000 原液 1ml 打入
-B. 取 1:1,000 Epinephrine 1 支 (1mg/1ml) 加入 NS 至總量 100ml → 濃度為 10mcg/ml
+B. 取 1:1,000 Epi 1 mL + N/S 至 10 mL（100 mcg/mL）→ 再取 1 mL + N/S 至 10 mL → 濃度 10 mcg/mL
 C. 取 1ml 的 1:1000 Epinephrine 加水稀釋至 10ml
 D. 用 D5W 泡製
 > **Answer: B**
-> **解析**：台灣現場常備 1:1,000 (1mg/1ml) Epinephrine。泡法：取 1 支 (1mg) 加入 NS 至總量 100ml，最終濃度 10mcg/ml。Push-dose 每次推 1-2ml (10-20mcg) IV，q1-2 min。直接打原液 1mg = push-dose 的 50-100 倍，極易打成 VF/VT。D5W 會加速 Epinephrine 分解，應用 NS 稀釋。
+> **解析**：台灣現場常備 1:1,000 (1 mg/1 mL) Epinephrine。二階段稀釋法：Step 1 取 1 mL + N/S 至 10 mL（= 100 mcg/mL）；Step 2 再取 1 mL + N/S 至 10 mL（= 10 mcg/mL）。Push-dose 每次推 1–2 mL (10–20 mcg) slow IV push，q1-2 min。直接打原液 1 mg = push-dose 的 50-100 倍，極易打成 VF/VT。D5W 會加速 Epinephrine 分解，應用 NS 稀釋。
 
 **Q22.** `M02` `Remember` `Post`
 **Amiodarone 若採快速 IV 推注 (IV push)，最常見且顯著的副作用是？**

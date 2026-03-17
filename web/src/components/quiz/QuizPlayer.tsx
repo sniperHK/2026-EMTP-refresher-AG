@@ -9,7 +9,6 @@ import { cn } from '@/lib/utils'
 interface Props {
   questions: Question[]
   onFinish: (result: QuizFinishResult) => void
-  onReset: () => void
 }
 
 export interface QuizFinishResult {
@@ -24,7 +23,7 @@ const levelColor: Record<string, string> = {
   Analyze: 'var(--medical-red)',
 }
 
-export function QuizPlayer({ questions, onFinish, onReset }: Props) {
+export function QuizPlayer({ questions, onFinish }: Props) {
   const [currentIdx, setCurrentIdx] = useState(0)
   const [selected, setSelected] = useState<OptionKey | null>(null)
   const [showFeedback, setShowFeedback] = useState(false)
@@ -63,6 +62,27 @@ export function QuizPlayer({ questions, onFinish, onReset }: Props) {
     setSelected(null)
     setShowFeedback(false)
   }, [answers, isLast, onFinish, score, total])
+
+  const handlePrev = useCallback(() => {
+    if (currentIdx === 0) return
+    // Remove the current answer record if it exists (user going back before answering)
+    const prevAnswer = answers.find(a => a.questionId === q.id)
+    if (prevAnswer) {
+      setAnswers(prev => prev.filter(a => a.questionId !== q.id))
+      if (prevAnswer.isCorrect) setScore(s => s - 1)
+    }
+    setCurrentIdx(i => i - 1)
+    // Restore previous question's answer state
+    const prevQ = questions[currentIdx - 1]
+    const prevQAnswer = answers.find(a => a.questionId === prevQ.id)
+    if (prevQAnswer) {
+      setSelected(prevQAnswer.selected as OptionKey)
+      setShowFeedback(true)
+    } else {
+      setSelected(null)
+      setShowFeedback(false)
+    }
+  }, [currentIdx, answers, q.id, questions])
 
   const optionKeys: OptionKey[] = ['A', 'B', 'C', 'D']
 
@@ -178,8 +198,13 @@ export function QuizPlayer({ questions, onFinish, onReset }: Props) {
 
       {/* Action buttons */}
       <div className="flex justify-between pt-2">
-        <Button variant="outline" size="sm" onClick={onReset}>
-          重新選擇
+        <Button
+          variant="outline"
+          size="sm"
+          onClick={handlePrev}
+          disabled={currentIdx === 0}
+        >
+          ← 上一題
         </Button>
         {showFeedback && (
           <Button onClick={handleNext}>

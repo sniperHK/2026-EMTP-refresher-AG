@@ -5,90 +5,19 @@ import { useLocation } from 'react-router-dom'
 
 interface Annotation {
   id: string
-  anchor: string      // CSS selector for the target element
-  relX: number        // 0-1 relative X within anchor element
-  relY: number        // 0-1 relative Y within anchor element
+  page: string         // route path (e.g. "/content/M01")
+  x: number            // click X in px (relative to document)
+  y: number            // click Y in px (relative to document)
+  viewportW: number    // viewport width at time of annotation
+  viewportH: number    // viewport height at time of annotation
   text: string
-  color: string
-  // Legacy fallback (old absolute positioning)
-  pageX?: number
-  pageY?: number
-}
-
-const COLORS = ['#FEF08A', '#BBF7D0', '#BFDBFE', '#FED7AA', '#F9A8D4']
-
-// ── DOM anchor utilities ─────────────────────────────────────────────────────
-
-const BLOCK_TAGS = new Set([
-  'H1', 'H2', 'H3', 'H4', 'H5', 'H6', 'P', 'DIV', 'SECTION', 'ARTICLE',
-  'TABLE', 'TR', 'LI', 'PRE', 'BLOCKQUOTE', 'MAIN', 'HEADER', 'FOOTER',
-  'NAV', 'ASIDE', 'FIGURE', 'FIGCAPTION', 'DETAILS', 'SUMMARY',
-])
-
-/** Walk up from an element to find a meaningful block-level anchor */
-function findAnchorElement(el: Element | null): Element {
-  let current = el
-  while (current && current !== document.body) {
-    if (current.id || BLOCK_TAGS.has(current.tagName)) return current
-    current = current.parentElement
-  }
-  return document.body
-}
-
-/** Generate a unique CSS selector for an element */
-function getSelector(el: Element): string {
-  if (el === document.body) return 'body'
-  if (el.id) return `#${CSS.escape(el.id)}`
-
-  const parts: string[] = []
-  let current: Element | null = el
-
-  while (current && current !== document.body) {
-    if (current.id) {
-      parts.unshift(`#${CSS.escape(current.id)}`)
-      break
-    }
-
-    let selector = current.tagName.toLowerCase()
-    const parent = current.parentElement
-    if (parent) {
-      const sameTag = Array.from(parent.children).filter(c => c.tagName === current!.tagName)
-      if (sameTag.length > 1) {
-        const idx = sameTag.indexOf(current) + 1
-        selector += `:nth-of-type(${idx})`
-      }
-    }
-    parts.unshift(selector)
-    current = current.parentElement
-  }
-
-  return parts.join(' > ')
-}
-
-/** Resolve anchor position — returns viewport-relative coords */
-function resolvePosition(note: Annotation): { left: number; top: number } | null {
-  if (note.anchor && note.anchor !== 'body') {
-    try {
-      const el = document.querySelector(note.anchor)
-      if (el) {
-        const rect = el.getBoundingClientRect()
-        return {
-          left: rect.left + rect.width * note.relX,
-          top: rect.top + rect.height * note.relY,
-        }
-      }
-    } catch { /* invalid selector */ }
-  }
-  // Legacy fallback
-  if (note.pageX != null && note.pageY != null) {
-    return { left: note.pageX - window.scrollX, top: note.pageY - window.scrollY }
-  }
-  return null
+  timestamp: string    // ISO 8601
+  resolved: boolean
 }
 
 // ── Persistence ──────────────────────────────────────────────────────────────
 
-const LOCAL_KEY = 'emtp-annotations'
+const LOCAL_KEY = 'emtp-annotations-v2'
 
 async function apiLoad(): Promise<Record<string, Annotation[]>> {
   try {
@@ -112,203 +41,261 @@ async function apiSave(data: Record<string, Annotation[]>): Promise<void> {
   } catch { /* silent */ }
 }
 
-// ── StickyNote component ─────────────────────────────────────────────────────
+// ── Pin marker (shown on page at annotation location) ────────────────────────
 
-interface NoteProps {
+function PinMarker({ note, onResolve, onDelete }: {
   note: Annotation
-  onUpdate: (id: string, text: string) => void
+  onResolve: (id: string) => void
   onDelete: (id: string) => void
-  onDragEnd: (id: string, anchor: string, relX: number, relY: number) => void
-}
+}) {
+  const [expanded, setExpanded] = useState(false)
+  const markerRef = useRef<HTMLDivElement>(null)
 
-function StickyNote({ note, onUpdate, onDelete, onDragEnd }: NoteProps) {
-  const [editing, setEditing] = useState(!note.text)
-  const [pos, setPos] = useState<{ left: number; top: number } | null>(null)
-  const textareaRef = useRef<HTMLTextAreaElement>(null)
-  const dragging = useRef(false)
-  const dragOffset = useRef({ x: 0, y: 0 })
-
-  // Recalculate position on scroll/resize
+  // Close when clicking outside
   useEffect(() => {
-    const update = () => setPos(resolvePosition(note))
-    update()
-    window.addEventListener('scroll', update, { passive: true })
-    window.addEventListener('resize', update, { passive: true })
-    return () => {
-      window.removeEventListener('scroll', update)
-      window.removeEventListener('resize', update)
-    }
-  }, [note.anchor, note.relX, note.relY, note.pageX, note.pageY])
-
-  const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
-    if ((e.target as HTMLElement).tagName === 'TEXTAREA') return
-    if ((e.target as HTMLElement).tagName === 'BUTTON') return
-    if (!pos) return
-    dragging.current = true
-    dragOffset.current = { x: e.clientX - pos.left, y: e.clientY - pos.top }
-    e.preventDefault()
-  }
-
-  useEffect(() => {
-    const onMouseMove = (e: MouseEvent) => {
-      if (!dragging.current) return
-      const el = document.getElementById(`note-${note.id}`)
-      if (el) {
-        el.style.left = `${e.clientX - dragOffset.current.x}px`
-        el.style.top = `${e.clientY - dragOffset.current.y}px`
+    if (!expanded) return
+    const handler = (e: MouseEvent) => {
+      if (markerRef.current && !markerRef.current.contains(e.target as Node)) {
+        setExpanded(false)
       }
     }
-    const onMouseUp = (e: MouseEvent) => {
-      if (!dragging.current) return
-      dragging.current = false
-      const dropX = e.clientX - dragOffset.current.x
-      const dropY = e.clientY - dragOffset.current.y
-      // Find new anchor at drop position
-      const target = document.elementFromPoint(dropX, dropY)
-      const anchorEl = findAnchorElement(target)
-      const selector = getSelector(anchorEl)
-      const rect = anchorEl.getBoundingClientRect()
-      const relX = rect.width > 0 ? (dropX - rect.left) / rect.width : 0
-      const relY = rect.height > 0 ? (dropY - rect.top) / rect.height : 0
-      onDragEnd(note.id, selector, relX, relY)
-    }
-    window.addEventListener('mousemove', onMouseMove)
-    window.addEventListener('mouseup', onMouseUp)
-    return () => {
-      window.removeEventListener('mousemove', onMouseMove)
-      window.removeEventListener('mouseup', onMouseUp)
-    }
-  }, [note.id, onDragEnd])
+    document.addEventListener('mousedown', handler)
+    return () => document.removeEventListener('mousedown', handler)
+  }, [expanded])
 
-  useEffect(() => {
-    if (editing) textareaRef.current?.focus()
-  }, [editing])
-
-  if (!pos) return null
+  const left = note.x
+  const top = note.y
 
   return (
     <div
-      id={`note-${note.id}`}
-      style={{
-        position: 'fixed', left: pos.left, top: pos.top, zIndex: 9999, width: 200,
-        background: note.color, borderRadius: 8,
-        boxShadow: '0 4px 14px rgba(0,0,0,0.18)',
-        pointerEvents: 'all', cursor: 'grab', userSelect: 'none',
-      }}
-      onMouseDown={handleMouseDown}
+      ref={markerRef}
+      style={{ position: 'absolute', left, top, zIndex: 9998, transform: 'translate(-50%, -100%)' }}
     >
-      {/* Title bar */}
-      <div style={{
-        display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-        padding: '4px 6px 2px', borderBottom: '1px solid rgba(0,0,0,0.1)',
-      }}>
-        <span style={{ fontSize: 10, fontWeight: 600, opacity: 0.6 }}>注記</span>
-        <div style={{ display: 'flex', gap: 4 }}>
-          <button
-            onClick={() => setEditing(v => !v)}
-            style={{ fontSize: 10, background: 'none', border: 'none', cursor: 'pointer', padding: '0 2px', opacity: 0.6 }}
-            title={editing ? '完成' : '編輯'}
-          >{editing ? '✓' : '✏'}</button>
-          <button
-            onClick={() => onDelete(note.id)}
-            style={{ fontSize: 10, background: 'none', border: 'none', cursor: 'pointer', padding: '0 2px', opacity: 0.6 }}
-            title="刪除"
-          >✕</button>
-        </div>
+      {/* Pin icon */}
+      <div
+        onClick={() => setExpanded(v => !v)}
+        style={{
+          width: 24, height: 24, borderRadius: '50% 50% 50% 0',
+          background: note.resolved ? '#9CA3AF' : '#EF4444',
+          transform: 'rotate(-45deg)',
+          cursor: 'pointer',
+          display: 'flex', alignItems: 'center', justifyContent: 'center',
+          boxShadow: '0 2px 6px rgba(0,0,0,0.3)',
+          transition: 'transform 0.15s',
+        }}
+        title={note.text}
+      >
+        <span style={{ transform: 'rotate(45deg)', fontSize: 10, color: 'white', fontWeight: 700 }}>
+          {note.resolved ? '✓' : '!'}
+        </span>
       </div>
 
-      {/* Body */}
-      <div style={{ padding: '6px 8px 8px' }}>
-        {editing ? (
-          <textarea
-            ref={textareaRef}
-            value={note.text}
-            onChange={e => onUpdate(note.id, e.target.value)}
-            onBlur={() => { if (note.text) setEditing(false) }}
-            placeholder="輸入注記…"
+      {/* Tooltip popup */}
+      {expanded && (
+        <div style={{
+          position: 'absolute', top: 28, left: -8, width: 260,
+          background: 'white', borderRadius: 8,
+          boxShadow: '0 4px 20px rgba(0,0,0,0.2)',
+          border: '1px solid #e5e7eb',
+          padding: '10px 12px', fontSize: 13, lineHeight: 1.5,
+          color: '#374151',
+        }}>
+          <p style={{ margin: 0, whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}>{note.text}</p>
+          <div style={{ marginTop: 8, display: 'flex', gap: 6, justifyContent: 'flex-end', fontSize: 11 }}>
+            <span style={{ color: '#9CA3AF', marginRight: 'auto', fontSize: 10 }}>
+              {new Date(note.timestamp).toLocaleString('zh-TW', { month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit' })}
+            </span>
+            {!note.resolved && (
+              <button
+                onClick={() => { onResolve(note.id); setExpanded(false) }}
+                style={{
+                  background: '#10B981', color: 'white', border: 'none', borderRadius: 4,
+                  padding: '2px 8px', cursor: 'pointer', fontWeight: 600,
+                }}
+              >已處理</button>
+            )}
+            <button
+              onClick={() => { onDelete(note.id); setExpanded(false) }}
+              style={{
+                background: '#EF4444', color: 'white', border: 'none', borderRadius: 4,
+                padding: '2px 8px', cursor: 'pointer', fontWeight: 600,
+              }}
+            >刪除</button>
+          </div>
+        </div>
+      )}
+    </div>
+  )
+}
+
+// ── Input form (appears at click position) ───────────────────────────────────
+
+function AnnotationInput({ x, y, onSubmit, onCancel }: {
+  x: number
+  y: number
+  onSubmit: (text: string) => void
+  onCancel: () => void
+}) {
+  const [text, setText] = useState('')
+  const inputRef = useRef<HTMLTextAreaElement>(null)
+
+  useEffect(() => {
+    inputRef.current?.focus()
+  }, [])
+
+  const handleSubmit = () => {
+    const trimmed = text.trim()
+    if (trimmed) onSubmit(trimmed)
+    else onCancel()
+  }
+
+  // Convert document coords to viewport for positioning the fixed input
+  const viewLeft = x - window.scrollX
+  const viewTop = y - window.scrollY
+
+  return (
+    <div style={{
+      position: 'fixed', left: viewLeft, top: viewTop, zIndex: 10001,
+      transform: 'translate(-4px, 8px)',
+    }}>
+      <div style={{
+        background: 'white', borderRadius: 10, padding: '10px 12px',
+        boxShadow: '0 4px 20px rgba(0,0,0,0.25)',
+        border: '2px solid #3B82F6',
+        width: 280,
+      }}>
+        <textarea
+          ref={inputRef}
+          value={text}
+          onChange={e => setText(e.target.value)}
+          onKeyDown={e => {
+            if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); handleSubmit() }
+            if (e.key === 'Escape') onCancel()
+          }}
+          placeholder="輸入意見或問題…"
+          rows={3}
+          style={{
+            width: '100%', border: '1px solid #E5E7EB', borderRadius: 6,
+            padding: '6px 8px', fontSize: 13, lineHeight: 1.5,
+            resize: 'vertical', outline: 'none', fontFamily: 'inherit',
+          }}
+        />
+        <div style={{ display: 'flex', gap: 6, justifyContent: 'flex-end', marginTop: 6 }}>
+          <button
+            onClick={onCancel}
             style={{
-              width: '100%', minHeight: 64, border: 'none', background: 'transparent',
-              resize: 'vertical', fontSize: 12, lineHeight: 1.5, outline: 'none',
-              fontFamily: 'inherit', cursor: 'text',
+              background: '#F3F4F6', color: '#6B7280', border: 'none', borderRadius: 6,
+              padding: '4px 12px', cursor: 'pointer', fontSize: 12, fontWeight: 500,
             }}
-          />
-        ) : (
-          <p
-            style={{ margin: 0, fontSize: 12, lineHeight: 1.5, whiteSpace: 'pre-wrap', wordBreak: 'break-word', minHeight: 20 }}
-            onDoubleClick={() => setEditing(true)}
-          >
-            {note.text || <span style={{ opacity: 0.4 }}>（空白）</span>}
-          </p>
-        )}
+          >取消</button>
+          <button
+            onClick={handleSubmit}
+            style={{
+              background: '#3B82F6', color: 'white', border: 'none', borderRadius: 6,
+              padding: '4px 12px', cursor: 'pointer', fontSize: 12, fontWeight: 600,
+            }}
+          >送出</button>
+        </div>
       </div>
     </div>
   )
 }
 
-// ── Annotation Layer ─────────────────────────────────────────────────────────
+// ── Annotation summary panel ─────────────────────────────────────────────────
 
-type SaveStatus = 'saved' | 'saving' | 'error'
+function AnnotationPanel({ notes, onResolve, onDelete, onClearResolved }: {
+  notes: Annotation[]
+  onResolve: (id: string) => void
+  onDelete: (id: string) => void
+  onClearResolved: () => void
+}) {
+  const [open, setOpen] = useState(false)
+  const pending = notes.filter(n => !n.resolved)
+  const resolved = notes.filter(n => n.resolved)
+
+  if (!open) return null
+
+  return (
+    <div style={{
+      position: 'fixed', right: 12, bottom: 68, zIndex: 10000,
+      width: 320, maxHeight: '60vh', overflowY: 'auto',
+      background: 'white', borderRadius: 12,
+      boxShadow: '0 8px 30px rgba(0,0,0,0.2)',
+      border: '1px solid #e5e7eb',
+    }}>
+      <div style={{
+        padding: '10px 14px', borderBottom: '1px solid #e5e7eb',
+        display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+      }}>
+        <span style={{ fontWeight: 700, fontSize: 14, color: '#1F2937' }}>
+          此頁註記 ({notes.length})
+        </span>
+        <button
+          onClick={() => setOpen(false)}
+          style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: 16, color: '#9CA3AF' }}
+        >✕</button>
+      </div>
+
+      {pending.length === 0 && resolved.length === 0 && (
+        <p style={{ padding: 14, color: '#9CA3AF', fontSize: 13, textAlign: 'center' }}>尚無註記</p>
+      )}
+
+      {pending.map(note => (
+        <div key={note.id} style={{ padding: '8px 14px', borderBottom: '1px solid #f3f4f6' }}>
+          <p style={{ margin: 0, fontSize: 13, color: '#374151', lineHeight: 1.5 }}>{note.text}</p>
+          <div style={{ display: 'flex', gap: 6, marginTop: 4, alignItems: 'center' }}>
+            <span style={{ fontSize: 10, color: '#9CA3AF' }}>
+              ({Math.round(note.x)}, {Math.round(note.y)})
+            </span>
+            <span style={{ fontSize: 10, color: '#9CA3AF', marginRight: 'auto' }}>
+              {new Date(note.timestamp).toLocaleString('zh-TW', { month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit' })}
+            </span>
+            <button
+              onClick={() => onResolve(note.id)}
+              style={{ fontSize: 10, color: '#10B981', background: 'none', border: 'none', cursor: 'pointer', fontWeight: 600 }}
+            >已處理</button>
+            <button
+              onClick={() => onDelete(note.id)}
+              style={{ fontSize: 10, color: '#EF4444', background: 'none', border: 'none', cursor: 'pointer', fontWeight: 600 }}
+            >刪除</button>
+          </div>
+        </div>
+      ))}
+
+      {resolved.length > 0 && (
+        <>
+          <div style={{ padding: '6px 14px', background: '#F9FAFB', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <span style={{ fontSize: 11, color: '#9CA3AF', fontWeight: 600 }}>已處理 ({resolved.length})</span>
+            <button
+              onClick={onClearResolved}
+              style={{ fontSize: 10, color: '#EF4444', background: 'none', border: 'none', cursor: 'pointer' }}
+            >全部清除</button>
+          </div>
+          {resolved.map(note => (
+            <div key={note.id} style={{ padding: '6px 14px', borderBottom: '1px solid #f3f4f6', opacity: 0.6 }}>
+              <p style={{ margin: 0, fontSize: 12, color: '#6B7280', textDecoration: 'line-through' }}>{note.text}</p>
+            </div>
+          ))}
+        </>
+      )}
+    </div>
+  )
+}
+
+// ── Main Annotation Layer ────────────────────────────────────────────────────
 
 export function AnnotationLayer() {
   const location = useLocation()
   const path = location.pathname
 
   const [active, setActive] = useState(false)
+  const [showPanel, setShowPanel] = useState(false)
   const [allNotes, setAllNotes] = useState<Record<string, Annotation[]>>({})
-  const [colorIdx, setColorIdx] = useState(0)
-  const [saveStatus, setSaveStatus] = useState<SaveStatus>('saved')
   const [loaded, setLoaded] = useState(false)
-  const [slideHash, setSlideHash] = useState('')
+  const [pendingClick, setPendingClick] = useState<{ x: number; y: number } | null>(null)
+  const [saveStatus, setSaveStatus] = useState<'saved' | 'saving'>('saved')
 
   const saveTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
-
-  // ── Slidev iframe hash tracking ──
-  const isSlides = path.startsWith('/slides/')
-
-  useEffect(() => {
-    if (!isSlides) {
-      setSlideHash('')
-      return
-    }
-
-    let hashCleanup: (() => void) | undefined
-
-    function attachIframeListener() {
-      const iframe = document.querySelector('iframe') as HTMLIFrameElement | null
-      if (!iframe) return false
-
-      const onLoad = () => {
-        try {
-          const win = iframe.contentWindow
-          if (!win) return
-          setSlideHash(win.location.hash || '#/1')
-          const onHashChange = () => setSlideHash(win.location.hash || '#/1')
-          win.addEventListener('hashchange', onHashChange)
-          hashCleanup = () => {
-            try { win.removeEventListener('hashchange', onHashChange) } catch { /* noop */ }
-          }
-        } catch { /* cross-origin fallback */ }
-      }
-
-      if (iframe.contentDocument?.readyState === 'complete') {
-        onLoad()
-      }
-      iframe.addEventListener('load', onLoad)
-      return true
-    }
-
-    if (!attachIframeListener()) {
-      const observer = new MutationObserver(() => {
-        if (attachIframeListener()) observer.disconnect()
-      })
-      observer.observe(document.body, { childList: true, subtree: true })
-      return () => { observer.disconnect(); hashCleanup?.() }
-    }
-
-    return () => hashCleanup?.()
-  }, [isSlides, path])
-
-  const annotationKey = isSlides && slideHash ? `${path}${slideHash}` : path
 
   // ── Load ──
   useEffect(() => {
@@ -324,71 +311,71 @@ export function AnnotationLayer() {
     setSaveStatus('saving')
     if (saveTimer.current) clearTimeout(saveTimer.current)
     saveTimer.current = setTimeout(async () => {
-      try {
-        await apiSave(allNotes)
-        setSaveStatus('saved')
-      } catch {
-        setSaveStatus('error')
-      }
+      await apiSave(allNotes)
+      setSaveStatus('saved')
     }, 400)
-    return () => {
-      if (saveTimer.current) clearTimeout(saveTimer.current)
-    }
+    return () => { if (saveTimer.current) clearTimeout(saveTimer.current) }
   }, [allNotes, loaded])
 
-  const notes: Annotation[] = allNotes[annotationKey] ?? []
+  const notes: Annotation[] = allNotes[path] ?? []
 
   const setNotes = useCallback((updater: (prev: Annotation[]) => Annotation[]) => {
-    setAllNotes(prev => ({ ...prev, [annotationKey]: updater(prev[annotationKey] ?? []) }))
-  }, [annotationKey])
+    setAllNotes(prev => ({ ...prev, [path]: updater(prev[path] ?? []) }))
+  }, [path])
 
+  // Click on overlay → record position, show input form
   const handleOverlayClick = useCallback((e: React.MouseEvent<HTMLDivElement>) => {
     if (!active) return
-    const overlay = e.currentTarget
-    // Temporarily disable overlay to find element underneath
-    overlay.style.pointerEvents = 'none'
-    const target = document.elementFromPoint(e.clientX, e.clientY)
-    overlay.style.pointerEvents = 'all'
+    const docX = e.clientX + window.scrollX
+    const docY = e.clientY + window.scrollY
+    setPendingClick({ x: docX, y: docY })
+  }, [active])
 
-    const anchorEl = findAnchorElement(target)
-    const selector = getSelector(anchorEl)
-    const rect = anchorEl.getBoundingClientRect()
-    const relX = rect.width > 0 ? (e.clientX - rect.left) / rect.width : 0
-    const relY = rect.height > 0 ? (e.clientY - rect.top) / rect.height : 0
-
-    setNotes(prev => [...prev, {
+  // Submit annotation text
+  const handleSubmit = useCallback((text: string) => {
+    if (!pendingClick) return
+    const newNote: Annotation = {
       id: Date.now().toString(),
-      anchor: selector,
-      relX,
-      relY,
-      text: '',
-      color: COLORS[colorIdx % COLORS.length],
-    }])
-    setColorIdx(i => (i + 1) % COLORS.length)
-  }, [active, colorIdx, setNotes])
+      page: path,
+      x: pendingClick.x,
+      y: pendingClick.y,
+      viewportW: window.innerWidth,
+      viewportH: window.innerHeight,
+      text,
+      timestamp: new Date().toISOString(),
+      resolved: false,
+    }
+    setNotes(prev => [...prev, newNote])
+    setPendingClick(null)
+  }, [pendingClick, path, setNotes])
 
-  const handleUpdate = useCallback((id: string, text: string) =>
-    setNotes(prev => prev.map(n => n.id === id ? { ...n, text } : n)), [setNotes])
+  const handleResolve = useCallback((id: string) =>
+    setNotes(prev => prev.map(n => n.id === id ? { ...n, resolved: true } : n)), [setNotes])
 
   const handleDelete = useCallback((id: string) =>
     setNotes(prev => prev.filter(n => n.id !== id)), [setNotes])
 
-  const handleDragEnd = useCallback((id: string, anchor: string, relX: number, relY: number) =>
-    setNotes(prev => prev.map(n => n.id === id ? { ...n, anchor, relX, relY } : n)), [setNotes])
-
-  const clearAll = useCallback(() => setNotes(() => []), [setNotes])
+  const handleClearResolved = useCallback(() =>
+    setNotes(prev => prev.filter(n => !n.resolved)), [setNotes])
 
   // Escape → exit annotation mode
   useEffect(() => {
-    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') setActive(false) }
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        if (pendingClick) setPendingClick(null)
+        else setActive(false)
+      }
+    }
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
-  }, [])
+  }, [pendingClick])
+
+  const pendingCount = notes.filter(n => !n.resolved).length
 
   return (
     <>
       {/* Click-capture overlay */}
-      {active && (
+      {active && !pendingClick && (
         <div
           onClick={handleOverlayClick}
           style={{
@@ -398,47 +385,55 @@ export function AnnotationLayer() {
         />
       )}
 
-      {/* Sticky notes */}
-      {notes.map(note => (
-        <StickyNote
-          key={note.id}
-          note={note}
-          onUpdate={handleUpdate}
-          onDelete={handleDelete}
-          onDragEnd={handleDragEnd}
+      {/* Pin markers on page */}
+      <div style={{ position: 'absolute', top: 0, left: 0, pointerEvents: 'none' }}>
+        <div style={{ pointerEvents: 'auto' }}>
+          {notes.filter(n => !n.resolved).map(note => (
+            <PinMarker key={note.id} note={note} onResolve={handleResolve} onDelete={handleDelete} />
+          ))}
+        </div>
+      </div>
+
+      {/* Input form at click position */}
+      {pendingClick && (
+        <AnnotationInput
+          x={pendingClick.x}
+          y={pendingClick.y}
+          onSubmit={handleSubmit}
+          onCancel={() => setPendingClick(null)}
         />
-      ))}
+      )}
+
+      {/* Annotation panel */}
+      {showPanel && (
+        <AnnotationPanel
+          notes={notes}
+          onResolve={handleResolve}
+          onDelete={handleDelete}
+          onClearResolved={handleClearResolved}
+        />
+      )}
 
       {/* Toolbar */}
       <div style={{
         position: 'fixed', bottom: 68, left: 12, zIndex: 10000,
         display: 'flex', flexDirection: 'column', gap: 6, alignItems: 'flex-start',
       }}>
-        {isSlides && slideHash && (
-          <div style={{
-            background: '#0f172a', color: '#94a3b8', fontSize: 10, fontWeight: 500,
-            padding: '3px 8px', borderRadius: 5, pointerEvents: 'none',
-            whiteSpace: 'nowrap', boxShadow: '0 1px 4px rgba(0,0,0,0.15)',
-          }}>
-            Slide {slideHash.replace('#/', '')}
-            {notes.length > 0 && ` · ${notes.length} 則注記`}
-          </div>
-        )}
-
         {active && (
           <div style={{
             background: '#1e40af', color: 'white', fontSize: 11, fontWeight: 600,
             padding: '4px 10px', borderRadius: 6, pointerEvents: 'none',
             whiteSpace: 'nowrap', boxShadow: '0 2px 8px rgba(0,0,0,0.25)',
           }}>
-            點擊任意位置加入注記　Esc 退出
+            點擊任意位置加入註記　Esc 退出
           </div>
         )}
 
         <div style={{ display: 'flex', gap: 6, alignItems: 'center' }}>
+          {/* Toggle annotation mode */}
           <button
-            onClick={() => setActive(v => !v)}
-            title={active ? '退出注記模式（Esc）' : '開啟注記模式'}
+            onClick={() => { setActive(v => !v); setPendingClick(null) }}
+            title={active ? '退出註記模式（Esc）' : '開啟註記模式'}
             style={{
               width: 38, height: 38, borderRadius: '50%', border: 'none',
               cursor: 'pointer', fontSize: 16,
@@ -448,28 +443,33 @@ export function AnnotationLayer() {
               color: active ? '#ffffff' : '#374151',
               transition: 'background 0.2s, color 0.2s',
             }}
-          >✏️</button>
+          >&#9998;</button>
 
+          {/* Show panel with count */}
           {notes.length > 0 && (
             <button
-              onClick={clearAll}
-              title={`清除此頁全部注記（${notes.length} 則）`}
+              onClick={() => setShowPanel(v => !v)}
+              title="檢視此頁註記"
               style={{
-                height: 38, padding: '0 10px', borderRadius: 19,
-                border: '1px solid #e5e7eb', cursor: 'pointer', fontSize: 11,
-                background: '#ffffff', color: '#6b7280',
+                height: 38, padding: '0 12px', borderRadius: 19,
+                border: '1px solid #e5e7eb', cursor: 'pointer', fontSize: 12,
+                background: showPanel ? '#EFF6FF' : '#ffffff',
+                color: pendingCount > 0 ? '#EF4444' : '#6b7280',
+                fontWeight: pendingCount > 0 ? 700 : 400,
                 boxShadow: '0 2px 8px rgba(0,0,0,0.12)',
               }}
-            >清除 ({notes.length})</button>
+            >
+              {pendingCount > 0 ? `${pendingCount} 待處理` : `${notes.length} 則`}
+            </button>
           )}
 
-          {saveStatus !== 'saved' && (
+          {saveStatus === 'saving' && (
             <span style={{
-              fontSize: 10, color: saveStatus === 'error' ? '#ef4444' : '#9ca3af',
+              fontSize: 10, color: '#9ca3af',
               background: 'white', padding: '2px 8px', borderRadius: 10,
               boxShadow: '0 1px 4px rgba(0,0,0,0.1)',
             }}>
-              {saveStatus === 'saving' ? '儲存中…' : '儲存失敗'}
+              儲存中…
             </span>
           )}
         </div>

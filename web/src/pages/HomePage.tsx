@@ -26,17 +26,6 @@ export function HomePage() {
             <p className="mt-3 max-w-xl text-base text-gray-600 md:text-lg">
               互動式情境模擬與決策工具，強化院前緊急救護臨床判斷能力
             </p>
-            <div className="mt-4 flex flex-wrap justify-center gap-2 md:justify-start">
-              <Badge variant="outline" className="text-xs" style={{ borderColor: 'var(--medical-red)', color: 'var(--medical-red)' }}>
-                Pump
-              </Badge>
-              <Badge variant="outline" className="text-xs" style={{ borderColor: 'var(--medical-blue)', color: 'var(--medical-blue)' }}>
-                Pipe
-              </Badge>
-              <Badge variant="outline" className="text-xs" style={{ borderColor: 'var(--medical-orange)', color: 'var(--medical-orange)' }}>
-                Tank
-              </Badge>
-            </div>
           </div>
           <div className="flex flex-col items-center gap-2">
             <img

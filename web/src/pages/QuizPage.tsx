@@ -372,7 +372,6 @@ export function QuizPage() {
       <QuizPlayer
         questions={questions}
         onFinish={handleFinish}
-        onReset={handleReset}
       />
     </div>
   )

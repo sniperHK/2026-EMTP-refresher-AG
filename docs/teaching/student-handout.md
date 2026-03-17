@@ -174,7 +174,7 @@ flowchart TD
 
 | 藥物 | 適應症 | 劑量 | 關鍵提醒 |
 |---|---|---|---|
-| **Epinephrine** | OHCA | IV/IO 1 mg q3-5min (1:1,000 原液一支) | 台灣只有 1:1,000! |
+| **Epinephrine** | OHCA | IV/IO 1 mg push + flush, q3-5min | — |
 | **Epinephrine** | Anaphylaxis | IM 0.3-0.5 mg (1:1,000) q5-15min | 休克→改 IV |
 | **Amiodarone** | VF/pVT | 1st 300mg bolus → 2nd 150mg | 活人慢滴! |
 | **Adenosine** | SVT | 6mg rapid push → 12mg x2 + flush | 半衰期<10s |
@@ -204,12 +204,15 @@ flowchart TD
 ## Push-dose Epinephrine 泡製
 
 ```
-Step 1: 取 Epi 1:1,000 (1mg/1mL) 一支
-Step 2: 加入 NS 至總量 100 mL
-Step 3: 最終濃度 = 10 mcg/mL
+【二階段稀釋法】（台灣 1:1,000 安瓿適用）
 
-給藥: 每次 1-2 mL (10-20 mcg) IV push
-      每 1-2 分鐘 titrate 至 SBP > 90
+Step 1: 取 Epi 1:1,000 (1 mg/1 mL) 抽 1 mL
+        ＋ N/S 抽至共 10 mL → 濃度 100 mcg/mL
+Step 2: 從 Step 1 再抽 1 mL (= 100 mcg)
+        ＋ N/S 抽至共 10 mL → 濃度 10 mcg/mL ✔
+
+給藥: 每次 1–2 mL (10–20 mcg) slow IV push
+      每 1–2 分鐘 titrate 至 SBP > 90
 ```
 
 ---

@@ -91,7 +91,7 @@
 |------|------|-----------|---------|
 | 09:25–09:30 | 5 | M02 slides 1–6 | **PK 四步驟（ADME）+ 休克中的 PK 變化**：低灌流 → IM 吸收不穩定 →「休克不要 IM」 |
 | 09:30–09:35 | 5 | M02 slides 7–12 | **給藥途徑比較**（IV > IO > IN > IM onset）：IO = Central Circulation、IN 跳過首渡效應 |
-| 09:35–09:40 | 5 | M02 slides 13–18 | **Epi 三種濃度 + Push-dose Epi 泡製**：1:1000 IM / 1:10000 IV arrest / Push-dose 10-20 mcg IV |
+| 09:35–09:40 | 5 | M02 slides 13–18 | **Epi 濃度 + Push-dose Epi 泡製**：1:1000 IM 原液 / Push-dose 1 支 + NS 至 100mL = 10mcg/mL，每次 1-2mL IV |
 | 09:40–09:45 | 5 | M02 slides 19–22 | **NTG + ACLS 藥物速查**：NTG 右心禁忌、Amiodarone 低血壓風險、Adenosine 快推沖 |
 | 09:45–09:50 | 5 | M02 slides 23–25 | **OHCA VF 關鍵節奏**：Epi q3-5min、Amio 300→150、高品質 CPR 不中斷 |
 | 09:50–09:55 | 5 | 整合 | **高風險錯誤防呆 5 條**：快速複習講義速查表。Furosemide/Dobutamine 指向講義自讀 |

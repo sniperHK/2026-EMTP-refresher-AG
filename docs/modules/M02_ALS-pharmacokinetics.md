@@ -62,11 +62,11 @@
 
 ### 循環與強心 (Cardiovascular)
 - **Epinephrine (Adrenaline)**
-  - **Cardiac Arrest**: IV/IO 1 mg (1:1,000 原液一支) q 3-5 min
+  - **Cardiac Arrest**: IV/IO 1 mg push + flush, q 3-5 min
   - **Anaphylaxis**: IM 0.3-0.5 mg (1:1,000 原液) q 5-15 min
   - **Push-dose (低血壓)**: 10-20 mcg IV q 1-2 min（泡製見 Section 5）
   - **PK**: IV Onset 快 (1-2 min), Duration 短 (5-10 min) → 需持續輸注。
-  - **陷阱**: 台灣現場只有 1:1,000 (1mg/1mL)，沒有 1:10,000 預充針。心停用原液一支 (1mg) 直接 IV/IO push；IM 打原液用於過敏；push-dose 需稀釋（1 支 + NS 至 100mL = 10mcg/mL）。
+  - **陷阱**: 台灣現場只有 1:1,000 (1 mg/1 mL)。心停用原液一支 (1 mg) 直接 IV/IO push + flush；IM 打原液用於過敏；push-dose 需二階段稀釋（見 Section 5）。
 
 - **Amiodarone**
   - **OHCA VF/pVT**: 1st 300 mg IV/IO bolus → 2nd 150 mg bolus
@@ -142,9 +142,10 @@
 
 ## 5. 藥物計算與泡製 (Practical Skills)
 
-- **Push-dose Epinephrine (急救升壓)**:
-  - 取 1:1,000 Epinephrine 1 支 (1mg/1ml) 加入 NS 至總量 100ml → 濃度 10mcg/ml
-  - 每次給 1-2ml (10-20mcg)，每 1-2 分鐘 titrate 直到 SBP > 90。
+- **Push-dose Epinephrine (急救升壓) — 二階段稀釋法**:
+  - Step 1: 取 Epi 1:1,000 (1 mg/1 mL) 抽 1 mL ＋ N/S 抽至共 10 mL → 濃度 100 mcg/mL
+  - Step 2: 從 Step 1 再抽 1 mL (= 100 mcg) ＋ N/S 抽至共 10 mL → 濃度 **10 mcg/mL**
+  - 每次給 1–2 mL (10–20 mcg) slow IV push，每 1–2 分鐘 titrate 至 SBP > 90。
   - **PseudoPEA 專用情境**：心臟還在跳但脈搏摸不到 → 用 push-dose（10-20 mcg），**絕對不能用 ACLS 劑量 1 mg**——心臟還有收縮力，全量 Epi 會打成 VF/VT。
 
 - **Dopamine/Norepi Drip Rate**:

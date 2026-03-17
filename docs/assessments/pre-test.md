@@ -54,7 +54,7 @@ D. 1:1,000 (1mg/1ml) SC 皮下注射
 
 **9. 關於 Push-dose Epinephrine 的泡製，下列何者正確？**
 A. 直接抽 1:1000 原液 1ml 打入
-B. 取 1:1,000 Epinephrine 1 支 (1mg/1ml) 加入 NS 至總量 100ml → 濃度為 10mcg/ml
+B. 取 1:1,000 Epi 1 mL + N/S 至 10 mL（100 mcg/mL）→ 再取 1 mL + N/S 至 10 mL → 濃度 10 mcg/mL
 C. 取 1ml 的 1:1000 Epinephrine 加水稀釋至 10ml
 D. 用 D5W 泡製
 
