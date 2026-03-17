@@ -177,7 +177,7 @@ flowchart TD
 | **Epinephrine** | OHCA | IV/IO 1 mg push + flush, q3-5min | — |
 | **Epinephrine** | Anaphylaxis | IM 0.3-0.5 mg (1:1,000) q5-15min | 休克→改 IV |
 | **Amiodarone** | VF/pVT | 1st 300mg bolus → 2nd 150mg | 活人慢滴! |
-| **Adenosine** | SVT | 6mg rapid push → 12mg x2 + flush | 半衰期<10s |
+| **Adenosine** | SVT | 6mg rapid push → 12mg x2 | **不稀釋**原液推；1-2 秒內打完 + 立即 **20mL NS flush** + 抬手臂；半衰期 <10s |
 
 ### 血管擴張 & 利尿
 
@@ -259,6 +259,32 @@ Step 2: 從 Step 1 再抽 1 mL (= 100 mcg)
 2. **追藥太快**: 尊重 circulation time, 至少等 3 min
 3. **IO 忘 Flush**: 每次給藥後 20 mL NS flush + 抬高肢體
 4. **Amiodarone 活人快推**: 非 arrest → 10-15 min 慢滴
+
+---
+
+## 院前敗血症速查
+
+### qSOFA 快速篩檢（≥ 2 項 → 高度懷疑）
+
+| 項目 | 閾值 |
+|---|---|
+| 呼吸速率 | **RR ≥ 22** /min |
+| 意識改變 | **GCS < 15** |
+| 收縮壓 | **SBP ≤ 100** mmHg |
+
+### 院前處置流程
+
+1. **氧合支持** → SpO₂ ≥ 94%
+2. **建立 IV/IO** → 儘早
+3. **輸液** → NS/LR **30 mL/kg**（首小時），分次 250-500 mL bolus
+4. **血糖** → 低血糖即處理
+5. **EtCO₂** → 監測酸中毒程度與灌流變化
+6. **體溫** → 發燒或低體溫均記錄
+7. **Sepsis Alert 通報** → 讓醫院備好抗生素 + 乳酸檢測
+
+> **口訣**：老人 + 喘 + 意識差 + 溫暖型低血壓 → 不是「只是虛弱」→ qSOFA → 輸液 + 通報
+>
+> 每延遲 1 小時抗生素，死亡率 ↑ 7.6%（Kumar 2006）。院前最重要的事 = **早期辨識 + 輸液 + 提早通報**。
 
 ---
 

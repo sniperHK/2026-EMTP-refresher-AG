@@ -207,7 +207,7 @@ export const questions: Question[] = [
       "IM > IN > IV",
     ],
     answer: "C",
-    explanation: "整體而言 IV 最快，IO 次之，IN 再慢，IM 最慢。成人 cardiac arrest 依 2025 AHA 應先嘗試 IV；若 IV 延遲、失敗或不可行，再改 IO。",
+    explanation: "IV 直接入血最快；IO 次之（經骨髓腔進入中央靜脈）；IN 第三（鼻黏膜薄、微血管密集、直接吸收入體循環，且休克時黏膜血流相對保留）；IM 最慢（藥物需穿過肌肉組織擴散，休克時周邊血管收縮更慢）。成人 cardiac arrest 依 2025 AHA 應先嘗試 IV；若延遲或失敗，再改 IO。",
   },
   {
     id: 17, module: "M02", level: "Apply", usage: ["Pre"],
