@@ -734,9 +734,8 @@ def build_m02():
 
     # Slide 28
     add_content_slide(prs,
-                      "高風險錯誤防呆 — 5 條",
+                      "高風險錯誤防呆 — 4 條",
                       [
-                          "Epi 用法混淆: 台灣只有 1:1,000；心停原液 IV/IO、過敏原液 IM、push-dose 需稀釋",
                           "休克打 IM: 血流不到肌肉 → 改用 IV/IO",
                           "追藥太快: 尊重 circulation time, 至少等 3 min",
                           "IO 忘 Flush: 每次給藥後 20 mL NS flush + 抬高",

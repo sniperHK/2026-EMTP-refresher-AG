@@ -71,10 +71,10 @@ const blocks: TimeBlock[] = [
     notes: [
       'PK 四步驟（ADME）+ 休克中的 PK 變化',
       '給藥途徑比較（IV > IO > IN > IM）',
-      'Epi 三濃度 + Push-dose Epi 泡製',
+      'Epi 用法 + Push-dose Epi 泡製',
       'NTG + ACLS 藥物速查',
       'OHCA VF 關鍵節奏',
-      '高風險錯誤防呆 5 條',
+      '高風險錯誤防呆 4 條',
     ],
     links: [
       { label: 'M02 投影片', to: '/slides/M02' },

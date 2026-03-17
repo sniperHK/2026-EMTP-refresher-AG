@@ -35,7 +35,7 @@
       │  四大支柱 / Oxy vs Vent / 休克三階段 / Pump-Pipe-Tank
       │  Nohria-Stevenson / SCAPE / PseudoPEA 基本框架
 09:25 ├─ Lecture 2：M02 核心概念 ─────────────── 30 min  📖
-      │  ADME + 休克 PK / 給藥途徑 / Epi 三濃度 / Push-dose
+      │  ADME + 休克 PK / 給藥途徑 / Epi 用法 / Push-dose
       │  NTG / ACLS 藥物速查 / 高風險防呆
 09:55 ├─ 休息 ─────────────────────────────── 10 min  ☕
 10:05 ├─ 分組任務說明 ──────────────────────── 10 min
@@ -94,7 +94,7 @@
 | 09:35–09:40 | 5 | M02 slides 13–18 | **Epi 濃度 + Push-dose Epi 泡製**：1:1000 IM 原液 / Push-dose 1 支 + NS 至 100mL = 10mcg/mL，每次 1-2mL IV |
 | 09:40–09:45 | 5 | M02 slides 19–22 | **NTG + ACLS 藥物速查**：NTG 右心禁忌、Amiodarone 低血壓風險、Adenosine 快推沖 |
 | 09:45–09:50 | 5 | M02 slides 23–25 | **OHCA VF 關鍵節奏**：Epi q3-5min、Amio 300→150、高品質 CPR 不中斷 |
-| 09:50–09:55 | 5 | 整合 | **高風險錯誤防呆 5 條**：快速複習講義速查表。Furosemide/Dobutamine 指向講義自讀 |
+| 09:50–09:55 | 5 | 整合 | **高風險錯誤防呆 4 條**：快速複習講義速查表。Furosemide/Dobutamine 指向講義自讀 |
 
 > 💡 Push-dose Epi 泡製步驟一定要帶——這是學員最想學的實作技能
 

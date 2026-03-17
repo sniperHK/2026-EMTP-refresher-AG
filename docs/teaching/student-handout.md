@@ -230,13 +230,12 @@ Step 2: 從 Step 1 再抽 1 mL (= 100 mcg)
 
 ---
 
-## 高風險錯誤防呆 5 條
+## 高風險錯誤防呆 4 條
 
-1. **Epi 濃度混淆**: IM 用 1:1,000 原液 / IV push-dose 需稀釋至 10mcg/ml
-2. **休克打 IM**: 血流不到肌肉 → 改用 IV/IO
-3. **追藥太快**: 尊重 circulation time, 至少等 3 min
-4. **IO 忘 Flush**: 每次給藥後 20 mL NS flush + 抬高肢體
-5. **Amiodarone 活人快推**: 非 arrest → 10-15 min 慢滴
+1. **休克打 IM**: 血流不到肌肉 → 改用 IV/IO
+2. **追藥太快**: 尊重 circulation time, 至少等 3 min
+3. **IO 忘 Flush**: 每次給藥後 20 mL NS flush + 抬高肢體
+4. **Amiodarone 活人快推**: 非 arrest → 10-15 min 慢滴
 
 ---
 
