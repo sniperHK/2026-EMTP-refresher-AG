@@ -142,8 +142,9 @@ flowchart TD
 
 | 情境 | 風險 | 對策 |
 |---|---|---|
-| **插管前低血壓** | PPV 減少回心血流 → BP 更低 | 先 Fluid/Vasopressor 穩住 BP |
-| **酸中毒病人插管** | 接管後 RR 不足以代償 → pH 驟降 | 匹配病人原本的 RR |
+| **插管前低血氧** | 拔除面罩/BVM 嘗試插管時，SpO₂ 急降 → 誘發致命心律不整 | 充分預氧合（Pre-oxygenation），必要時 DSI（延遲續發性插管） |
+| **插管前低血壓** | PPV 減少回心血流，加上藥物血管擴張 → BP 崩盤 | 先 Fluid/Vasopressor 穩住 BP 再插管 |
+| **酸中毒病人插管** | 接管後 RR 不足以代償 → pH 驟降 | 匹配病人原本的高 RR（過度通氣代償）
 
 ---
 
@@ -170,7 +171,7 @@ flowchart TD
 
 ## 藥物速查表（ACLS 2020 通用劑量）
 
-### 循環與強心
+### 循環與強心（含升壓劑）
 
 | 藥物 | 適應症 | 劑量 | 關鍵提醒 |
 |---|---|---|---|
@@ -178,6 +179,8 @@ flowchart TD
 | **Epinephrine** | Anaphylaxis | IM 0.3-0.5 mg (1:1,000) q5-15min | 休克→改 IV |
 | **Amiodarone** | VF/pVT | 1st 300mg bolus → 2nd 150mg | 活人慢滴! |
 | **Adenosine** | SVT | 6mg rapid push → 12mg x2 | **不稀釋**原液推；1-2 秒內打完 + 立即 **20mL NS flush** + 抬手臂；半衰期 <10s |
+| **Norepinephrine** | Shock | 0.1-0.5 mcg/kg/min IV drip | 外滲壞死風險；Warm/Distributive shock 首選升壓 |
+| **Dobutamine** | Cold+Wet (SBP>70-80) | 2-20 mcg/kg/min IV drip | 強心劑 (Inotrope)；SBP 極低時需先用 Norepi 撐起血壓再加 |
 
 ### 血管擴張 & 利尿
 
@@ -185,7 +188,6 @@ flowchart TD
 |---|---|---|---|
 | **NTG** | SCAPE/APE（Warm+Wet） | SL 0.4 mg q3-5min / IV 10-200 mcg/min | 低劑量降前負荷（擴靜脈）、高劑量降後負荷（擴動脈）; **SBP<90 禁用**; RV infarct 禁用 |
 | **Furosemide** | Volume overload 肺水腫 | 20-80 mg IV | Flash APE ≠ volume overload → 非首選 |
-| **Dobutamine** | Cold+Wet (SBP>70-80) | 2-20 mcg/kg/min IV drip | 強心; 不用於 SBP 極低 |
 
 ### 鎮靜止痛 & 呼吸
 
@@ -195,7 +197,6 @@ flowchart TD
 | **Fentanyl** | Analgesia | IV 1-2mcg/kg / IN 1.5mcg/kg | **不釋放組織胺 → 血壓穩定**; 胸壁僵硬(罕見) |
 | **Morphine** | Analgesia | IV 2-4mg q5-15min | ⚠️ **組織胺釋放 → 低血壓**; 休克病人避免使用 |
 | **Albuterol** | Bronchospasm | 2.5mg nebulizer q15-20min | Tachycardia |
-| **Norepinephrine** | Shock | 0.1-0.5 mcg/kg/min IV drip | 外滲壞死風險 |
 
 > **止痛選藥口訣**：休克/血壓不穩 → Fentanyl（不釋放組織胺）；避免 Morphine（組織胺釋放 → 血管擴張 → 加劇低血壓）
 
@@ -253,12 +254,13 @@ Step 2: 從 Step 1 再抽 1 mL (= 100 mcg)
 
 ---
 
-## 高風險錯誤防呆 4 條
+## 高風險錯誤防呆 5 條
 
-1. **休克打 IM**: 血流不到肌肉 → 改用 IV/IO
-2. **追藥太快**: 尊重 circulation time, 至少等 3 min
-3. **IO 忘 Flush**: 每次給藥後 20 mL NS flush + 抬高肢體
-4. **Amiodarone 活人快推**: 非 arrest → 10-15 min 慢滴
+1. **Push-dose Epi 稀釋錯誤**: 忘記做第二次稀釋（打成 100 mcg/mL）→ 等於給了目標劑量的 10 倍，極危險
+2. **休克打 IM**: 血流不到肌肉 → 改用 IV/IO
+3. **追藥太快**: 尊重 circulation time, 至少等 3 min
+4. **IO 忘 Flush**: 每次給藥後 20 mL NS flush + 抬高肢體
+5. **Amiodarone 活人快推**: 非 arrest → 10-15 min 慢滴
 
 ---
 
@@ -282,29 +284,34 @@ Step 2: 從 Step 1 再抽 1 mL (= 100 mcg)
 6. **體溫** → 發燒或低體溫均記錄
 7. **Sepsis Alert 通報** → 讓醫院備好抗生素 + 乳酸檢測
 
+> **臨床進展提醒**：敗血症初期常為 **Warm shock**（四肢溫暖、脈壓寬、心輸出量代償性增加），但隨病情惡化會轉變成 **Cold shock**（四肢冰冷、脈壓窄、心臟衰竭）。
+> 
 > **口訣**：老人 + 喘 + 意識差 + 溫暖型低血壓 → 不是「只是虛弱」→ qSOFA → 輸液 + 通報
 >
 > 每延遲 1 小時抗生素，死亡率 ↑ 7.6%（Kumar 2006）。院前最重要的事 = **早期辨識 + 輸液 + 提早通報**。
 
 ---
 
-## 課堂筆記
+## 過敏性休克 (Anaphylaxis) 速查
 
-_（請在此區記錄課堂重點）_
+### 辨識四大系統徵兆（高度懷疑：接觸過敏原後急性發作，且具備下述 2 個系統以上表現）
+- **皮膚/黏膜**：全身蕁麻疹、血管性水腫（顏面/唇舌/眼周）、潮紅發癢
+- **呼吸**：呼吸困難、喘鳴 (Wheezing)、喉頭水腫、Stridor
+- **心血管**：低血壓、休克、暈厥、搏動過速
+- **腸胃**：腹部絞痛、嘔吐
 
-|  |  |
-|---|---|
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-|  |  |
-
----
-
-> **Protocol 聲明**: 藥物劑量依據 AHA ACLS 2020 通用準則。實際執行請以台北市醫療指導醫師核准之在地 Protocol 為準。
->
-> 2026 台北市 EMTP 複訓 | ALS 病生理學 & 藥物動力學
+### 處置步驟
+1. **移除過敏原**（停止輸液/拔除蜂刺等）
+2. **首選：Epinephrine IM**
+   - **劑量**：0.3-0.5 mg (1:1,000 原液) **大腿前外側 IM**
+   - **時機**：及早給予，勿等血壓掉才打。若症狀持續，每 5-15 分鐘可重複。
+   - **注意**：若已進入**休克/循環衰竭**，IM 吸收極差，需改用 **IV Push-dose Epi** 或 **Epi drip**。
+3. **氧合與氣道**：高濃度氧氣，若有嚴重喉頭水腫考慮早期插管（需資深人員，因氣道極度腫脹）
+4. **輸液**：大口徑 IV，給予 1-2L NS/LR 補充血管內流失容積
+5. **二線藥物**（醫院端/進階處置，不應延遲 Epi）：
+   - 抗組織胺：Diphenhydramine 25-50 mg IV/IM
+   - 類固醇：Methylprednisolone 125 mg IV 或 Hydrocortisone
+   - 支氣管擴張：Albuterol nebulizer (針對 persistent bronchospasm)
 
 ---
 
@@ -346,3 +353,23 @@ _（請在此區記錄課堂重點）_
 3. **通報接收醫院** — 若懷疑 ACS，告知可能需 primary PCI
 4. **體溫管理** — 避免發燒（> 37.7°C 有害）
 5. **依病因安排後續檢查** — 依臨床情境考慮 coronary evaluation / echo / CT
+
+---
+
+## 課堂筆記
+
+_（請在此區記錄課堂重點）_
+
+|  |  |
+|---|---|
+|  |  |
+|  |  |
+|  |  |
+|  |  |
+|  |  |
+
+---
+
+> **Protocol 聲明**: 藥物劑量依據 AHA ACLS 2020/2025 通用準則。實際執行請以台北市醫療指導醫師核准之在地 Protocol 為準。
+>
+> 2026 台北市 EMTP 複訓 | ALS 病生理學 & 藥物動力學
