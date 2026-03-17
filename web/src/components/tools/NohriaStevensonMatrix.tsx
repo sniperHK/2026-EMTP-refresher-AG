@@ -63,6 +63,28 @@ export function NohriaStevensonMatrix() {
         </p>
       </div>
 
+      {/* Warm/Cold/Dry/Wet 定義 */}
+      <div className="mx-auto max-w-lg rounded-xl border border-gray-200 bg-gray-50 p-4">
+        <div className="grid grid-cols-2 gap-3 text-sm">
+          <div>
+            <p className="font-semibold" style={{ color: '#27AE60' }}>Warm（溫暖）= 灌流足夠</p>
+            <p className="mt-0.5 text-xs text-gray-600">四肢溫暖、CRT 正常、意識清楚</p>
+          </div>
+          <div>
+            <p className="font-semibold" style={{ color: '#C0392B' }}>Cold（冰冷）= 灌流不足</p>
+            <p className="mt-0.5 text-xs text-gray-600">末梢濕冷、CRT 延長、脈壓差窄、意識變差</p>
+          </div>
+          <div>
+            <p className="font-semibold" style={{ color: '#2980B9' }}>Dry（乾）= 無肺充血</p>
+            <p className="mt-0.5 text-xs text-gray-600">肺音清、無囉音、JVD(-)、可平躺</p>
+          </div>
+          <div>
+            <p className="font-semibold" style={{ color: '#F39C12' }}>Wet（濕）= 有肺充血</p>
+            <p className="mt-0.5 text-xs text-gray-600">雙側囉音、端坐呼吸、JVD(+)、SpO₂↓</p>
+          </div>
+        </div>
+      </div>
+
       {/* 2x2 Matrix */}
       <div className="mx-auto max-w-lg">
         {/* Column headers */}

@@ -262,12 +262,12 @@ export const questions: Question[] = [
     question: "關於 Push-dose Epinephrine 的泡製，下列何者正確？",
     options: [
       "直接抽 1:1000 原液 1ml 打入",
-      "取 1:1,000 Epinephrine 1 支 (1mg/1ml) 加入 NS 至總量 100ml → 濃度為 10mcg/ml",
+      "取 1:1,000 Epi 1mL + NS 至 10mL → 再取 1mL + NS 至 10mL → 濃度為 10mcg/ml",
       "取 1ml 的 1:1000 Epinephrine 加水稀釋至 10ml",
       "用 D5W 泡製",
     ],
     answer: "B",
-    explanation: "台灣現場常備 1:1,000 (1mg/1ml) Epinephrine。泡法：取 1 支 (1mg) 加入 NS 至總量 100ml，最終濃度 10mcg/ml。Push-dose 每次推 1-2ml (10-20mcg) IV，q1-2 min。直接打原液 1mg = push-dose 的 50-100 倍，極易打成 VF/VT。D5W 會加速 Epinephrine 分解，應用 NS 稀釋。",
+    explanation: "台灣現場常備 1:1,000 (1mg/1ml) Epinephrine。二階段稀釋法：Step 1 取 1mL + NS 至 10mL（= 100 mcg/mL）；Step 2 再取 1mL + NS 至 10mL（= 10 mcg/mL）。Push-dose 每次推 1-2ml (10-20mcg) IV，q1-2 min。直接打原液 1mg = push-dose 的 50-100 倍，極易打成 VF/VT。D5W 會加速 Epinephrine 分解，應用 NS 稀釋。",
   },
   {
     id: 22, module: "M02", level: "Remember", usage: ["Post"],

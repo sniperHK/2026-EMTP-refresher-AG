@@ -158,6 +158,9 @@ export function ContentPage() {
 
   const components = makeMdComponents(mod.color)
 
+  // Strip leading H1 from markdown (already shown in header card)
+  const strippedContent = mod.content.replace(/^#\s+.+\n+/, '')
+
   return (
     <div className="mx-auto max-w-3xl">
       {/* Header */}
@@ -174,7 +177,7 @@ export function ContentPage() {
       {/* Markdown content */}
       <div className="space-y-0">
         <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]} components={components}>
-          {mod.content}
+          {strippedContent}
         </ReactMarkdown>
       </div>
 

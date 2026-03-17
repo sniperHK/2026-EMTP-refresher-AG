@@ -607,7 +607,7 @@ def build_m02():
                     [
                         ["Cardiac Arrest", "1:1,000 原液一支", "1 mg q3-5min", "IV/IO"],
                         ["Anaphylaxis", "1:1,000 原液", "0.3-0.5 mg q5-15min", "IM"],
-                        ["Push-dose (低 BP)", "1支+NS至100mL=10mcg/mL", "10-20 mcg q1-2min", "IV"],
+                        ["Push-dose (低 BP)", "二階段稀釋→10mcg/mL", "10-20 mcg q1-2min", "IV"],
                     ],
                     note_text="台灣只有 1:1,000 (1mg/1mL)。心停用原液一支直接 IV/IO；過敏用原液 IM；push-dose 需稀釋")
 
@@ -701,9 +701,8 @@ def build_m02():
     add_content_slide(prs,
                       "Push-dose Epinephrine 泡製",
                       [
-                          "Step 1: 取 Epi 1:1,000 (1mg/1mL) 一支",
-                          "Step 2: 加入 NS 至總量 100 mL",
-                          "Step 3: 最終濃度 = 10 mcg/mL",
+                          "Step 1: 取 Epi 1:1,000 (1mg/1mL) 抽 1mL + NS 至 10mL = 100 mcg/mL",
+                          "Step 2: 從 Step 1 取 1mL (100mcg) + NS 至 10mL = 10 mcg/mL",
                           "給藥: 每次 1-2 mL (10-20 mcg) IV push",
                           "Titrate 至 SBP > 90，每 1-2 分鐘可重複",
                       ])
