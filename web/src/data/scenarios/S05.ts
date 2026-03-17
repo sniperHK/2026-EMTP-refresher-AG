@@ -88,7 +88,7 @@ export const S05: Scenario = {
         ],
       },
       teachingPoint:
-        "SCAPE（Sympathetic Crashing Acute Pulmonary Edema）= 交感神經風暴引起的急性肺水腫。機轉：交感神經過度活化 → 全身血管痙攣 → 後負荷劇增 → 左心無法排空 → 血液回堵到肺部 → 肺水腫。所以 SCAPE 的核心治療不是利尿劑（病人不是單純水太多），而是 NTG（降低前/後負荷）+ CPAP（改善 alveolar recruitment、減少呼吸做功、降低肺充血壓力）。",
+        "SCAPE（Sympathetic Crashing Acute Pulmonary Edema）= 交感神經過度活化導致後負荷急升，左心室失代償而引發的急性肺水腫。機轉：交感活化 → 全身血管收縮 → 後負荷劇增 → 左心無法排空 → 血液回堵到肺部 → 肺水腫。所以 SCAPE 的核心治療不是利尿劑（病人不是單純水太多），而是 NTG（降低前/後負荷）+ CPAP（改善 alveolar recruitment、減少呼吸做功、降低肺充血壓力）。",
     },
     {
       id: "S05-T5",
