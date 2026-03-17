@@ -1,35 +1,62 @@
-# 2026 北市 TP 複訓課程規劃 TODO
+# 2026 北市 TP 複訓課程 — 未來內容擴充藍圖 (TODO)
 
-## 現況同步（與 `docs/roadmap.md` 對齊）
+> 本課程目前架構聚焦於「呼吸與循環衰竭」（AMLS Ch.4 心血管、Ch.5 休克、Ch.2 藥理的精華深潛版）。
+> 以下為未來依據 **AMLS (Advanced Medical Life Support) 16 小時架構**，延續「機轉導向、拒絕死背」教學特色所建議的 **四個擴增象限**：
 
-- [x] M01 病生理學模組（lecture-ready）
-- [x] M02 藥物動力學模組（lecture-ready）
-- [x] 題庫 / pre-post / answer key / blueprint / mini-OSCE
-- [x] 學員講義與課程執行腳本
-- [x] PowerPoint 簡報（M01、M02）
+---
 
-## 近期待辦（收尾與在地化）
+## 🚀 擴增方向一：神經與代謝急症（橫向擴展疾病庫）
+*目標：補足意識改變與核心神經/內分泌急症，對接現有 Midazolam 等藥物機轉。*
 
-- [ ] **定案課名**：重探病生理-瀕死案例討論 (Revisiting Pathophysiology: Near-Death Case Discussions)
-  - 歸類：1.5 人體基本解剖生理學（生命徵象與神經、呼吸及循環相關生理）
-  - 課程目標：用瀕死案例連結臨床徵象與基礎生理，聚焦代償與衰竭機制
-- [ ] 對齊台北市在地作業流程：將 `docs/modules/M02_protocol-dosing-map.md` 重整為 ALS / 呼吸困難 / 過敏性休克 / 急性肺水腫與休克對接表，並同步 M02 與題庫相關劑量/流程
-- [x] 清理 `IV-first / IO-as-alternative` 用語：同步 `M02`、`student-handout`、`web/slides/M02.md`、題庫與 post-test
-- [x] 將 `ROSC 後前 5 分鐘` 從 pocket card 擴充到 `S04` / web scenario / 題庫
-- [x] 為各 scenario 加入 `Assessment Pathway` 小框（scene size-up → first impression → focused exam → DDx）
-- [ ] 視需要建立 A/B 平行題卷（目前 pre/post 固定卷）
+- [ ] **策劃模組：`M03_ALS-Neuro-Metabolic`**
+  - **神經急症 (Neurologic)**：
+    - 大血管阻塞型中風 (LVO) 的辨識與初階神經學評估 (LAMS)。
+    - 癲癇重積狀態 (Status Epilepticus) 的給藥策略。
+    - *機轉連結：BZD 藥動力學——為什麼癲癇要大劑量？休克狀態外 IM 吸收速度？*
+  - **內分泌與代謝 (Endocrine/Metabolic)**：
+    - DKA (糖尿病酮酸中毒)、HHS、低血糖機轉。
+    - *機轉連結：探討 Kussmaul breathing 與 EtCO₂ 代償的實戰觀察。*
+- [ ] **新增情境：`S06_status-epilepticus`** (癲癇重積狀態與氣道保護)。
 
-## 補強素材（Optional）
+---
 
-- [ ] 補充典型 OHCA/Shock 案例心電圖與生命徵象數據（供教學圖像化）
-- [ ] 整理氧氣運輸、休克循環、酸鹼/CO2 生理機轉圖表
-- [ ] 視需要撰寫講師詳細教案（Instructor Notes）
-- [ ] 視需要建立課後回饋問卷
-- [x] 規劃 `M03`：blind spots microcases（sepsis / endocrine-metabolic / stroke-neuro / tox）
+## 🚀 擴增方向二：呼吸與毒物急症（深化現有機轉）
+*目標：從單純的「肺水腫/氣胸」往氣道阻力病理及常見中毒邁進。*
 
-## 部署與網站優化 (Web / Deployment)
+- [ ] **策劃模組：`M04_ALS-Toxidrome-Respiratory`**
+  - **進階呼吸道阻塞 (Respiratory)**：
+    - 氣喘 (Asthma) 與 COPD 急性發作的聽診與波形鑑別。
+    - *機轉連結：動態肺部過度充氣 (Auto-PEEP) 的致命性，呼應「插管三殺」；Albuterol 的 Beta-2 效應。*
+  - **毒物學 (Toxicology)**：
+    - 鴉片類中毒 (Opioid Toxidrome) / 抗膽鹼毒性 (Anticholinergic)。
+    - *機轉連結：Naloxone 的 PK/PD（半衰期短於毒品導致的 Late dump 昏迷陷阱）。*
+- [ ] **新增情境：`S07_COPD-autoPEEP`** (Auto-PEEP 與正壓通氣陷阱)。
 
-- [x] 針對 Netlify 部署修復 SPA 路由 404 問題（`web/public/_redirects` 已建立，`/* /index.html 200`）
-- [x] Web Quiz 通過門檻與 blueprint 對齊：`Pre-test` 僅 baseline，`Post-test / all` = `80%`
-- [x] Web instructor mode Phase 1：`QR 快速進題`、`debrief timer`、`critical actions` 匯出（先不依賴後端）
-- [ ] Web instructor mode Phase 2：若需多組同步與課後紀錄，再評估導入 `Supabase`
+---
+
+## 🚀 擴增方向三：心血管進階（擴大 ECG 應用）
+*目標：從 Arrest / SCAPE 衍生至不穩定心律與缺血性心臟病。*
+
+- [ ] **致死性心律不整 (Cardiovascular)**：
+  - Bradycardia（心搏過緩）、VT（有脈搏。
+  - *機轉連結：探討「Unstable」的血流動力學界定；Atropine 限制與 Epi/Norepi Drip 在過緩合併休克時的應用。*
+- [ ] **急性冠心症 (ACS)**：
+  - 12 導程 ECG 院前進階應用（OMI / 致命性等同 STEMI 波形）。
+  - *機轉連結：右心梗塞 (RV Infarct) 的流體力學，深化「為何 NTG 在右心梗塞禁用（Preload-dependent）」。*
+
+---
+
+## 🚀 擴增方向四：導入 AMLS「Assessment Pathway」（臨床推理升級）
+*目標：從現有「演繹法（先教框架後驗證）」升級為「歸納法（從案例梳理框架）」。*
+
+- [ ] **Sick vs Not Sick 第一印象訓練**：
+  - 建立快速視覺診斷 (Gestalt) 題庫。限制 15 秒內給出膚色、姿勢、呼吸，要求學員說出 Sick/Not Sick 及最致命懷疑。
+- [ ] **Cardinal Presentation 鑑別診斷站**：
+  - 設計「未給定診斷」的綜合情境（如：「主訴：喘 + 意識不清」）。
+  - 訓練學員運用「生理四柱 (Oxygenation → Ventilation → Perfusion → Metabolism)」動態抓錯並進行 DDx。
+
+---
+
+## 🔧 基礎建設與維護 (Infrastructure)
+- [ ] **教材更新與版本控制**：持續同步台北市最新醫療指導醫師核准之 Protocol。
+- [ ] **Web 部署與互動**：評估講師模式 (Instructor mode) Phase 2，導入後端資料庫 (如 Supabase) 以記錄多組學員決策軌跡。
