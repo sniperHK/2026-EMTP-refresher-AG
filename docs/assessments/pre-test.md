@@ -10,11 +10,11 @@ B. Ventilation Failure (Type 2 Respiratory Failure) 持續惡化，CO2 蓄積
 C. Metabolic Acidosis 代償反應
 D. Shock 造成的腦部灌流不足
 
-**2. 嚴重創傷休克病人，周邊脈搏摸不到，意識躁動。此時最優先的處置目標是？**
+**2. 嚴重創傷休克病人，周邊脈搏摸不到，意識躁動。依 XABCDE 流程，此時最優先的處置目標是？**
 A. 插管 (Intubation) 以確保呼吸道
 B. 給予鎮靜劑 (Sedation) 讓病人安靜
 C. 文獻回顧顯示需維持 SBP > 140 mmHg
-D. 恢復組織灌流 (Fluid/Blood/Stop bleeding)
+D. 控制大出血並恢復灌流 (X: eXsanguinating hemorrhage control)
 
 **3. 在監測休克病人時，End-tidal CO2 (EtCO2) 數值由 35 mmHg 驟降至 15 mmHg，且波形仍規律，最可能代表？**
 A. 氣管內管滑脫 (Extubation)
