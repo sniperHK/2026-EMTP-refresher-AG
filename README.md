@@ -14,7 +14,7 @@
 - Post-test：`docs/assessments/post-test.md`
 - Answer key：`docs/assessments/answer-key.md`
 - 情境評分表：`docs/scenarios/critical-actions-checklist.md`
-- M02 在地劑量對接表：`docs/modules/M02_protocol-dosing-map.md`
+- M09 台北市流程對接表：`docs/modules/M02_protocol-dosing-map.md`
 - 課程執行腳本：`docs/teaching/session-flow.md`
 - 結構稽核腳本：`scripts/audit_project.sh`
 

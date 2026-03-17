@@ -19,7 +19,7 @@
 ### `docs/modules/`
 - `M01_ALS-pathophysiology.md`：病生理學主模組
 - `M02_ALS-pharmacokinetics.md`：PK/PD 主模組
-- `M02_protocol-dosing-map.md`：在地 protocol 對接表（需持續維護）
+- `M02_protocol-dosing-map.md`：台北市 ALS / 休克流程對接表（需持續維護）
 - `M03_high-risk-blind-spots.md`：10-15 分鐘 blind spots microcases（sepsis / endocrine-metabolic / stroke-neuro / tox）
 
 ### `docs/assessments/`

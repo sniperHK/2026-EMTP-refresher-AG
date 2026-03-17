@@ -1,41 +1,196 @@
-# M02 在地 Protocol 劑量對接表
+# M09 台北市 ALS / 休克流程對接表
 
-> 用途：把 `M02_ALS-pharmacokinetics.md` 的通用教學內容，轉成「台北市 EMTP 可直接教學/考核」版本。
-> 請填入醫療指導醫師核准之最新版流程與版本日期。
+> 此檔暫沿用舊檔名 `M02_protocol-dosing-map.md`，但用途已改為 **M09 在地流程對接表**。
+> 用途：把本課程的病生理學、藥理學與情境案例，對回台北市 EMTP 現場真正使用的作業程序。
+> 狀態：`workflow draft`。正式授課前，仍應以臺北市消防局 / 醫療指導醫師核准的最新版為準。
 
-## 版本資訊
+## 來源與使用原則
 
-- Protocol 名稱：ACLS 2020 通用版（AHA/ERC Guidelines）
-- 版次：Draft v1.0 — 待在地 protocol 確認後微調
-- 生效日期：2020-10-21（AHA Guidelines Update）
-- 核准單位/醫療指導醫師：（待填 — 台北市醫療指導醫師確認）
-- 最後校對人：Claude Code
-- 最後校對日期：2026-02-23
+- 目前 repo 內沒有台北市官方 PDF；以下整理先依公開可查的《臺北市政府緊急救護技術員到院前緊急救護作業程序手冊》鏡像內容建立 crosswalk。
+- 手冊首頁說明顯示，此手冊的制定單位為「臺北市政府消防局醫療顧問委員會」，作為台北市 EMT 執勤時依循的作業原則；無法判斷時，EMTP 應尋求線上醫療指導。
+- 這份 M09 不再試圖做「全部藥物劑量總表」，而是優先整理：
+  1. 什麼情境在台北市流程下會被視為 ALS / 危急個案
+  2. 呼吸困難、過敏性休克、急性肺水腫、低血壓與休克的在地流程錨點
+  3. 哪些藥物是流程中的一部分，哪些只是本課程的延伸教學
 
-## 劑量/途徑對接表
+### 目前引用的公開來源
 
-| 藥物 | 適應症 | 路徑 | 濃度/泡製 | 成人劑量 | 重複間隔 | 最大劑量 | 重要禁忌/警訊 | 來源條文 |
-|---|---|---|---|---|---|---|---|---|
-| Epinephrine | OHCA VF/pVT/PEA/Asystole | IV/IO | 1:1,000 (1mg/1mL) 原液一支 | 1 mg | q 3-5 min | 無上限（持續至 ROSC 或終止急救） | ROSC 後體內蓄積致高血壓/心律不整；台灣只有 1:1,000，心停用原液一支 (1mg) 直接 IV/IO | AHA ACLS 2020 §5.2 |
-| Epinephrine | Anaphylaxis | IM (大腿外側) | 1:1,000 (1mg/1mL) 原液 | 0.3-0.5 mg | q 5-15 min PRN | 無絕對上限（依臨床反應） | 休克病人 IM 吸收差 → 考慮 IV push-dose | AHA ACLS 2020; WAO Anaphylaxis Guidelines 2020 |
-| Amiodarone | Refractory VF/pVT (OHCA) | IV/IO | 原液 50mg/mL 或預混 | 1st: 300 mg bolus; 2nd: 150 mg bolus | 1st 後 3-5 min 可給 2nd | 單次急救共 450 mg | **活人勿快推** — 非 arrest 須 10-15 min 慢滴（150mg/100mL D5W）以免低血壓；Arrest 時可 push | AHA ACLS 2020 §5.3 |
-| Adenosine | Stable SVT (Regular narrow-complex) | IV (肘前靜脈優先) | 原液 3mg/mL | 1st: 6 mg rapid push + 20mL NS flush; 2nd/3rd: 12 mg | 1-2 min | 共 30 mg (6+12+12) | 半衰期 <10 sec → 必須最近心臟的 IV + rapid push + flush；禁用於 irregular WCT、2nd/3rd degree AVB | AHA ACLS 2020 §7.3 |
-| Midazolam | Seizure / Sedation | IV/IM/IN | 原液 5mg/mL | IV: 2-5 mg; IM: 5-10 mg; IN: 0.2 mg/kg (MAD) | IV: q 5-10 min; IM: q 15 min | IV 累計 10 mg; IM 累計 10 mg | 呼吸抑制（尤與 opioid 併用）；老人/休克減量 50%；備好 BVM 及 Flumazenil | AHA ACLS 2020; Neurocritical Care Society 2012 |
-| Fentanyl | Analgesia | IV/IN | 原液 50mcg/mL | IV: 1-2 mcg/kg (通常 50-100 mcg); IN: 1.5 mcg/kg (MAD) | IV: q 5-10 min; IN: q 15 min | 依臨床反應（通常 200-300 mcg/hr） | 胸壁僵硬（罕見，高劑量快推）；呼吸抑制；老人/休克減量 | AHA Pain Management; NAEMSP Position Statement |
-| Albuterol | Bronchospasm (Asthma/COPD) | Inhalation (Nebulizer) | 2.5mg/3mL NS | 2.5 mg nebulizer | q 15-20 min PRN; 重症可 continuous | 無絕對上限（重症可連續霧化） | Tachycardia, Tremor（Beta-2 不完全選擇性）；低血鉀風險 | AHA/GINA 2020 |
-| Norepinephrine | Septic/Distributive Shock | IV drip | 4 mg/250 mL D5W (16 mcg/mL) | 起始 0.1-0.5 mcg/kg/min | Titrate q 2-5 min | 通常 ≤ 1 mcg/kg/min（無絕對上限） | 需 central line 或大口徑 peripheral（外滲致組織壞死）；確保 volume 先補充 | AHA ACLS 2020; Surviving Sepsis 2021 |
+- 手冊使用規範（P.05）：<https://fliphtml5.com/aoisd/palz/%E8%87%BA%E5%8C%97%E5%B8%82EMT%E4%BD%9C%E6%A5%AD%E6%89%8B%E5%86%8A%E7%AC%AC%E4%BA%94%E7%89%88%E4%BF%AE%E8%A8%82%E7%A8%BF/5/>
+- G5 危急個案（P.20）：<https://fliphtml5.com/aoisd/palz/%E8%87%BA%E5%8C%97%E5%B8%82EMT%E4%BD%9C%E6%A5%AD%E6%89%8B%E5%86%8A%E7%AC%AC%E4%BA%94%E7%89%88%E4%BF%AE%E8%A8%82%E7%A8%BF/20/>
+- 呼吸困難程序要旨（P.43）：<https://fliphtml5.com/aoisd/palz/%E8%87%BA%E5%8C%97%E5%B8%82EMT%E4%BD%9C%E6%A5%AD%E6%89%8B%E5%86%8A%E7%AC%AC%E4%BA%94%E7%89%88%E4%BF%AE%E8%A8%82%E7%A8%BF/43/>
+- 過敏反應 / 過敏性休克（P.52）：<https://fliphtml5.com/aoisd/palz/%E8%87%BA%E5%8C%97%E5%B8%82EMT%E4%BD%9C%E6%A5%AD%E6%89%8B%E5%86%8A%E7%AC%AC%E4%BA%94%E7%89%88%E4%BF%AE%E8%A8%82%E7%A8%BF/52/>
+- 急性肺水腫、低血壓及休克（公開 2024 鏡像，P.75-76 節錄）：<https://fliphtml5.com/kwrrr/kyfz/2024_%E8%87%BA%E5%8C%97%E5%B8%82%E6%94%BF%E5%BA%9C%E7%B7%8A%E6%80%A5%E6%95%91%E8%AD%B7%E6%8A%80%E8%A1%93%E5%93%A1%E5%88%B0%E9%99%A2%E5%89%8D%E7%B7%8A%E6%80%A5%E6%95%91%E8%AD%B7%E4%BD%9C%E6%A5%AD%E7%A8%8B%E5%BA%8F%E6%89%8B%E5%86%8A_2/>
+- 無脈搏急救 / 5H5T 要旨（P.38）：<https://fliphtml5.com/aoisd/palz/%E8%87%BA%E5%8C%97%E5%B8%82EMT%E4%BD%9C%E6%A5%AD%E6%89%8B%E5%86%8A%E7%AC%AC%E4%BA%94%E7%89%88%E4%BF%AE%E8%A8%82%E7%A8%BF/38/>
 
-## 高風險錯誤防呆（教學必講）
+## M09 重新定位
 
-- [x] 休克病人誤用 IM 導致吸收失敗 — **低灌流 → 改 IV/IO**
-- [x] 低灌流狀態下重複補藥過快造成 ROSC 後過量 — **尊重 circulation time，勿 < 3 min 就追加**
-- [x] IO 未充分 flush 造成藥效延遲 — **每次給藥後 20 mL NS flush + 抬高肢體**
-- [x] Amiodarone 活人誤用快速推注導致低血壓 — **非 arrest 須 10-15 min 慢滴**
+- 這一模組不是「藥物背誦表」。
+- 這一模組是「課程內容對回台北市作業程序的接口層」。
+- 藥物只保留在流程真的需要出現的位置：
+  - 過敏性休克的 IM epinephrine
+  - 急性肺水腫 / 低血壓 / 休克流程中的 NTG、輸液、dirty epinephrine drip
+  - 其他藥理學細節仍回到 `M02_ALS-pharmacokinetics.md`
 
-## 對接完成定義（Definition of Done）
+## 先抓住 5 個在地流程錨點
 
-- [x] 表中所有常用藥都填入「ACLS 通用劑量 + 來源條文」
-- [ ] 與課程題庫（Q16-Q30）逐題比對一致 — 待 Step 5 標籤完成後核對
-- [ ] 與 scenario debrief 用語一致（S01-S04）— 待最終校對
+| 流程錨點 | 台北市手冊對應 | 對課程的意義 |
+|---|---|---|
+| ALS / 危急個案辨識 | `G5 危急個案` | 決定什麼病人需要用 ALS 視角進場，而不是把所有案例都當成一般急症 |
+| 無脈搏急救與可逆原因 | 無脈搏急救要旨 / `5H5T` | 對應 S04 OHCA、也支撐 M01 的 reversible causes 框架 |
+| 呼吸困難流程 | 呼吸困難程序 | 對應 Oxy vs Vent、氧氣升級、半坐臥、COPD 氧氣使用警訊 |
+| 過敏反應 / 過敏性休克 | 過敏反應程序 | 對應 S03，強調穩定 vs 不穩定與 Epi IM 的流程位置 |
+| 急性肺水腫、低血壓及休克 | `M9 / M10` 類流程（不同公開鏡像版本頁碼略有差異） | 對應 S05 與整體 shock sorting；重點是 `Rate / Volume / Pump`，不是先背藥單 |
 
-> **Note**: 目前為 ACLS 2020 通用版。台北市在地 protocol 確認後，請更新版本資訊並微調劑量差異處。
+## 台北市流程重點速查
+
+### 1. ALS / 危急個案（G5）
+
+台北市公開手冊把下列指標列為危急個案的重要門檻，適合直接當成本課程「什麼時候要切換成 ALS 腦袋」的起手式：
+
+- GCS < 13
+- 呼吸次數 < 10/min 或 >= 30/min
+- 未給氧時 SpO2 < 90%
+- 脈搏 >= 150/min 或 < 50/min
+- 收縮壓 < 90 mmHg 或 >= 220 mmHg
+- CRT >= 2 秒
+- 體溫極端異常
+- 血糖 < 60 mg/dL 或 >= 500 mg/dL
+- 發紺
+
+教學上，這一段比單純背「哪支藥多少 mg」更前面，因為它決定：
+
+- 這是不是 ALS 視角的病人
+- 是否要提早叫援、提早通報、提早準備進階處置
+
+### 2. 呼吸困難流程
+
+公開手冊對呼吸困難的重點比較像「氧合與呼吸工作量管理」，不是先進入藥物：
+
+- 先看呼吸頻率、SpO2、是否發紺，以及是否需要提升氧氣設備等級
+- 意識清楚且 SpO2 尚可時，可先選相對舒適的鼻導管
+- 呼吸窘迫明顯時，可升級為簡單面罩或高濃度氧氣面罩
+- COPD 病人需避免不必要的過度給氧
+- 送醫姿勢可考慮坐姿或半坐臥
+
+這塊最適合對接：
+
+- `M01` 的 Oxy vs Vent
+- `S01` 張力性氣胸與 `S05` 急性肺水腫的呼吸表現
+- 講義裡的 oxygenation / ventilation 區分
+
+### 3. 過敏反應 / 過敏性休克
+
+公開手冊明確把這塊分成「穩定」與「不穩定」：
+
+- 穩定：只有輕度呼吸困難，收縮壓仍維持 >= 90 mmHg，皮膚表現未呈現休克樣
+- 不穩定：意識改變、皮膚濕冷、嚴重呼吸窘迫或上呼吸道阻塞徵象、收縮壓 < 90 mmHg
+
+流程上可抓的重點：
+
+- 高濃度氧氣
+- 快速輸液
+- 成人可考慮 IM epinephrine 0.3 mg
+- 不穩定狀態持續時，可依程序重複給藥
+- 若有嚴重呼吸窘迫，需提早線上醫療指導與進階呼吸道準備
+
+對課程的意義：
+
+- `S03` 不只是「Epi 背劑量」，而是要學會辨識哪一種病人已經進入休克 / 呼吸衰竭
+- `M02` 應把 Epi IM 放在流程脈絡裡教，而不是孤立成濃度題
+
+### 4. 急性肺水腫、低血壓及休克
+
+這是目前最值得變成 M09 主體的段落。公開手冊呈現的核心不是藥單，而是判斷邏輯：
+
+- `EMT2` 先以 `Volume` 問題為主
+- `EMTP` 進一步用 `Rate / Volume / Pump` 快速整理低血壓與休克
+- 先判斷有沒有急性肺水腫 / 體液過多表現
+- 沒有體液過多表現時，才考慮靜脈輸液
+- 若是急性肺水腫且收縮壓仍 >= 90 mmHg，可依流程使用 NTG
+- 若極低血壓（公開鏡像顯示 SBP < 70 mmHg）且後送較久，可經線上醫療指導考慮 dirty epinephrine drip
+
+可直接放進課程的在地重點：
+
+| 情境 | 台北市流程重點 | 課程對接 |
+|---|---|---|
+| 急性肺水腫 / SCAPE 樣貌 | 半坐臥、氧合支持、辨識肺水腫徵象、NTG 在 SBP >= 90 時有流程位置 | 對接 `S05`、`Nohria-Stevenson`、M01 心因性休克 |
+| 低血壓但無 overload 徵象 | 可以考慮 IV 輸液 | 對接 `Pump-Pipe-Tank` 的 `Tank` 與 `Volume` 思維 |
+| 極低血壓且後送久 | 線上醫療指導 + dirty epinephrine drip | 對接 M02 升壓藥，但定位為流程分支，不是主軸 |
+| 休克分類 | 不是只看血壓，而是看心跳、呼吸、意識、皮膚、CRT 等灌流表現 | 對接 M01 休克病生理 |
+
+### 5. OHCA 與 5H5T
+
+公開手冊在無脈搏急救段落強調：
+
+- 高品質 CPR 優先
+- 同步考慮 `5H5T`
+- 雙軌救護時要確認團隊目前進度與下一步
+
+這一段對應：
+
+- `S04 OHCA`
+- `pseudoPEA` 的 reversible causes 討論
+- `Pump-Pipe-Tank` 與 `5H5T` 的橋接
+
+## 建議的 M09 教學排法
+
+### A. 先講「什麼病人進入 ALS / 危急流程」
+
+- 直接用 `G5` 危急個案門檻
+- 把學員從「知道這病很重」拉到「知道什麼叫在地 ALS 啟動點」
+
+### B. 再講「呼吸困難與休克不是分開兩件事」
+
+- 呼吸困難流程：氧合 / 姿勢 / 氧氣設備升級
+- 休克流程：Rate / Volume / Pump
+- 把 `M01` 的病生理框架對回台北市程序
+
+### C. 再講 2 個高價值分支
+
+- 過敏性休克：穩定 vs 不穩定、Epi IM 在哪裡出現
+- 急性肺水腫 / 低血壓 / 休克：NTG、輸液、dirty epi drip 在哪裡出現
+
+### D. 最後才附藥物欄位
+
+藥物在 M09 只保留「流程中真的需要用到的最低限度資訊」：
+
+- Epi IM（過敏性休克）
+- NTG（急性肺水腫）
+- Dirty epinephrine drip（極低血壓）
+
+其餘藥理機轉、濃度陷阱、泡製細節，仍回 `M02_ALS-pharmacokinetics.md`。
+
+## 對回本課程模組
+
+| 課程內容 | 台北市流程錨點 | 建議教學說法 |
+|---|---|---|
+| `M01 ALS 病生理學` | `G5`、呼吸困難、休克流程、5H5T | 先用病生理建立判讀，再指出台北市流程對應的入口 |
+| `M02 藥物動力學/藥效學` | 過敏性休克、急性肺水腫 / 休克分支 | 藥物是流程中的一段，不是 M09 的主體 |
+| `S03 過敏性休克` | 過敏反應 / 過敏性休克流程 | 學員要說得出穩定 vs 不穩定與 Epi IM 的位置 |
+| `S04 OHCA` | 無脈搏急救、5H5T | 把 OHCA 從 ACLS 口訣拉回可逆原因與團隊流程 |
+| `S05 心因性休克 + APE` | 急性肺水腫、低血壓及休克流程 | 這是 M09 最核心的示範案例 |
+
+## 這份流程表刻意不直接宣稱的內容
+
+以下內容可以留在課程主模組講，但 **不宜在 M09 直接寫成「台北市在地流程已確認」**，除非拿到最新版官方文件：
+
+- `SCAPE` 這個名詞本身
+- `CPAP / NIV` 是否在最新版台北市流程中有明確位置
+- `push-dose epinephrine` / `pseudoPEA` 是否已有正式在地流程語言
+- `norepinephrine` 是否已取代特定情境下的 dirty epinephrine drip
+
+換句話說：
+
+- `M01 / M02` 可以保留課程層的進階教學
+- `M09` 只寫我們目前能對回台北市作業程序的部分
+
+## 後續待辦
+
+- [ ] 取得台北市官方 PDF 或最新核准版手冊，取代目前公開鏡像來源
+- [ ] 逐條確認 `SCAPE / CPAP / pseudoPEA / push-dose epi` 是否已進入正式在地流程
+- [ ] 依最新版手冊，補上版本日期、核准單位與最後校對人
+- [ ] 若確認流程穩定，再回頭同步 `M02` 題庫與講義 wording
+
+## 一句話結論
+
+M09 應該從「在地劑量表」改成「台北市 ALS / 呼吸困難 / 過敏性休克 / 急性肺水腫與休克流程對接表」；藥物只是流程的一部分，不是這個模組的主角。

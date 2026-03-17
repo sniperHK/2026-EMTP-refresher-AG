@@ -13,7 +13,7 @@
 - [ ] **定案課名**：重探病生理-瀕死案例討論 (Revisiting Pathophysiology: Near-Death Case Discussions)
   - 歸類：1.5 人體基本解剖生理學（生命徵象與神經、呼吸及循環相關生理）
   - 課程目標：用瀕死案例連結臨床徵象與基礎生理，聚焦代償與衰竭機制
-- [ ] 對齊台北市在地 protocol：更新 `docs/modules/M02_protocol-dosing-map.md`，並同步 M02 與題庫相關劑量/流程
+- [ ] 對齊台北市在地作業流程：將 `docs/modules/M02_protocol-dosing-map.md` 重整為 ALS / 呼吸困難 / 過敏性休克 / 急性肺水腫與休克對接表，並同步 M02 與題庫相關劑量/流程
 - [x] 清理 `IV-first / IO-as-alternative` 用語：同步 `M02`、`student-handout`、`web/slides/M02.md`、題庫與 post-test
 - [x] 將 `ROSC 後前 5 分鐘` 從 pocket card 擴充到 `S04` / web scenario / 題庫
 - [x] 為各 scenario 加入 `Assessment Pathway` 小框（scene size-up → first impression → focused exam → DDx）

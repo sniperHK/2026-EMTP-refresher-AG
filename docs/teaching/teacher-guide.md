@@ -128,7 +128,7 @@
 | [M02_藥物動力學PK-PD_v2.pptx](../../exports/2026-02-26_v2/M02_藥物動力學PK-PD_v2.pptx) | 投影片 1-29，短講 + 計算演練 |
 | [student-handout.pdf](../../exports/2026-02-26_v2/student-handout.pdf) | 學員同步參照 p.3-4 |
 | [M02_ALS-pharmacokinetics.md](../modules/M02_ALS-pharmacokinetics.md) | 講師備課用（完整講稿） |
-| [M02_protocol-dosing-map.md](../modules/M02_protocol-dosing-map.md) | 在地劑量對接表（備查） |
+| [M02_protocol-dosing-map.md](../modules/M02_protocol-dosing-map.md) | 台北市 ALS / 休克流程對接表（備查） |
 
 **重點段落**：
 1. 給藥途徑比較（slides 2-6）→ 口訣：休克不要 IM

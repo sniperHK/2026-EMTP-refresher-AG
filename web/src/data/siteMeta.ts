@@ -23,8 +23,8 @@ export const moduleMeta: Record<
     color: 'var(--medical-orange)',
   },
   M09: {
-    title: 'M09 在地劑量參考表',
-    desc: '在地協議劑量速查與關鍵警示',
+    title: 'M09 台北市流程對接表',
+    desc: '把 ALS、呼吸困難與休克流程對回台北市作業程序',
     color: 'var(--medical-teal)',
   },
 }
