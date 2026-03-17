@@ -637,10 +637,10 @@ def build_m02():
                     ["項目", "內容"],
                     [
                         ["適應症", "SCAPE / Warm+Wet 肺水腫"],
-                        ["劑量", "SL 0.4 mg q3-5min; SCAPE 可 SL 0.8 mg"],
+                        ["劑量", "SL 0.4 mg q3-5min; SCAPE 可 SL 0.8 mg（急診文獻建議，非標準 AHA 劑量，需醫療指導授權）"],
                         ["IV drip", "10-200 mcg/min"],
                         ["Onset", "SL 1-3 min; IV < 1 min"],
-                        ["禁忌", "SBP < 90、RV infarct"],
+                        ["禁忌", "SBP < 90、RV infarct、近 24-48 hr 內使用 PDE-5 抑制劑（Sildenafil/Tadalafil）"],
                     ],
                     note_text="作用：低劑量→靜脈擴張(減前負荷)；高劑量→動脈擴張(減後負荷)")
 
@@ -668,7 +668,7 @@ def build_m02():
     add_content_slide(prs,
                       "Midazolam & Fentanyl",
                       [
-                          "Midazolam: IV 2-5mg / IM 5-10mg / IN 0.2mg/kg",
+                          "Midazolam — Seizure: IM 10mg / IV 5mg / IN 0.2mg/kg；Sedation: IV 2-5mg / IM 5mg",
                           "老人減量 50%；呼吸抑制！",
                           "Fentanyl: IV 1-2 mcg/kg / IN 1.5 mcg/kg",
                           "不釋放組織胺 → 比 Morphine 更不影響 BP",
@@ -678,7 +678,7 @@ def build_m02():
     add_content_slide(prs,
                       "Norepinephrine",
                       [
-                          "Septic/Distributive Shock: 0.1-0.5 mcg/kg/min IV drip",
+                          "Septic/Distributive Shock: 0.01-0.5 mcg/kg/min IV drip（從低劑量 titrate）",
                           "Cardiogenic Shock (Cold+Wet, SBP<70): 首選升壓",
                           "外滲 → 組織壞死 → 優先 central line 或大口徑 IV",
                           "泡製：4 mg / 250 mL D5W",
@@ -686,7 +686,7 @@ def build_m02():
 
     # Slide 23 — Albuterol
     add_content_slide(prs,
-                      "Albuterol",
+                      "Salbutamol (= Albuterol)",
                       [
                           "Bronchospasm: 2.5 mg nebulizer q15-20min",
                           "Inhalation onset 5-15 min",

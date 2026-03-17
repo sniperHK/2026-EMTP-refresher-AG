@@ -179,7 +179,7 @@ flowchart TD
 | **Epinephrine** | Anaphylaxis | IM 0.3-0.5 mg (1:1,000) q5-15min | 休克→改 IV |
 | **Amiodarone** | VF/pVT | 1st 300mg bolus → 2nd 150mg | 活人慢滴! |
 | **Adenosine** | SVT | 6mg rapid push → 12mg x2 | **不稀釋**原液推；1-2 秒內打完 + 立即 **20mL NS flush** + 抬手臂；半衰期 <10s |
-| **Norepinephrine** | Shock | 0.1-0.5 mcg/kg/min IV drip | 外滲壞死風險；Warm/Distributive shock 首選升壓 |
+| **Norepinephrine** | Shock | 0.01-0.5 mcg/kg/min IV drip（從低劑量 titrate） | 外滲壞死風險；Warm/Distributive shock 首選升壓 |
 | **Dobutamine** | Cold+Wet (SBP>70-80) | 2-20 mcg/kg/min IV drip | 強心劑 (Inotrope)；SBP 極低時需先用 Norepi 撐起血壓再加 |
 
 ### 血管擴張 & 利尿
@@ -193,11 +193,12 @@ flowchart TD
 
 | 藥物 | 適應症 | 劑量 | 關鍵提醒 |
 |---|---|---|---|
-| **Midazolam** | Seizure/Sedation | IV 2-5mg / IM 5-10mg / IN 0.2mg/kg | 老人減半; 呼吸抑制 |
+| **Midazolam** | Seizure | IM 10mg / IV 5mg / IN 0.2mg/kg | 老人減半; 呼吸抑制 |
+| **Midazolam** | Sedation | IV 2-5mg / IM 5mg | 老人減半; 呼吸抑制 |
 | **Fentanyl** | Analgesia | IV 1-2mcg/kg / IN 1.5mcg/kg | **不釋放組織胺 → 血壓穩定**; 胸壁僵硬(罕見) |
 | **Morphine** | Analgesia | IV 2-4mg q5-15min | ⚠️ **組織胺釋放 → 低血壓**; 休克病人避免使用 |
 | **Ketamine** | Analgesia (sub-dissociative) | IV **0.1-0.3 mg/kg** 慢推 / IN 0.5-1 mg/kg | 不抑制呼吸、不降血壓；噁心/幻覺可能；RSI 劑量不同（1-2 mg/kg） |
-| **Albuterol** | Bronchospasm | 2.5mg nebulizer q15-20min | Tachycardia |
+| **Salbutamol (= Albuterol)** | Bronchospasm | 2.5mg nebulizer q15-20min | Tachycardia；Combivent 為 Salbutamol + Ipratropium 複方，非單方 |
 
 > **止痛選藥口訣**：休克/血壓不穩 → Fentanyl 或 Ketamine（兩者均不降血壓）；避免 Morphine（組織胺 → 低血壓）。Ketamine sub-dissociative（0.1-0.3 mg/kg）遠低於 RSI 劑量（1-2 mg/kg），不會造成解離。
 
@@ -312,7 +313,7 @@ Step 2: 從 Step 1 再抽 1 mL (= 100 mcg)
 5. **二線藥物**（醫院端/進階處置，不應延遲 Epi）：
    - 抗組織胺：Diphenhydramine 25-50 mg IV/IM
    - 類固醇：Methylprednisolone 125 mg IV 或 Hydrocortisone
-   - 支氣管擴張：Albuterol nebulizer (針對 persistent bronchospasm)
+   - 支氣管擴張：Salbutamol nebulizer (針對 persistent bronchospasm)
 
 ---
 

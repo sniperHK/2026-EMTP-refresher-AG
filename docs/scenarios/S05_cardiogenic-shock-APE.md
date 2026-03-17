@@ -87,7 +87,7 @@
 > - 但脈搏摸不到（心輸出量極低）
 > - 這代表 **extreme low-flow state**；若無法快速確認，不要為了 pseudoPEA 假設拖慢標準 resuscitation 節奏
 > - **處置**：push-dose epi 10-20 mcg IV q 1-2 min + Norepinephrine drip + 持續 BVM + 快速轉送
-> - 若有 POCUS（受訓操作者，不延長 rhythm check 暫停）：心臟有收縮可支持 pseudoPEA / low-flow shock 判斷（2025 AHA：intra-arrest POCUS 診斷價值尚未完全建立，作為輔助工具，非必要條件）
+> - 若有 POCUS（受訓操作者，不延長 rhythm check 暫停）：心臟有收縮可支持 pseudoPEA / low-flow shock 判斷（2025 AHA Class 2b 建議：可輔助辨別可逆原因，但不應延長 CPR 中斷超過 10 秒，作為輔助工具，非必要條件）
 
 **結局**：Push-dose Epi 反覆 2 次（共 40 mcg）+ Norepi drip 啟動 → BP 回到 85/55，脈搏可觸及，SpO₂ 回升至 90%。快速轉送心導管室。
 

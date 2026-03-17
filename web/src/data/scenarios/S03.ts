@@ -136,10 +136,10 @@ export const S03: Scenario = {
           },
           {
             id: "S03-T3-D",
-            text: "Albuterol 噴霧吸入",
+            text: "Salbutamol 噴霧吸入",
             correct: false,
             feedback:
-              "Albuterol 只能處理下呼吸道的支氣管痙攣（wheeze），無法解決上呼吸道水腫（stridor）和低血壓。此病人同時有氣道 + 循環問題，只有 Epinephrine 能同時處理兩者。",
+              "Salbutamol 只能處理下呼吸道的支氣管痙攣（wheeze），無法解決上呼吸道水腫（stridor）和低血壓。此病人同時有氣道 + 循環問題，只有 Epinephrine 能同時處理兩者。",
           },
         ],
       },

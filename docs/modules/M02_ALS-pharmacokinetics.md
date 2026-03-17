@@ -81,7 +81,8 @@
 
 ### 鎮靜與止痛 (Sedation & Analgesia)
 - **Midazolam (Dormicum)**
-  - **Seizure/Sedation**: IV 2-5 mg / IM 5-10 mg / IN 0.2 mg/kg
+  - **Seizure**: IM 10 mg / IV 5 mg / IN 0.2 mg/kg
+  - **Sedation**: IV 2-5 mg / IM 5 mg
   - **PK**: 肝代謝。IV Onset 1-3 min。
   - **陷阱**: **呼吸抑制 (Respiratory Depression)**，尤其併用 Opioid 時。老人/休克減量 50%。
 
@@ -103,23 +104,25 @@
   > **結論**：休克或血壓不穩的病人止痛，Fentanyl 優於 Morphine。Morphine 的組織胺釋放可能加劇低血壓。
 
 ### 呼吸與過敏 (Respiratory/Allergy)
-- **Albuterol (Combivent/Ventolin)**
+- **Salbutamol (= Albuterol)**
+  - **Ventolin**：Salbutamol 單方 β2-agonist
+  - **Combivent**：Salbutamol + Ipratropium 複方（含抗膽鹼，非 Salbutamol 單方）
   - **Bronchospasm**: 2.5 mg nebulizer q 15-20 min PRN
   - **PK**: Inhalation Onset 5-15 min。
   - **陷阱**: Side effect 是 Tachycardia, Tremor (Beta-2 selectivity 不是 100%)。
 
 ### 血管擴張劑 (Vasodilators) — 肺水腫用
 - **Nitroglycerin (NTG)**
-  - **Warm+Wet（SCAPE / 急性肺水腫）**: SL 0.4 mg q 3-5 min；SCAPE 可加倍至 SL 0.8 mg
+  - **Warm+Wet（SCAPE / 急性肺水腫）**: SL 0.4 mg q 3-5 min；SCAPE 可加倍至 SL 0.8 mg（此為急診文獻建議，非標準 AHA 劑量，需醫療指導授權）
   - **IV drip**: 10-200 mcg/min，依血壓 titrate
   - **PK**: SL Onset 1-3 min, Duration 20-30 min; IV Onset < 1 min
   - **作用機轉**：低劑量 → 靜脈擴張 → 減前負荷 → 減肺水腫；高劑量 → 動脈擴張 → 減後負荷
-  - **陷阱**: **SBP < 90 禁用**。右心梗（RV infarct: inferior STEMI + RV lead ST↑）禁用——右心靠前負荷維生，NTG 會讓它崩潰。
+  - **陷阱**: **SBP < 90 禁用**。右心梗（RV infarct: inferior STEMI + RV lead ST↑）禁用——右心靠前負荷維生，NTG 會讓它崩潰。近 24-48 小時內使用 PDE-5 抑制劑（如 Sildenafil/Viagra、Tadalafil/Cialis）禁用——合併使用會導致致命性低血壓。
   - **PK/PD 教學點**: NTG 在低灌流時 SL 吸收差——跟 IM 在休克時失效的道理一樣（黏膜血流不足 → 吸收延遲）。
 
 ### 升壓劑 (Vasopressors)
 - **Norepinephrine**
-  - **Septic/Distributive Shock**: 0.1-0.5 mcg/kg/min IV drip, titrate q 2-5 min
+  - **Septic/Distributive Shock**: 0.01-0.5 mcg/kg/min IV drip（從低劑量 titrate）, titrate q 2-5 min
   - **Cardiogenic Shock (Cold+Wet, SBP < 70)**: 首選升壓，待 BP 穩定後再加 Dobutamine
   - **泡製**: 4 mg/250 mL D5W (16 mcg/mL)
   - **陷阱**: 外滲致組織壞死 → 優先 central line 或大口徑 IV。確保已補充足夠 volume。

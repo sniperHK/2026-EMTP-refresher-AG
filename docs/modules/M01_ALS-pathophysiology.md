@@ -140,7 +140,7 @@
 **為何重要**：
 - 42-86% 的 PEA cardiac arrest 可能其實是 pseudoPEA
 - True PEA 存活率 < 1%；pseudoPEA（有心臟收縮）ROSC 率可達 70-94%
-- **POCUS 可協助鑑別**：超音波看到心臟有收縮提示 pseudoPEA，但需受過訓練者操作且不可延長 CPR 暫停（2025 AHA：intra-arrest POCUS 診斷價值尚未完全建立）
+- **POCUS 可協助鑑別**：超音波看到心臟有收縮提示 pseudoPEA，但需受過訓練者操作且不可延長 CPR 暫停（2025 AHA Class 2b 建議：可輔助辨別可逆原因，但不應延長 CPR 中斷超過 10 秒）
 
 **處置差異**：
 
@@ -179,7 +179,7 @@
 | :--- | :--- | :--- | :--- |
 | **Fluids** (NS/LR) | Tank (Preload) | 增加 SV → 增加 CO → 改善 BP | Fluid overload (肺水腫), 稀釋凝血因子。**Cold+Wet 禁大量輸液！** |
 | **Epinephrine** | Alpha-1 (Vessel), Beta-1 (Heart) | 增加 SVR (BP↑), 增加 Contractility | 增加心肌耗氧 (Myocardial O2 demand), 導致心律不整 |
-| **Nitroglycerin** | 靜脈（低劑量）/ 動脈（高劑量）擴張 | 減前負荷 → 減肺水腫；減後負荷 → 減心臟負擔 | **SBP < 90 禁用。右心梗禁用。** 低灌流時 SL 吸收差 |
+| **Nitroglycerin** | 靜脈（低劑量）/ 動脈（高劑量）擴張 | 減前負荷 → 減肺水腫；減後負荷 → 減心臟負擔 | **SBP < 90 禁用。右心梗禁用。近 24-48 hr 內使用 PDE-5 抑制劑（Sildenafil/Tadalafil）禁用。** 低灌流時 SL 吸收差 |
 | **Amiodarone** | K+ Channel, Beta, Ca++, Na+ | 延長動作電位 (Repolarization), 抑制異位放電 | **Hypotension (血管擴張)**, Bradycardia |
 | **Intubation** (RSI) | Airway/Ventilation | 確保通氣, 防止吸入 | **PPV (正壓通氣) 減少回心血流 (Preload↓) → 可能導致剛插管後 Cardiac Arrest** |
 | **CPAP/BiPAP** | Oxygenation + Preload | 正壓撐開肺泡 + 減少回心血量 | 肺水腫首選！**比插管侵入性低，效果快（5-10 min）** |
@@ -190,7 +190,37 @@
 
 ---
 
-## 6. 模組總結：從生理到決策
+## 6. ROSC 後前 5 分鐘：第二階段 Resuscitation
+
+> ROSC ≠ 急救結束。ROSC 後的前 5 分鐘是**第二階段 resuscitation**，目標是避免二次傷害。
+
+### 氧合目標
+
+| 參數 | 目標 | 原因 |
+|------|------|------|
+| **SpO₂** | **92-98%** | 避免 Hyperoxia（過度氧化產生自由基，加重再灌流損傷） |
+| **通氣** | 避免過度通氣 | PaCO₂ 35-45 mmHg（或 EtCO₂ 接近正常）；Hyperventilation → 腦血管收縮 → 腦缺血 |
+
+### 血流動力學目標
+
+| 參數 | 目標 | 處置 |
+|------|------|------|
+| **MAP** | **≥ 65 mmHg** | 血壓低 → Norepinephrine drip（依在地 protocol） |
+| **Epi 蓄積警戒** | 密切監測 | ROSC 前可能已累積 3-5 mg Epi → ROSC 後突發高血壓/心搏過速/心律不整；勿再追加 |
+
+### 移交清單（Pocket Card）
+
+1. **12-lead ECG** — 排除 STEMI，評估 PCI 需求
+2. **血糖** — 避免低血糖（< 70 mg/dL）及嚴重高血糖（> 180 mg/dL）
+3. **體溫管理** — 避免發燒（> 37.7°C 有害），考慮 TTM（目標 32-37.5°C）
+4. **通報接收醫院** — 可能需 PCI / Echo / CT
+5. **依病因持續評估** — coronary evaluation、神經學評估
+
+> **口訣**：ROSC 後「氧不多、氣不快、壓要夠、溫要低、ECG 要做」
+
+---
+
+## 7. 模組總結：從生理到決策
 
 1. **區分 Oxygenation vs Ventilation 問題**：SpO2 低給氧，EtCO2 高/意識差給通氣。
 2. **休克識別在血壓掉之前**：看 HR, CRT, 皮膚, 意識。
