@@ -9,6 +9,7 @@ import { cn } from '@/lib/utils'
 interface Props {
   questions: Question[]
   onFinish: (result: QuizFinishResult) => void
+  onReset?: () => void
 }
 
 export interface QuizFinishResult {
@@ -23,7 +24,7 @@ const levelColor: Record<string, string> = {
   Analyze: 'var(--medical-red)',
 }
 
-export function QuizPlayer({ questions, onFinish }: Props) {
+export function QuizPlayer({ questions, onFinish, onReset }: Props) {
   const [currentIdx, setCurrentIdx] = useState(0)
   const [selected, setSelected] = useState<OptionKey | null>(null)
   const [showFeedback, setShowFeedback] = useState(false)
@@ -91,9 +92,20 @@ export function QuizPlayer({ questions, onFinish }: Props) {
       {/* Progress header */}
       <div className="space-y-2">
         <div className="flex items-center justify-between text-sm">
-          <span className="font-medium text-gray-600">
-            第 {currentIdx + 1} 題 / 共 {total} 題
-          </span>
+          <div className="flex items-center gap-2">
+            {onReset && (
+              <button
+                onClick={onReset}
+                className="text-xs text-gray-400 hover:text-gray-600 transition-colors"
+                title="回到測驗選單"
+              >
+                ← 選單
+              </button>
+            )}
+            <span className="font-medium text-gray-600">
+              第 {currentIdx + 1} 題 / 共 {total} 題
+            </span>
+          </div>
           <div className="flex items-center gap-2">
             <span className="text-gray-400">得分 {score}</span>
             <Badge

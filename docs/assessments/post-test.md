@@ -118,8 +118,8 @@ B. 心因性休克
 C. 末期失代償性休克 (酸中毒嚴重)
 D. 神經性休克
 
-**20. 內科 OHCA 病人，CPR 過程中 rhythm check 顯示 narrow-complex sinus rhythm（HR 65），頸動脈脈搏摸不到。快速 POCUS 確認心臟有微弱收縮活動。此狀態最可能是？**
-A. True PEA（心臟已無有效收縮）
-B. ROSC（已恢復自主循環）
-C. PseudoPEA（心臟仍有收縮但心輸出量極低）
-D. Pulseless VT（無脈搏心室頻脈）
+**20. 關於成人 cardiac arrest 中 POCUS 的角色，下列何者最恰當？**
+A. 應常規延長每次 rhythm check，直到超音波看清楚為止
+B. 只要有 POCUS，就可以取代標準 ACLS 流程
+C. 若有受訓操作者，且不延長 CPR 暫停，可作為輔助工具；若無法快速完成，應回到標準 resuscitation 節奏
+D. POCUS 已足以單獨決定是否停止 CPR

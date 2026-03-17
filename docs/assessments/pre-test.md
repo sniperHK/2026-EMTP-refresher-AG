@@ -52,14 +52,14 @@ B. 1:1,000 (1mg/1ml) IM 肌肉注射
 C. 稀釋後 10mcg/mL IV push（Push-dose 濃度）
 D. 1:1,000 (1mg/1ml) SC 皮下注射
 
-**9. 關於 Push-dose Epinephrine 的泡製，下列何者正確？**
-A. 直接抽 1:1000 原液 1ml 打入
-B. 取 1:1,000 Epi 1 mL + N/S 至 10 mL（100 mcg/mL）→ 再取 1 mL + N/S 至 10 mL → 濃度 10 mcg/mL
-C. 取 1ml 的 1:1000 Epinephrine 加水稀釋至 10ml
-D. 用 D5W 泡製
+**9. 關於成人 cardiac arrest 的血管通路策略，下列何者正確？**
+A. IO 固定優先於 IV，因為一定更快
+B. 應先嘗試 IV；若 IV 延遲、失敗或不可行，IO 是合理替代
+C. 只要打不到肘窩就一定先做 Tibial IO
+D. 建立 IO 後不需要 Flush
 
-**10. 關於 Nitroglycerin (NTG) 在急性肺水腫的應用，下列何者正確？**
+**10. 關於 Nitroglycerin (NTG) 在高血壓合併急性肺水腫的應用，下列何者正確？**
 A. NTG 是利尿劑，可幫助排除肺部多餘液體
-B. NTG 低劑量擴張靜脈（減前負荷），高劑量擴張動脈（減後負荷），是 SCAPE 首選
+B. NTG 是血管擴張劑；在血壓允許時，可放在流程前段處理前/後負荷
 C. SBP 60 mmHg 的休克病人仍可使用 NTG
 D. NTG 舌下吸收不受灌流狀態影響

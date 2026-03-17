@@ -35,9 +35,9 @@ const quizMeta: Record<QuizType, { title: string; description: string; count: nu
     color: 'var(--medical-orange)',
   },
   all: {
-    title: '完整題庫（35 題）',
+    title: '完整題庫（37 題）',
     description: '所有題目混合練習，適合課後複習或自我評估。',
-    count: 35,
+    count: 37,
     color: 'var(--medical-navy)',
   },
 }
@@ -372,6 +372,7 @@ export function QuizPage() {
       <QuizPlayer
         questions={questions}
         onFinish={handleFinish}
+        onReset={handleReset}
       />
     </div>
   )

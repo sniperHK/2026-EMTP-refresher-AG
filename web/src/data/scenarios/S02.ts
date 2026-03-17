@@ -29,7 +29,7 @@ export const S02: Scenario = {
   },
   debrief: {
     minutes: 8,
-    focus: "讓學員記住『正常血壓不等於穩定』，以及 hemorrhage control 優先於補液。",
+    focus: "讓學員記住『正常血壓不等於穩定』、hemorrhage control 優先於補液、以及允許性低血壓（permissive hypotension, SBP 80-90）的概念。",
   },
   stages: [
     {
@@ -125,7 +125,7 @@ export const S02: Scenario = {
             text: "大量輸液 — 先用 NS 1000mL 把血壓拉起來",
             correct: false,
             feedback:
-              "大量輸液在未止血的情況下可能有害！過度輸液會：(1) 稀釋凝血因子 (2) 降低血液黏稠度 (3) 沖掉正在形成的血塊 (4) 升高血壓反而加速出血。這叫「pop the clot」效應。",
+              "大量輸液在未止血的情況下可能有害！過度輸液會：(1) 稀釋凝血因子 (2) 降低血液黏稠度 (3) 沖掉正在形成的血塊 (4) 升高血壓反而加速出血。這叫「pop the clot」效應。正確的輸液策略是「允許性低血壓（permissive hypotension）」：目標 SBP 80-90 mmHg（有意識即可），不追求正常血壓，避免破壞血塊。（Ref: PHTLS 9th Ed; TCCC Guidelines）",
             consequence:
               "大量輸液後血壓暫時回升至 130/85，但出血加速，5 分鐘後血壓崩潰到 70/40。",
           },

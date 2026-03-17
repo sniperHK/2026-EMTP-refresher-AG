@@ -2,6 +2,7 @@ import { Children, isValidElement } from 'react'
 import type { ComponentProps, ReactNode } from 'react'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
+import rehypeRaw from 'rehype-raw'
 import handoutRaw from '../../../docs/teaching/student-handout.md?raw'
 import { MermaidBlock } from '@/components/markdown/MermaidBlock'
 import { studentHandoutPdfFile } from '@/data/siteMeta'
@@ -206,7 +207,7 @@ export function HandoutPage() {
 
       {/* Markdown content */}
       <div className="space-y-0">
-        <ReactMarkdown remarkPlugins={[remarkGfm]} components={mdComponents}>
+        <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]} components={mdComponents}>
           {handoutRaw}
         </ReactMarkdown>
       </div>
