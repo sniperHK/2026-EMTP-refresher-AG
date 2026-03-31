@@ -1,6 +1,6 @@
 # 教師說明 — 教材使用指南
 
-> 2026 台北市 EMTP 複訓 | ALS 病生理學 & 藥物動力學 | 4 小時（240 分鐘）
+> 2026 台北市 EMTP 複訓 | ALS 病生理學 & 藥物動力學 | 4 小時完整版（240 分鐘）
 
 ---
 
@@ -208,7 +208,7 @@
 
 | 類別 | 檔案 |
 |---|---|
-| 完整題庫（35 題） | [question-bank.md](../assessments/question-bank.md) |
+| 完整題庫（37 題） | [question-bank.md](../assessments/question-bank.md) |
 | 評量藍圖 | [blueprint.md](../assessments/blueprint.md) |
 | 課程路線圖 | [roadmap.md](../roadmap.md) |
 | v2 匯出清單 | [manifest.md](../../exports/2026-02-26_v2/manifest.md) |

@@ -164,10 +164,10 @@ const blocks: TimeBlock[] = [
     ],
   },
   {
-    time: '195–200',
-    clock: '11:45–11:50',
-    title: '收尾',
-    duration: '5 min',
+    time: '195–210',
+    clock: '11:45–12:00',
+    title: '收尾 / 彈性時間',
+    duration: '15 min',
     type: 'wrap',
     notes: [
       '(1) Pump-Pipe-Tank 是你的決策 GPS',
@@ -217,10 +217,10 @@ export function RoadmapPage() {
       {/* Header */}
       <section className="text-center">
         <h1 className="text-2xl font-bold md:text-3xl" style={{ color: 'var(--medical-navy)' }}>
-          課程地圖
+          課程地圖（3.5 小時版）
         </h1>
         <p className="mt-2 text-sm text-gray-500 md:text-base">
-          08:30–11:50 ｜ 210 分鐘 ｜ Lecture → 分組案例 → 報告 → 總整
+          08:30–12:00 ｜ 210 分鐘 ｜ Lecture → 分組案例 → 報告 → 總整
         </p>
         <div className="mt-3 flex flex-wrap justify-center gap-2">
           {Object.entries(typeStyles).map(([key, s]) => (

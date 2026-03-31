@@ -192,7 +192,7 @@ export function HomePage() {
                   評量測驗
                 </CardTitle>
                 <CardDescription className="text-xs">
-                  前測（10 題）、後測（20 題）、完整題庫（35 題）互動作答，即時解析
+                  前測（10 題）、後測（20 題）、完整題庫（37 題）互動作答，即時解析
                 </CardDescription>
               </CardHeader>
             </Card>

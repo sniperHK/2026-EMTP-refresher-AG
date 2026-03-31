@@ -28,7 +28,7 @@
 - `docs/scenarios/critical-actions-checklist.md`
 - `docs/assessments/mini-osce.md`
 
-## 3. 題庫分布（35 題，建議比例）
+## 3. 題庫分布（37 題，建議比例）
 
 - 病生理學（M01）：約 40-45% — 休克、氧合/通氣、OHCA 與 post-ROSC 核心判讀
 - PK/PD（M02）：約 35-40% — route、onset、老年/低灌流調整、ACLS 常見藥物風險
