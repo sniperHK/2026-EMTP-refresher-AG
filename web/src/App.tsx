@@ -9,6 +9,7 @@ import { QuizPage } from '@/pages/QuizPage'
 import { SlidesPage } from '@/pages/SlidesPage'
 import { RoadmapPage } from '@/pages/RoadmapPage'
 import { TeacherDashboardPage } from '@/pages/TeacherDashboardPage'
+import { MessageBoardPage } from '@/pages/MessageBoardPage'
 
 export default function App() {
   return (
@@ -25,6 +26,7 @@ export default function App() {
           <Route path="slides/:slideId" element={<SlidesPage />} />
           <Route path="slides" element={<SlidesPage />} />
           <Route path="roadmap" element={<RoadmapPage />} />
+          <Route path="messages" element={<MessageBoardPage />} />
           <Route path="teacher-dashboard" element={<TeacherDashboardPage />} />
         </Route>
       </Routes>

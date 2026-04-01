@@ -150,6 +150,7 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
           {[
             { to: '/roadmap', label: '課程地圖', dot: 'bg-amber-500' },
             { to: '/handout', label: '學員講義', dot: 'bg-blue-600' },
+            { to: '/messages', label: '互動留言板', dot: 'bg-emerald-500' },
             { to: '/quiz', label: '評量測驗', dot: 'bg-red-500' },
           ].map((item) => (
             <Link

@@ -172,7 +172,7 @@ export function HomePage() {
         >
           學員資源
         </h2>
-        <div className="grid gap-4 sm:grid-cols-2">
+        <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
           <Link to="/handout" className="group">
             <Card className="h-full transition-all hover:shadow-lg group-hover:-translate-y-0.5">
               <CardHeader>
@@ -181,6 +181,18 @@ export function HomePage() {
                 </CardTitle>
                 <CardDescription className="text-xs">
                   快速參考卡 — Pump-Pipe-Tank、Nohria-Stevenson、SCAPE、PseudoPEA 速查
+                </CardDescription>
+              </CardHeader>
+            </Card>
+          </Link>
+          <Link to="/messages" className="group">
+            <Card className="h-full transition-all hover:shadow-lg group-hover:-translate-y-0.5">
+              <CardHeader>
+                <CardTitle className="text-base" style={{ color: 'var(--medical-teal)' }}>
+                  互動留言板
+                </CardTitle>
+                <CardDescription className="text-xs">
+                  課後提問、SOP 差異補充、案例延伸討論與現場回饋
                 </CardDescription>
               </CardHeader>
             </Card>
