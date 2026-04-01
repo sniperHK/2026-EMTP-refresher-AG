@@ -28,7 +28,7 @@
 | 途徑 | Onset (平均) | 適用情境 | 瀕死/休克病人注意事項 |
 | :--- | :--- | :--- | :--- |
 | **IV (Central/Upper limb)** | 10-30 sec | ALS 黃金標準 | 確保管路通暢，推藥後需 Flush。上肢優於下肢。 |
-| **IO (Tibial/Humeral)** | 30-60 sec | IV 失敗或無法建立時的合理替代 | **Humeral IO (肱骨)** 常較快接近 central circulation；**Tibial IO** 仍是可接受位置，但常需加壓輸液 (Pressure bag/Push) 才能進入循環。**痛！清醒病人慎用 (Lidocaine pre-medication)。**<br>⚠️ **2025 AHA**：成人 cardiac arrest 建議先嘗試 IV；IV 失敗、延遲或不可行時，IO 為合理替代。 |
+| **IO (Tibial/Humeral)** | 30-60 sec | IV 失敗或無法建立時的合理替代 | **Humeral IO (肱骨)** 常較快接近 central circulation；**Tibial IO** 仍是可接受位置，但常需加壓輸液 (Pressure bag/Push) 才能進入循環。**痛！清醒病人慎用 (國際指引建議 Lidocaine pre-medication；台北市 115 年單項技術規範未納入此步驟)。**<br>⚠️ **2025 AHA**：成人 cardiac arrest 建議先嘗試 IV；IV 失敗、延遲或不可行時，IO 為合理替代。 |
 | **IM (Muscle)** | 5-15 min | 躁動/無法 IV 時 (Ketamine/Midazolam) | **休克病人禁用 IM！** 血流不到肌肉，藥物積在肌肉裡，等休克改善後再一次釋放 (Late Dump) 造成危險。 |
 | **IN (Mucosa)** | 3-5 min | 兒童/鎮靜/止痛 (Fentanyl/Midazolam) | 劑量限制 (體積不可太大，每孔 < 1ml)。鼻塞/鼻血無效。 |
 

@@ -239,11 +239,11 @@ export const questions: Question[] = [
     options: [
       "直接推藥，不需確認位置",
       "旋轉針頭確認深度 → 直接推藥",
-      "抽吸確認骨髓回血 → Lidocaine 止痛（清醒者）→ NS Flush 衝開骨髓腔 → 給藥",
+      "抽吸確認骨髓回血 → NS Flush 衝開骨髓腔 → 給藥",
       "NS Flush → 抽吸確認 → 給藥",
     ],
     answer: "C",
-    explanation: "依台北市消防員作業手冊：IO 建立後先抽吸確認有骨髓回血（驗證位置正確）→ 清醒病人先給 Lidocaine 40mg 止痛 → NS 20mL 快速 Flush 衝開骨髓腔 fibrin mesh → 再開始給藥。每次給藥後需再 Flush 20mL 確保藥物進入循環。",
+    explanation: "依台北市 115 年單項技術規範「骨內注射流程」步驟 (八)~(十)：IO 建立後先回抽確認有骨髓血液流出（驗證位置正確）→ 推注 10-20cc NS 將骨髓推開，觀察有無腫脹浸潤 → 再開始給藥。每次給藥後需再 Flush 確保藥物進入循環。（註：Lidocaine IO 止痛為國際指引建議，非台北市在地 SOP 步驟。）",
   },
   {
     id: 20, module: "M02", level: "Remember", usage: ["Pre"],

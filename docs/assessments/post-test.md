@@ -73,7 +73,7 @@ D. 改用 Ketamine
 **12. IO (Intraosseous) 建立後，依台北市作業手冊，正確的確認與給藥順序為？**
 A. 直接推藥，不需確認位置
 B. 旋轉針頭確認深度 → 直接推藥
-C. 抽吸確認骨髓回血 → Lidocaine 止痛（清醒者）→ NS Flush 衝開骨髓腔 → 給藥
+C. 抽吸確認骨髓回血 → NS Flush 衝開骨髓腔 → 給藥
 D. NS Flush → 抽吸確認 → 給藥
 
 **13. Amiodarone 若採快速 IV 推注 (IV push)，最常見且顯著的副作用是？**
